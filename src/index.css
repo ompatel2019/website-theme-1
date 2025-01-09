@@ -4,6 +4,7 @@
 
 html {
     scroll-behavior: smooth;
+    overflow: hidden
 }
 
 /* ======================= */
@@ -27,62 +28,63 @@ html {
 /* H1 */
 .h1 {
     /* Base (~1440px) */
-    @apply text-[89.8px];
+    @apply text-[98.78px];
     /* Larger screens (~1536px+) */
-    @apply 2xl:text-[96.1px];
+    @apply 2xl:text-[105.71px];
     /* Medium screens (~768px+) */
-    @apply md:text-[47.6px];
+    @apply md:text-[52.36px];
     /* Very small screens (<640px) */
-    @apply max-sm:text-[39.5px];
+    @apply max-sm:text-[43.45px];
 }
 
 /* H2 */
 .h2 {
-    @apply text-[67.3px];
-    @apply 2xl:text-[72px];
-    @apply md:text-[35.7px];
-    @apply max-sm:text-[29.6px];
+    @apply text-[74.03px];
+    @apply 2xl:text-[79.2px];
+    @apply md:text-[39.27px];
+    @apply max-sm:text-[32.56px];
 }
 
 /* H3 */
 .h3 {
-    @apply text-[50.5px];
-    @apply 2xl:text-[54px];
-    @apply md:text-[26.8px];
-    @apply max-sm:text-[22.2px];
+    @apply text-[55.55px];
+    @apply 2xl:text-[59.4px];
+    @apply md:text-[29.48px];
+    @apply max-sm:text-[24.42px];
 }
 
 /* H4 */
 .h4 {
-    @apply text-[37.9px];
-    @apply 2xl:text-[40.5px];
-    @apply md:text-[20.1px];
-    @apply max-sm:text-[16.7px];
+    @apply text-[41.69px];
+    @apply 2xl:text-[44.55px];
+    @apply md:text-[22.11px];
+    @apply max-sm:text-[18.37px];
 }
 
 /* H5 */
 .h5 {
-    @apply text-[28.4px];
-    @apply 2xl:text-[30.4px];
-    @apply md:text-[15px];
-    @apply max-sm:text-[12.5px];
+    @apply text-[31.24px];
+    @apply 2xl:text-[33.44px];
+    @apply md:text-[16.5px];
+    @apply max-sm:text-[13.75px];
 }
 
 /* H6 */
 .h6 {
-    @apply text-[21.3px];
-    @apply 2xl:text-[22.8px];
-    @apply md:text-[11.3px];
-    @apply max-sm:text-[9.4px];
+    @apply text-[23.43px];
+    @apply 2xl:text-[25.08px];
+    @apply md:text-[12.43px];
+    @apply max-sm:text-[10.34px];
 }
 
 /* Paragraph */
 .p {
-    @apply text-[16px];
-    @apply 2xl:text-[17.1px];
-    @apply md:text-[8.5px];
-    @apply max-sm:text-[7px];
+    @apply text-[17.6px];
+    @apply 2xl:text-[18.81px];
+    @apply md:text-[9.35px];
+    @apply max-sm:text-[7.7px];
 }
+
 
 /* ======================= */
 /*   Other Utility Classes */
@@ -107,7 +109,19 @@ html {
 
 /* Responsive padding container */
 .responsivePad {
-    @apply 2xl:px-[320px] xl:px-[200px] lg:px-[120px] md:px-[96px] sm:px-[64px] max-sm:px-[16px];
+    @apply 2xl:px-[200px] xl:px-[120px] lg:px-[96px] sm:px-[64px] max-sm:px-[16px];
 }
 
 
+.btn:hover .plus { 
+    animation: twist 0.25s ease-in-out forwards;
+}
+
+@keyframes twist { 
+    from { 
+        transform: rotate(0deg);
+    }
+    to { 
+        transform: rotate(90deg);
+    }
+}
