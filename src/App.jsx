@@ -1,13 +1,11 @@
 import React from 'react';
-import { FaStar } from 'react-icons/fa';
+import Navbar from './components/Navbar'
 
 const App = () => {
   return (
-    <div>
-      <h1 className=''>
-        Hello World!
-      </h1>
-    </div>
+    <>
+      <Navbar/>
+    </>
   );
 }
 
