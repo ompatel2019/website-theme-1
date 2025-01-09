@@ -1,3 +1,113 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ======================= */
+/*    Headings and Body    */
+/* ======================= */
+
+/* 
+   h1: 89.8px base; 
+   h2: 67.3px base; 
+   h3: 50.5px base; 
+   h4: 37.9px base; 
+   h5: 28.4px base; 
+   h6: 21.3px base; 
+   p: 16px base 
+
+   2xl is ~1536px+ 
+   md is ~768px+ 
+   max-sm is <640px 
+*/
+
+/* H1 */
+.h1 {
+    /* Base (~1440px) */
+    @apply text-[89.8px];
+    /* Larger screens (~1536px+) */
+    @apply 2xl:text-[96.1px];
+    /* Medium screens (~768px+) */
+    @apply md:text-[47.6px];
+    /* Very small screens (<640px) */
+    @apply max-sm:text-[39.5px];
+}
+
+/* H2 */
+.h2 {
+    @apply text-[67.3px];
+    @apply 2xl:text-[72px];
+    @apply md:text-[35.7px];
+    @apply max-sm:text-[29.6px];
+}
+
+/* H3 */
+.h3 {
+    @apply text-[50.5px];
+    @apply 2xl:text-[54px];
+    @apply md:text-[26.8px];
+    @apply max-sm:text-[22.2px];
+}
+
+/* H4 */
+.h4 {
+    @apply text-[37.9px];
+    @apply 2xl:text-[40.5px];
+    @apply md:text-[20.1px];
+    @apply max-sm:text-[16.7px];
+}
+
+/* H5 */
+.h5 {
+    @apply text-[28.4px];
+    @apply 2xl:text-[30.4px];
+    @apply md:text-[15px];
+    @apply max-sm:text-[12.5px];
+}
+
+/* H6 */
+.h6 {
+    @apply text-[21.3px];
+    @apply 2xl:text-[22.8px];
+    @apply md:text-[11.3px];
+    @apply max-sm:text-[9.4px];
+}
+
+/* Paragraph */
+.p {
+    @apply text-[16px];
+    @apply 2xl:text-[17.1px];
+    @apply md:text-[8.5px];
+    @apply max-sm:text-[7px];
+}
+
+/* ======================= */
+/*   Other Utility Classes */
+/* ======================= */
+
+/* Responsive margins for mobile text sizing */
+.m1 {
+    @apply max-sm:text-xl;
+}
+.m2 {
+    @apply max-sm:text-lg;
+}
+.m3 {
+    @apply max-sm:text-[12px];
+}
+.m4 {
+    @apply max-sm:text-[10px];
+}
+.m5 {
+    @apply max-sm:text-[8px];
+}
+
+/* Responsive padding container */
+.responsivePad {
+    @apply 2xl:px-[320px] xl:px-[200px] lg:px-[120px] md:px-[96px] sm:px-[64px] max-sm:px-[16px];
+}
+
+
