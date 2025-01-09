@@ -1,13 +1,14 @@
-import React from 'react'
+import React from 'react';
+import { FaStar } from 'react-icons/fa';
 
 const App = () => {
   return (
     <div>
-      <h1 className="h1 font-bold underline">
+      <h1 className=''>
         Hello World!
       </h1>
     </div>
-  )
+  );
 }
 
 export default App;
