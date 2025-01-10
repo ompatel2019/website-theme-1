@@ -1,0 +1,149 @@
+/* fadeAnimations.css */
+
+/* Existing fade classes */
+
+/* Reusable Fade Element */
+.fade-element {
+  opacity: 0;
+  visibility: hidden; /* Hidden initially */
+  transition: opacity 1s ease-in-out, visibility 0s 1s; /* Delays visibility change */
+}
+
+.fade-element.fade-in {
+  opacity: 1;
+  visibility: visible; /* Set visible when fading in */
+  transition: opacity 1s ease-in-out, visibility 0s 0s; /* Immediately make it visible */
+}
+
+/* Simple Fade */
+@keyframes fade {
+  from {
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.fade.fade-in {
+  animation: fade 1s ease-in-out forwards;
+}
+
+/* Fade Up */
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px); /* Starts below */
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.fade-up.fade-in {
+  animation: fade-up 1s ease-in-out forwards;
+}
+
+/* Fade Down */
+@keyframes fade-down {
+  from {
+    opacity: 0;
+    transform: translateY(-20px); /* Starts above */
+    visibility: hidden;
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    visibility: visible;
+  }
+}
+
+.fade-down.fade-in {
+  animation: fade-down 1s ease-in-out forwards;
+}
+
+/* Fade Left */
+@keyframes fade-left {
+  from {
+    transform: translateX(-50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.fade-left.fade-in {
+  animation: fade-left 1s ease-in-out forwards;
+}
+
+/* Fade Right */
+@keyframes fade-right {
+  from {
+    transform: translateX(50px);
+    opacity: 0;
+    visibility: hidden;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.fade-right.fade-in {
+  animation: fade-right 1s ease-in-out forwards;
+}
+
+/* ------------------------------------- */
+/*        CSSTransition for Menu          */
+/* ------------------------------------- */
+
+/* Entering */
+.menu-enter {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.menu-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+/* Exiting */
+.menu-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.menu-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+/* ------------------------------------- */
+/*        Hover animations               */
+/* ------------------------------------- */
+
+.btn:hover .plus { 
+  animation: twist 0.25s ease-in-out forwards;
+}
+
+@keyframes twist { 
+  from { 
+      transform: rotate(0deg);
+  }
+  to { 
+      transform: rotate(90deg);
+  }
+}

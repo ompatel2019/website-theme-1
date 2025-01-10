@@ -111,17 +111,3 @@ html {
 .responsivePad {
     @apply 2xl:px-[200px] xl:px-[120px] lg:px-[96px] sm:px-[64px] max-sm:px-[16px];
 }
-
-
-.btn:hover .plus { 
-    animation: twist 0.25s ease-in-out forwards;
-}
-
-@keyframes twist { 
-    from { 
-        transform: rotate(0deg);
-    }
-    to { 
-        transform: rotate(90deg);
-    }
-}
