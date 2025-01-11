@@ -4,108 +4,61 @@
 
 html {
     scroll-behavior: smooth;
-    overflow: hidden
+    overflow-x: hidden
 }
 
-/* ======================= */
-/*    Headings and Body    */
-/* ======================= */
+/* Responsive font sizes */
 
-/* 
-   h1: 89.8px base; 
-   h2: 67.3px base; 
-   h3: 50.5px base; 
-   h4: 37.9px base; 
-   h5: 28.4px base; 
-   h6: 21.3px base; 
-   p: 16px base 
-
-   2xl is ~1536px+ 
-   md is ~768px+ 
-   max-sm is <640px 
-*/
-
-/* H1 */
 .h1 {
-    /* Base (~1440px) */
-    @apply text-[98.78px];
-    /* Larger screens (~1536px+) */
-    @apply 2xl:text-[105.71px];
-    /* Medium screens (~768px+) */
-    @apply md:text-[52.36px];
-    /* Very small screens (<640px) */
-    @apply max-sm:text-[43.45px];
-}
+    /* Start smaller and scale up at breakpoints */
+    @apply text-4xl md:text-6xl xl:text-8xl;
+  }
+  
+  .h2 {
+    @apply text-3xl md:text-5xl xl:text-7xl;
+  }
+  
+  .h3 {
+    @apply text-2xl md:text-4xl xl:text-6xl;
+  }
+  
+  .h4 {
+    @apply text-xl md:text-3xl xl:text-5xl;
+  }
+  
+  .h5 {
+    @apply text-lg md:text-2xl xl:text-4xl;
+  }
+  
+  .h6 {
+    @apply text-base md:text-xl xl:text-2xl;
+  }
+  
+  /* Paragraph */
+  .p {
+    @apply text-base md:text-lg xl:text-xl;
+  }
 
-/* H2 */
-.h2 {
-    @apply text-[74.03px];
-    @apply 2xl:text-[79.2px];
-    @apply md:text-[39.27px];
-    @apply max-sm:text-[32.56px];
-}
-
-/* H3 */
-.h3 {
-    @apply text-[55.55px];
-    @apply 2xl:text-[59.4px];
-    @apply md:text-[29.48px];
-    @apply max-sm:text-[24.42px];
-}
-
-/* H4 */
-.h4 {
-    @apply text-[41.69px];
-    @apply 2xl:text-[44.55px];
-    @apply md:text-[22.11px];
-    @apply max-sm:text-[18.37px];
-}
-
-/* H5 */
-.h5 {
-    @apply text-[31.24px];
-    @apply 2xl:text-[33.44px];
-    @apply md:text-[16.5px];
-    @apply max-sm:text-[13.75px];
-}
-
-/* H6 */
-.h6 {
-    @apply text-[23.43px];
-    @apply 2xl:text-[25.08px];
-    @apply md:text-[12.43px];
-    @apply max-sm:text-[10.34px];
-}
-
-/* Paragraph */
-.p {
-    @apply text-[17.6px];
-    @apply 2xl:text-[18.81px];
-    @apply md:text-[9.35px];
-    @apply max-sm:text-[7.7px];
-}
-
-
-/* ======================= */
-/*   Other Utility Classes */
-/* ======================= */
-
-/* Responsive margins for mobile text sizing */
-.m1 {
+  .m1 {
     @apply max-sm:text-xl;
 }
+
 .m2 {
     @apply max-sm:text-lg;
 }
+
 .m3 {
-    @apply max-sm:text-[12px];
+    @apply max-sm:text-[12px]
 }
+
 .m4 {
     @apply max-sm:text-[10px];
 }
+
 .m5 {
     @apply max-sm:text-[8px];
 }
+  
 
 /* Responsive padding container */
 .responsivePad {

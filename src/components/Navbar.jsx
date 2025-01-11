@@ -22,11 +22,11 @@ const Navbar = () => {
     <>
       <nav id='home' className="bg-c1-0 flex items-center responsivePad pt-[32px] justify-between font-questrial sticky z-50 top-0" aria-label="Main Navigation">
         <a href="/" aria-label="Home">
-          <p className="text-white h4 fade-left fade-in">Byt.</p>
+          <p className="text-white text-[16px] fade-left fade-in h4 max-md:text-[32px]">Byt.</p>
         </a>
 
-        <div className="max-md:hidden flex space-x-4 h5 fade-right fade-in">
-          <ul className="bg-c2-0 flex text-c4-0 border-2 border-c4-0 rounded-full items-center space-x-6 px-5">
+        <div className="max-[960px]:hidden flex space-x-4 h5 fade-right fade-in">
+          <ul className="bg-c2-0 flex text-c4-0 border-2 border-c4-0 rounded-full items-center space-x-6 px-5 p">
             {navBarLinks.map((link, index) => (
               <li key={index} className="hover:translate-y-[-5px] transition-transform duration-300">
                 <a href={link.anchor}>{link.name}</a>
@@ -35,7 +35,7 @@ const Navbar = () => {
           </ul>
           <a href="#contact">
             <button
-              className="bg-c4-0 rounded-full flex items-center p-4 px-8 justify-center btn hover:bg-c1-0 hover:text-c4-0 transition-all hover:px-10 hover:border-white hover:border-2 border-2 duration-300"
+              className="p bg-c4-0 rounded-full flex items-center p-4 px-8 justify-center btn hover:bg-c1-0 hover:text-c4-0 transition-all hover:px-10 hover:border-white hover:border-2 border-2 duration-300"
               aria-label="Book a call"
             >
               Book a call <FaPlus className="plus" aria-hidden="true" />
@@ -43,7 +43,7 @@ const Navbar = () => {
           </a>
         </div>
 
-        <div className='md:hidden text-white h3 fade-right fade-in'>
+        <div className='min-[961px]:hidden text-white h3 fade-right fade-in max-md:text-[32px]'>
           <button
             onClick={changeMenuVisibility}
             aria-label={showMenu ? "Close Menu" : "Open Menu"}
@@ -62,11 +62,11 @@ const Navbar = () => {
         unmountOnExit
       >
         <div
-          className='bg-c1-0 fixed inset-0 flex flex-col items-center justify-center z-40'
+          className='bg-c1-0 fixed inset-0 flex flex-col items-center justify-center z-40 h4 font-questrial'
           id="mobile-menu"
           // role="dialog"
           aria-modal="true">
-          <ul className="flex flex-col text-c4-0 items-center space-y-10 font-dm-sans h4 placeholder-opacity-80">
+          <ul className="flex flex-col text-c4-0 items-center space-y-10 font-dm-sanstext-[16px]placeholder-opacity-80">
             {navBarLinks.map((link, index) => (
               <li key={index} className="hover:translate-y-[-5px] transition-transform duration-200">
                 <a href={link.anchor} onClick={() => setShowMenu(false)} aria-label={`Navigate to ${link.name}`}>
