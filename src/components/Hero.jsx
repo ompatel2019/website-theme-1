@@ -1,58 +1,53 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react';
 import { FaStar } from "react-icons/fa";
-import heroImage1 from "../images/heroImage1.webp"
-import heroImage2 from "../images/heroImage2.webp"
+import heroImage1 from "../images/heroImage1.webp";
+import heroImage2 from "../images/heroImage2.webp";
 
 const Hero = () => {
-  const allTestimonials = [ 
+  const allTestimonials = [
     "Their expertise brought my vision to life—highly recommended!",
     "Creative solutions, timely delivery, and excellent attention to detail!",
-    "Exceptional web design and communication throughout the process!", 
-  ]
+    "Exceptional web design and communication throughout the process!",
+  ];
 
-  const allHeroSubText = "Find your place on the internet in under a month! We offer custom designs, domain hosting, SEO services, and more to help you establish a standout online presence quickly and efficiently."
+  const allHeroSubText = "Find your place on the internet in under a month! We offer custom designs, domain hosting, SEO services, and more to help you establish a standout online presence quickly and efficiently.";
 
   const [testimonials, setTestimonialsArray] = useState([]);
   const [heroSubText, setHeroSubText] = useState("");
-  const mobHeroSubText = "Get online fast with our custom designs, domain hosting, and SEO services!"
+  const mobHeroSubText = "Get online fast with our custom designs, domain hosting, and SEO services!";
 
-  const updateHeroTexts = () => { 
+  const updateHeroTexts = () => {
     const screenWidth = window.innerWidth;
 
-    if (screenWidth <= 768) { 
-      const updatedTestimonialsArr = allTestimonials.splice(0,2);
+    if (screenWidth <= 768) {
+      const updatedTestimonialsArr = allTestimonials.slice(0, 2);
       setTestimonialsArray(updatedTestimonialsArr);
       setHeroSubText(mobHeroSubText);
-    } else { 
+    } else {
       setTestimonialsArray(allTestimonials);
       setHeroSubText(allHeroSubText);
     }
-  }
+  };
 
-  useEffect(() => { 
+  useEffect(() => {
     updateHeroTexts();
+
+    const intervalId = setInterval(() => {
+      updateHeroTexts();
+    }, 1000);
 
     window.addEventListener('resize', updateHeroTexts);
 
-    const screenWidth = window.innerWidth;
-    console.log(screenWidth);
-    
-    setTimeout(() => { 
-      updateHeroTexts
-      console.log("hello");
-    }, 1000)
-
     return () => {
+      clearInterval(intervalId);
       window.removeEventListener('resize', updateHeroTexts);
     };
+  }, []);
 
-
-  }, [])
-
-  const heroText = "We Offer Web Solutions."
-  const leftButton = "Get Started"
-  const rightButton = "Services"
-  const buttonClass = 'bg-c2-0 border-2 border-c4-0 w-full rounded-md p-2 hover:bg-pink-400 transition-all hover:px-32 duration-[325ms]' ;
+  const heroText = "We Offer Web Solutions.";
+  const leftButton = "Get Started";
+  const rightButton = "Services";
+  const buttonClass = 'bg-c2-0 border-2 border-c4-0 w-full rounded-md p-2 hover:bg-orange-400 transition-all hover:px-32 duration-[325ms]';
 
   return (
     <>
@@ -63,16 +58,16 @@ const Hero = () => {
           <div className='col-span-2 flex flex-col justify-around max-lg:space-y-8'>
 
             <div className='flex p space-x-8 max-lg:text-center'>
-                {testimonials.map((item, index) => (
-                  <div key={index}>
-                    <div className='flex max-lg:justify-center'>
-                      {[0, 1, 2, 3, 4].map(starIndex => (
-                        <FaStar key={starIndex} className='text-[#E6BD7B] text-[16px]'/>
-                      ))}
-                    </div>
-                    <p>{item}</p>
+              {testimonials.map((item, index) => (
+                <div key={index}>
+                  <div className='flex max-lg:justify-center'>
+                    {[0, 1, 2, 3, 4].map(starIndex => (
+                      <FaStar key={starIndex} className='text-[#E6BD7B] p' />
+                    ))}
                   </div>
-                ))}
+                  <p>{item}</p>
+                </div>
+              ))}
             </div>
 
             <div className='max-lg:text-center space-y-4'>
@@ -86,7 +81,7 @@ const Hero = () => {
 
             <div className='flex max-lg:justify-center p space-x-3'>
               <button
-              className={buttonClass}
+                className={buttonClass}
               >
                 {leftButton.toUpperCase()}
               </button>
@@ -111,4 +106,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;

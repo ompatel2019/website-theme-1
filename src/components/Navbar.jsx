@@ -7,9 +7,9 @@ import '../animations.css';
 
 const Navbar = () => {
   const navBarLinks = [
-    { name: 'Home', anchor: '#home' },
     { name: 'About Us', anchor: '#aboutUs' },
     { name: 'Why Choose Us', anchor: '#whyChooseUs' },
+    { name: 'Pricing', anchor: '#pricing' },
     { name: 'Portfolio', anchor: '#portfolio' },
     { name: 'Blogs', anchor: '#blogs' }
   ];
@@ -35,7 +35,7 @@ const Navbar = () => {
           </ul>
           <a href="#contact">
             <button
-              className="p bg-c4-0 rounded-full flex items-center p-4 px-8 justify-center btn hover:bg-c1-0 hover:text-c4-0 transition-all hover:px-10 hover:border-white hover:border-2 border-2 duration-300"
+              className="p bg-c4-0 rounded-full flex items-center p-4 px-10 justify-center btn hover:bg-c1-0 hover:text-c4-0 transition-all hover:px-12 hover:border-white hover:border-2 border-2 duration-300"
               aria-label="Book a call"
             >
               Book a call <FaPlus className="plus" aria-hidden="true" />
