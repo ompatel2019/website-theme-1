@@ -45,7 +45,7 @@ const Hero = () => {
   const heroText = "We Offer Web Solutions.";
   const leftButton = "Get Started";
   const rightButton = "Services";
-  const buttonClass = 'bg-c2-0 border-2 border-c4-0 w-full rounded-md p-2 hover:bg-orange-400 transition-all hover:px-32 duration-[325ms]';
+  const buttonClass = 'bg-c2-0 border-2 border-c4-0 w-full rounded-md p-2 hover:bg-orange-400 transition-all hover:px-32 duration-[325ms] max-md:hover:px-8';
 
   return (
     <>
@@ -73,16 +73,22 @@ const Hero = () => {
               </p>
             </div>
             <div className='flex max-lg:justify-center p space-x-3'>
-              <button
-                className={buttonClass}
-              >
-                {leftButton.toUpperCase()}
-              </button>
-              <button
-                className={buttonClass}
-              >
-                {rightButton.toUpperCase()}
-              </button>
+              <a href="#pricing">
+                <button
+                  className={buttonClass}
+                  aria-label="View Pricing"
+                >
+                  {leftButton.toUpperCase()}
+                </button>
+              </a>
+              <a href="#services">
+                <button
+                  className={buttonClass}
+                  aria-label="Explore Services"
+                >
+                  {rightButton.toUpperCase()}
+                </button>
+              </a>
             </div>
           </div>
           <div className='fade-in fade-down'>
