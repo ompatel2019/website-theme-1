@@ -31,16 +31,14 @@ const Hero = () => {
 
   useEffect(() => {
     updateHeroTexts();
-
-    const intervalId = setInterval(() => {
+    const handleResize = () => {
       updateHeroTexts();
-    }, 1000);
+    };
 
-    window.addEventListener('resize', updateHeroTexts);
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      clearInterval(intervalId);
-      window.removeEventListener('resize', updateHeroTexts);
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
@@ -51,12 +49,9 @@ const Hero = () => {
 
   return (
     <>
-      <div className='responsivePad bg-c1-0 pt-[64px] pb-[16px] text-white font-dm-sans max-md:py-[16px]'>
-
+      <div className='responsivePad bg-c1-0 pt-[64px] pb-[16px] text-white font-dm-sans max-md:py-[32px]'>
         <div className='grid grid-cols-3 max-lg:flex max-lg:flex-col gap-8'>
-
-          <div className='col-span-2 flex flex-col justify-around max-lg:space-y-8'>
-
+          <div className='col-span-2 flex flex-col justify-around max-lg:space-y-12 max-md:space-y-8 fade-in fade-up'>
             <div className='flex p space-x-8 max-lg:text-center'>
               {testimonials.map((item, index) => (
                 <div key={index}>
@@ -69,7 +64,6 @@ const Hero = () => {
                 </div>
               ))}
             </div>
-
             <div className='max-lg:text-center space-y-4'>
               <h1 className='h1 font-bold max-md:leading-10'>
                 {heroText.toUpperCase()}
@@ -78,14 +72,12 @@ const Hero = () => {
                 {heroSubText}
               </p>
             </div>
-
             <div className='flex max-lg:justify-center p space-x-3'>
               <button
                 className={buttonClass}
               >
                 {leftButton.toUpperCase()}
               </button>
-
               <button
                 className={buttonClass}
               >
@@ -93,11 +85,10 @@ const Hero = () => {
               </button>
             </div>
           </div>
-
-          <div className=''>
+          <div className='fade-in fade-down'>
             <div className='flex lg:flex-col max-md:flex-col md:flex-row gap-4'>
-              <img src={heroImage1} alt="" />
-              <img src={heroImage2} alt="" />
+              <img src={heroImage1} alt="Hero Image 1" loading="lazy" />
+              <img src={heroImage2} alt="Hero Image 2" loading="lazy" />
             </div>
           </div>
         </div>

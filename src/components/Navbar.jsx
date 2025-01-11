@@ -62,7 +62,7 @@ const Navbar = () => {
         unmountOnExit
       >
         <div
-          className='bg-c1-0 fixed inset-0 flex flex-col items-center justify-center z-40 h4 font-questrial'
+          className='bg-c1-0 fixed inset-0 flex flex-col items-center justify-center z-40 h4 font-questrial opacity-[0.97]'
           id="mobile-menu"
           // role="dialog"
           aria-modal="true">
