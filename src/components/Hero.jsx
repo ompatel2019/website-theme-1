@@ -54,7 +54,7 @@ const Hero = ({ hoverBg }) => {
 
   return (
     <>
-      <div className="responsivePad bg-c1-0 text-white font-dm-sans py-[48px] max-lg:py-[32px] max-md:py-[48px]">
+      <div className="responsivePad bg-c1-0 text-white font-dm-sans py-[48px] max-lg:py-[16px] max-md:py-[48px] lg:pb-[24px]">
         <div className="grid grid-cols-3 max-lg:flex max-lg:flex-col gap-8">
           {/* LEFT SIDE */}
           <div className="col-span-2 flex flex-col justify-around max-lg:space-y-10 max-md:space-y-10 fade-in fade-up">
@@ -105,7 +105,7 @@ const Hero = ({ hoverBg }) => {
             <div className="flex flex-row lg:flex-col gap-4 justify-center items-center">
               <div className='w-fit flex items-center justify-center'>
                 <img
-                  className="w-[90%]"
+                  className="2xl:w-[90%] lg:w-[85%]"
                   src={heroImage1}
                   alt="Hero Image 1"
                   loading="lazy"
@@ -113,7 +113,7 @@ const Hero = ({ hoverBg }) => {
               </div>
               <div className='w-fit flex items-center justify-center'>
                 <img
-                  className="w-[90%]"
+                  className="2xl:w-[90%] lg:w-[85%]"
                   src={heroImage2}
                   alt="Hero Image 2"
                   loading="lazy"
