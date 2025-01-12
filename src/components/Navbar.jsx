@@ -5,7 +5,7 @@ import { CSSTransition } from 'react-transition-group';
 import { RiMenu3Fill } from "react-icons/ri";
 import '../animations.css'; 
 
-const Navbar = () => {
+const Navbar = ({hoverBg}) => {
   const navBarLinks = [
     { name: 'About Us', anchor: '#aboutUs' },
     { name: 'Why Choose Us', anchor: '#whyChooseUs' },
@@ -28,14 +28,14 @@ const Navbar = () => {
         <div className="max-[960px]:hidden flex space-x-4 h5 fade-right fade-in">
           <ul className="bg-c2-0 flex text-c4-0 border-2 border-c4-0 rounded-full items-center space-x-6 px-5 p">
             {navBarLinks.map((link, index) => (
-              <li key={index} className="hover:translate-y-[-5px] transition-transform duration-300">
+              <li key={index} className="hover:translate-y-[-8px] transition-all duration-300 hover:pl-2">
                 <a href={link.anchor}>{link.name}</a>
               </li>
             ))}
           </ul>
           <a href="#contact">
             <button
-              className="p bg-c4-0 rounded-full flex items-center p-4 px-10 justify-center btn hover:bg-c1-0 hover:text-c4-0 transition-all hover:px-12 hover:border-white hover:border-2 border-2 duration-300"
+              className={`${hoverBg} p bg-c4-0 rounded-full flex items-center p-4 px-10 justify-center btn hover:bg-c1-0 hover:text-c4-0 transition-all hover:px-12 hover:border-white hover:border-2 border-2 duration-300`}
               aria-label="Book a call"
             >
               Book a call <FaPlus className="plus" aria-hidden="true" />

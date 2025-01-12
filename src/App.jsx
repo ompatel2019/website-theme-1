@@ -3,10 +3,11 @@ import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 
 const App = () => {
+  const hoverBg = 'hover:bg-green-400';
   return (
     <>
-      <Navbar/>
-      <Hero/>
+      <Navbar hoverBg = {hoverBg}/>
+      <Hero hoverBg = {hoverBg}/>
     </>
   );
 }
