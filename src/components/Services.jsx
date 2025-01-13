@@ -6,7 +6,7 @@ import development from '../images/development.webp'
 import Service from './Service'
 
 
-const Services = ({servicesSection, sectionClass, subHeadingClass}) => {
+const Services = ({consistentLayout, servicesSection}) => {
 
   const allSubHeading = "We offer an array of services designed to help you effectively expand your brand in the digital realm. Our comprehensive solutions are tailored to enhance your online presence and drive growth."
   const mobileSubheading = "We offer services to expand your brand online, enhance your presence, and drive growth.";
@@ -37,7 +37,7 @@ const Services = ({servicesSection, sectionClass, subHeadingClass}) => {
     {
       serviceActive: true,
       serviceDuration: '2 days',
-      serviceName: 'Free UX Wireframe',
+      serviceName: 'Free Wireframe',
       serviceDesc: 'Receive a free, brand-focused blueprint crafted to ensure seamless user experiences and cohesive layouts from the start.',
       serviceTools: ['Relume', 'Figma'],
       serviceImg: wireframe
@@ -69,7 +69,7 @@ const Services = ({servicesSection, sectionClass, subHeadingClass}) => {
     {
       serviceActive: true,
       serviceDuration: '2 days',
-      serviceName: 'Search Engine Optimisation',
+      serviceName: 'SEO',
       serviceDesc: 'Enhance your visibility with strategic optimizations that boost traffic, amplify brand reach, and drive sustainable online growth.',
       serviceTools: ['Lighthouse', 'TechnicalSEO'],
       serviceImg: seo
@@ -88,10 +88,10 @@ const Services = ({servicesSection, sectionClass, subHeadingClass}) => {
       <div id='services' className='responsivePad bg-c1-0 font-dm-sans pt-[32px] pb-[64px]'>
         <div className='text-c4-0 space-y-10'>
           <div className='fade-in fade-down'>
-            <p className={sectionClass}>{servicesSection.toUpperCase()}</p>
-            <h3 className={subHeadingClass}>
+            <p className={consistentLayout.sectionClass}>{servicesSection.toUpperCase()}</p>
+            <h2 className={consistentLayout.sectionSubheadingClass}>
               {subHeading}
-            </h3>
+            </h2>
           </div>
 
           <div className='grid 2xl:px-[160px] lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 fade-in fade-up'>

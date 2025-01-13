@@ -15,7 +15,7 @@ const Service = ({ serviceInfo }) => {
         rounded-md space-y-4 justify-between
         
         transition-all duration-300 ease-in-out
-        hover:-translate-y-[5px] hover:invert hover:bg-c1-0
+        hover:-translate-y-[10px] hover:invert hover:bg-c1-0
       "
     >
       <div className='flex space-x-2'>
@@ -44,13 +44,13 @@ const Service = ({ serviceInfo }) => {
       </div>
 
       <div className='space-y-4'>
-        <h3 className='h5 text-center font-bold m1'>{serviceInfo.serviceName}</h3>
+        <h3 className='h5 text-center font-bold m1 font-dm-mono'>{serviceInfo.serviceName.toUpperCase()}</h3>
         <p className='p text-center'>{serviceInfo.serviceDesc}</p>
         <div className='flex space-x-1 justify-around items-center'>
           {serviceInfo.serviceTools.map((serviceTool, serviceToolIndex) => (
             <div
               key={serviceToolIndex}
-              className='bg-c4-0 w-full text-c1-0 text-center rounded-sm font-normal text-base px-2 py-[4px]'
+              className='bg-c4-0 w-full text-c1-0 text-center rounded-sm font-normal text-base px-2 py-[4px] font-questrial'
             >
               <p>{serviceTool}</p>
             </div>
