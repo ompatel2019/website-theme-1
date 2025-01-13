@@ -148,6 +148,7 @@
   }
 }
 
+
 /* ------------------------------------- */
 /*        Constant animations            */
 /* ------------------------------------- */
@@ -208,15 +209,26 @@
 }
 
 .rotate {
-  animation: threesixty 3s ease-in-out infinite; /* Total 3 seconds per cycle */
+  animation: flipHourglass 4s infinite linear;
 }
 
-@keyframes threesixty {
-  0%, 33.33% { 
-    transform: rotate(0deg); /* Pause for 2 seconds during each 3-second cycle */
+@keyframes flipHourglass {
+  /* First half of the cycle: hold at 0° */
+  0%, 49.999% {
+    transform: rotate(0deg);
   }
-  100% { 
-    transform: rotate(360deg); /* Complete the rotation in the last 1 second */
+
+  /* Instantly flip to 180° at 50% */
+  50%, 99.999% {
+    transform: rotate(180deg);
+  }
+
+  /* Instantly flip back to 0° at the very end, 
+     so the next cycle starts again at 0° */
+  100% {
+    transform: rotate(0deg);
   }
 }
+
+
 

@@ -36,9 +36,9 @@ const Services = ({servicesSection, sectionClass, subHeadingClass}) => {
   const services = [
     {
       serviceActive: true,
-      serviceDuration: '5 days',
+      serviceDuration: '2 days',
       serviceName: 'Free UX Wireframe',
-      serviceDesc: 'Custom website blueprint tailored to your brand, provided at no cost. Ensures a seamless user experience.',
+      serviceDesc: 'Receive a free, brand-focused blueprint crafted to ensure seamless user experiences and cohesive layouts from the start.',
       serviceTools: ['Relume', 'Figma'],
       serviceImg: wireframe
     },
@@ -46,40 +46,55 @@ const Services = ({servicesSection, sectionClass, subHeadingClass}) => {
       serviceActive: true,
       serviceDuration: '7 days',
       serviceName: 'Design Solution',
-      serviceDesc: 'Creative design strategies that align with your brand, from concept to implementation, ensuring your vision is brought to life.',
-      serviceTools: ['ThemeForest', 'Dribble'],
+      serviceDesc: 'Transform your ideas into captivating digital designs, from concept to final visuals, ensuring a strong and consistent brand presence.',
+      serviceTools: ['ThemeForest', 'Dribbble'],
       serviceImg: design
     },
     {
       serviceActive: true,
       serviceDuration: '7 days',
-      serviceName: 'Develop & Deploy',
-      serviceDesc: 'Building responsive, high-performance websites with clean code, optimized for all devices and deploying on the internet.',
-      serviceTools: ['ReactJS', 'TailwindCSS'],
+      serviceName: 'Development',
+      serviceDesc: 'Build responsive, high-performance websites with clean code, seamlessly optimized for every device and aligned with modern best practices.',
+      serviceTools: ['React.js', 'TailwindCSS'],
+      serviceImg: development
+    },
+    {
+      serviceActive: true,
+      serviceDuration: '1 day',
+      serviceName: 'Web Hosting',
+      serviceDesc: 'Secure, reliable hosting solutions that improves site speed, giving your website consistent, top-tier performance.',
+      serviceTools: ['GoDaddy', 'Netlify'],
       serviceImg: development
     },
     {
       serviceActive: true,
       serviceDuration: '2 days',
       serviceName: 'Search Engine Optimisation',
-      serviceDesc: 'Increase your online presence with our SEO strategies, driving traffic and improving search engine rankings for growth.',
-      serviceTools: ['Lighthouse', 'Technical SEO'],
+      serviceDesc: 'Enhance your visibility with strategic optimizations that boost traffic, amplify brand reach, and drive sustainable online growth.',
+      serviceTools: ['Lighthouse', 'TechnicalSEO'],
+      serviceImg: seo
+    },
+    {
+      serviceActive: false,
+      serviceName: 'Reviews Automation',
+      serviceDesc: 'Enable customers to generate quick, authentic feedback using AI-driven prompts, boosting reviews, SEO, and brand trust.',
+      serviceTools: ['AI-API', 'Django', 'Next.js'],
       serviceImg: seo
     }
-  ]
-
+  ];
+  
   return (
     <>
       <div id='services' className='responsivePad bg-c1-0 font-dm-sans pt-[32px] pb-[64px]'>
         <div className='text-c4-0 space-y-10'>
-          <div className='fade-in fade-left'>
+          <div className='fade-in fade-down'>
             <p className={sectionClass}>{servicesSection.toUpperCase()}</p>
             <h3 className={subHeadingClass}>
               {subHeading}
             </h3>
           </div>
 
-          <div className='grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 fade-in fade-right'>
+          <div className='grid 2xl:px-[160px] lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 fade-in fade-up'>
             {
               services.map((serviceInfo, serviceIndex) => (
                 <Service key={serviceIndex} serviceInfo={serviceInfo}/>
