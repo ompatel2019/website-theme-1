@@ -12,12 +12,13 @@ const Service = ({ serviceInfo }) => {
         border-2 border-c4-0
         px-8 py-8
         flex flex-col items-center
-        rounded-md space-y-4 justify-between
+        rounded-md space-y-4 lg:justify-around
         
         transition-all duration-300 ease-in-out
         hover:-translate-y-[10px] hover:invert hover:bg-c1-0
       "
     >
+          
       <div className='flex space-x-2'>
         <div className={`${topContainersClass}`}>
           {serviceInfo.serviceActive ? (
@@ -43,6 +44,7 @@ const Service = ({ serviceInfo }) => {
         )}
       </div>
 
+      <div className='flex justify-center'><serviceInfo.serviceImg className='w-12 h-12'/></div>
       <div className='space-y-4'>
         <h3 className='h5 text-center font-bold m1 font-dm-mono'>{serviceInfo.serviceName.toUpperCase()}</h3>
         <p className='p text-center'>{serviceInfo.serviceDesc}</p>

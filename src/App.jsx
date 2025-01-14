@@ -10,6 +10,15 @@ const App = () => {
   const servicesSection = 'Services';
   const whyChooseUS = 'Why Choose Us';
 
+  const sections = [
+    {
+      sectionHeading: '',
+      sectionMobileHeading: '',
+      sectionSubheading: '', 
+      sectionMobileSubheading: ''
+    }
+  ]
+
   useEffect(() => {
     const screenWidth = window.innerWidth;
     console.log(screenWidth);

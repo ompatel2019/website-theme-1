@@ -13,11 +13,12 @@ const Hero = ({ hoverBg }) => {
   const allHeroSubText =
     "Find your place on the internet in under a month! We offer custom designs, domain hosting, SEO services, and more to help you establish a standout online presence quickly and efficiently.";
 
+    const mobHeroSubText =
+      "Get online fast with our custom designs, domain hosting, and SEO services!";
+      
   const [testimonials, setTestimonialsArray] = useState([]);
   const [heroSubText, setHeroSubText] = useState("");
 
-  const mobHeroSubText =
-    "Get online fast with our custom designs, domain hosting, and SEO services!";
 
   const updateHeroTexts = () => {
     const screenWidth = window.innerWidth;
@@ -56,9 +57,7 @@ const Hero = ({ hoverBg }) => {
     <>
       <div className="responsivePad bg-c1-0 text-white font-dm-sans py-[48px] max-lg:py-[16px] max-md:py-[48px] lg:pb-[24px]">
         <div className="grid grid-cols-3 max-lg:flex max-lg:flex-col gap-8">
-          {/* LEFT SIDE */}
           <div className="col-span-2 flex flex-col justify-around max-lg:space-y-10 max-md:space-y-10 fade-in fade-up">
-            {/* Testimonials */}
             <div className="flex p space-x-8 max-lg:text-center">
               {testimonials.map((item, index) => (
                 <div key={index}>
@@ -72,7 +71,6 @@ const Hero = ({ hoverBg }) => {
               ))}
             </div>
 
-            {/* Heading + Subtext */}
             <div className="max-lg:text-center space-y-4">
               <h1 className="h1 font-bold max-md:leading-10">
                 {heroText.toUpperCase()}
@@ -80,7 +78,6 @@ const Hero = ({ hoverBg }) => {
               <p className="h6">{heroSubText}</p>
             </div>
 
-            {/* Buttons */}
             <div className="flex max-lg:justify-center p space-x-3">
               <a
                 href="#pricing"
@@ -100,7 +97,6 @@ const Hero = ({ hoverBg }) => {
             </div>
           </div>
 
-          {/* RIGHT SIDE: IMAGES */}
           <div className="fade-in fade-down max-sm:hidden">
             <div className="flex flex-row lg:flex-col gap-4 justify-center items-center">
               <div className='w-fit flex items-center justify-center'>
