@@ -9,39 +9,35 @@ const Portfolio = ({portfolio, consistentLayout}) => {
   const subheading = "Our Innovative Projects Designed to Solve Business Issues"
   const portfolioItems = [
     {
-      portfolioItemName: "ICL",
+      portfolioItemName: "ICL ⋅ 2024",
       portfolioItemDesc: "Revitalized the online presence of ICL with a dynamic, user-friendly website designed to enhance client engagement and streamline event management.",
       portfolioItemLink: "https://www.playicl.com.au/",
       portfolioItemImg: icl,
-      portfolioItemDate: "2024"
     },
     {
-      portfolioItemName: "Sydney Backflow Plumbing & Excavation",
-      portfolioItemDesc: "Developed a robust website for Sydney Backflow, featuring advanced booking systems and detailed service information to boost operational efficiency.",
+      portfolioItemName: "Sydney Backflow Plumbing ⋅ 2024",
+      portfolioItemDesc: "Developed a robust website featuring booking systems and detailed service information to boost operational efficiency.",
       portfolioItemLink: "https://sydneybackflow.com/",
       portfolioItemImg: sbp,
-      portfolioItemDate: "2024"
     },
     {
-      portfolioItemName: "RGB Plumbing",
+      portfolioItemName: "RGB Plumbing ⋅ 2024",
       portfolioItemDesc: "Created an intuitive and visually appealing website for RGB Plumbing, focusing on user experience and seamless access to plumbing services.",
       portfolioItemLink: "https://rgbplumbing.com/",
       portfolioItemImg: rgb,
-      portfolioItemDate: "2024"
     },
     {
-      portfolioItemName: "ISolve Plumbing",
+      portfolioItemName: "Solve Plumbing ⋅ 2024",
       portfolioItemDesc: "Designed a sleek, mobile-responsive website for ISolve Plumbing that emphasizes quick service requests and customer support.",
       portfolioItemLink: "https://isolveplumbing.com.au/",
       portfolioItemImg: isolve,
-      portfolioItemDate: "2024"
     },
   ];
   
 
   return (
     <>
-      <div id='portfolio' className='responsivePad bg-c1-0 space-y-4 py-[64px] font-dm-sans'>
+      <div id='portfolio' className='responsivePad bg-c1-0 py-[64px] max-md:py-[32px] font-dm-sans space-y-8'>
         <div className='fade-in fade-down text-c4-0 text-center'>
             <p className={`${consistentLayout.sectionClass}`}>{portfolio.toUpperCase()}</p>
             <h2 className={consistentLayout.sectionSubheadingClass}>
@@ -49,13 +45,12 @@ const Portfolio = ({portfolio, consistentLayout}) => {
             </h2>
         </div>
 
-        <div className='flex flex-col space-y-4'> 
+        <div className='flex flex-col gap-4'> 
           {
             portfolioItems.map((portfolioItem, portfolioItemKey) => (
               <PortfolioItem key={portfolioItemKey} portfolioItem = {portfolioItem} />
             ))
           }
-
         </div>
 
         </div>

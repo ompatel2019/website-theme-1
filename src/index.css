@@ -31,6 +31,10 @@ html {
   @apply text-xl md:text-3xl xl:text-5xl;
 }
 
+.h4 {
+  line-height: 1.4; 
+}
+
 .h5 {
   @apply text-lg md:text-2xl xl:text-4xl;
 }
