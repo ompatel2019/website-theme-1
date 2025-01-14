@@ -17,7 +17,6 @@ const WhyChooseUs = ({consistentLayout, whyChooseUS}) => {
     } else { 
       setSubheading(allSubHeading);
     }
-
   }
 
   useEffect(() => { 

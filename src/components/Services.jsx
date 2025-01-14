@@ -1,15 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import design from '../images/design.webp'
-import seo from '../images/seo.webp'
-import wireframe from '../images/wireframe.webp'
-import development from '../images/development.webp'
 import Service from './Service'
 import { PiBlueprint } from "react-icons/pi";
-import { MdOutlineDesignServices } from "react-icons/md";
+import { MdOutlineDesignServices, MdOutlineReviews, MdAutoGraph } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
 import { SiGodaddy } from "react-icons/si";
-import { MdAutoGraph } from "react-icons/md";
-import { MdOutlineReviews } from "react-icons/md";
 
 const Services = ({consistentLayout, servicesSection}) => {
 
@@ -74,7 +68,7 @@ const Services = ({consistentLayout, servicesSection}) => {
     {
       serviceActive: true,
       serviceDuration: '2 days',
-      serviceName: 'SEO',
+      serviceName: 'Search Engine Optimisation',
       serviceDesc: 'Enhance your visibility with strategic optimizations that boost traffic, amplify brand reach, and drive sustainable online growth.',
       serviceTools: ['Lighthouse', 'TechnicalSEO'],
       serviceImg: MdAutoGraph

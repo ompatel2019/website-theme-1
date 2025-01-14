@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { FaPlus } from "react-icons/fa6"; 
 import { RxCross2 } from "react-icons/rx";
 import { CSSTransition } from 'react-transition-group';
-import { RiMenu3Fill } from "react-icons/ri";
+import { CgMenuMotion } from "react-icons/cg";
+
 import '../animations.css'; 
 
 const Navbar = ({hoverBg}) => {
@@ -20,8 +21,8 @@ const Navbar = ({hoverBg}) => {
 
   return (
     <>
-      <nav id='home' className="bg-c1-0 flex items-center responsivePad pt-[32px] justify-between font-questrial sticky z-50 top-0" aria-label="Main Navigation">
-        <a href="/" aria-label="Home">
+      <nav className="bg-c1-0 flex items-center responsivePad pt-[32px] justify-between font-questrial sticky z-50 top-0" aria-label="Main Navigation">
+        <a href="#home" aria-label="Home">
           <p className="text-white text-[16px] fade-left fade-in h4 max-md:text-[32px]">Byt.</p>
         </a>
 
@@ -50,7 +51,7 @@ const Navbar = ({hoverBg}) => {
             aria-expanded={showMenu}
             aria-controls="mobile-menu"
           >
-            {!showMenu ? <RiMenu3Fill aria-hidden="true" /> : <RxCross2 aria-hidden="true" />}
+            {!showMenu ? <CgMenuMotion aria-hidden="true" /> : <RxCross2 aria-hidden="true" />}
           </button>
         </div>
       </nav>

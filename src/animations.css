@@ -149,6 +149,14 @@
 }
 
 
+.turnParent .turn { 
+  transform: rotate(45deg);
+}
+
+.turnParent:hover .turn { 
+  transform: rotate(0deg);
+}
+
 /* ------------------------------------- */
 /*        Constant animations            */
 /* ------------------------------------- */

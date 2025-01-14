@@ -12,7 +12,7 @@ const Service = ({ serviceInfo }) => {
         border-2 border-c4-0
         px-8 py-8
         flex flex-col items-center
-        rounded-md space-y-4 lg:justify-around
+        rounded-md space-y-6 lg:space-y-7 lg:justify-around
         
         transition-all duration-300 ease-in-out
         hover:-translate-y-[10px] hover:invert hover:bg-c1-0

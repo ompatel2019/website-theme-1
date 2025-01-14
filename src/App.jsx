@@ -4,20 +4,13 @@ import Hero from './components/Hero'
 import SlidingText from './components/SlidingText'
 import Services from './components/Services'
 import WhyChooseUs from './components/WhyChooseUs'
+import Portfolio from './components/Portfolio';
 
 const App = () => {
   const hoverBg = 'hover:bg-green-400';
   const servicesSection = 'Services';
   const whyChooseUS = 'Why Choose Us';
-
-  const sections = [
-    {
-      sectionHeading: '',
-      sectionMobileHeading: '',
-      sectionSubheading: '', 
-      sectionMobileSubheading: ''
-    }
-  ]
+  const portfolio = 'Portfolio';
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -31,11 +24,12 @@ const App = () => {
 
   return (
     <>
-      <Navbar hoverBg = {hoverBg}/>
+      <Navbar hoverBg = {hoverBg} />
       <Hero hoverBg = {hoverBg}/>
       <SlidingText/>
       <Services servicesSection = {servicesSection} consistentLayout = {consistentLayout}/>
       <WhyChooseUs whyChooseUS = {whyChooseUS} consistentLayout = {consistentLayout}/>
+      <Portfolio portfolio = {portfolio} consistentLayout = {consistentLayout}/>
     </>
   );
 }

@@ -23,7 +23,7 @@ const Hero = ({ hoverBg }) => {
   const updateHeroTexts = () => {
     const screenWidth = window.innerWidth;
 
-    if (screenWidth <= 550) {
+    if (screenWidth <= 768) {
       const updatedTestimonialsArr = allTestimonials.slice(0, 2);
       setTestimonialsArray(updatedTestimonialsArr);
       setHeroSubText(mobHeroSubText);
@@ -55,7 +55,7 @@ const Hero = ({ hoverBg }) => {
 
   return (
     <>
-      <div className="responsivePad bg-c1-0 text-white font-dm-sans py-[48px] max-lg:py-[16px] max-md:py-[48px] lg:pb-[24px]">
+      <div id='home' className="responsivePad bg-c1-0 text-white font-dm-sans py-[48px] max-lg:py-[16px] max-md:py-[48px] lg:pb-[24px]">
         <div className="grid grid-cols-3 max-lg:flex max-lg:flex-col gap-8">
           <div className="col-span-2 flex flex-col justify-around max-lg:space-y-10 max-md:space-y-10 fade-in fade-up">
             <div className="flex p space-x-8 max-lg:text-center">
