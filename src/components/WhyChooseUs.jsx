@@ -48,7 +48,7 @@ const WhyChooseUs = ({ consistentLayout, whyChooseUS }) => {
       className={consistentLayout.section}
     >
       <div className="text-c4-0 space-y-10">
-        <div className="fade-in fade-down fade-in fade">
+        <div className="">
           <p className={consistentLayout.sectionClass}>
             {whyChooseUS.toUpperCase()}
           </p>
@@ -58,11 +58,11 @@ const WhyChooseUs = ({ consistentLayout, whyChooseUS }) => {
         </div>
 
         <div className="grid grid-cols-2 max-md:flex max-md:flex-col gap-8 2xl:px-[200px] lg:px-[96px]">
-          <div className="border-2 w-full h-full fade-in fade-left rounded-md">
+          <div className="border-2 w-full h-full rounded-md">
             {/* Possibly an image or illustration here if you like */}
           </div>
 
-          <div className="flex flex-col justify-between space-y-4 fade-in fade-right">
+          <div className="flex flex-col justify-between space-y-4">
             <h3 className="h5 font-medium">
               Few achieve the Google Page Speed scores we consistently deliver.
             </h3>

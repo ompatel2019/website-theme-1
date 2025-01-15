@@ -43,7 +43,7 @@ const Portfolio = ({ portfolio, consistentLayout }) => {
       id="portfolio"
       className={consistentLayout.section}
     >
-      <div className="fade-in fade-down text-c4-0 text-center">
+      <div className="text-c4-0 text-center">
         <p className={consistentLayout.sectionClass}>
           {portfolio.toUpperCase()}
         </p>

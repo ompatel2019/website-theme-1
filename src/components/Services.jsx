@@ -82,7 +82,7 @@ const Services = ({ consistentLayout, servicesSection, screenWidth }) => {
       className={consistentLayout.section}
     >
       <div className="text-c4-0 space-y-10">
-        <div className="fade-in fade-down">
+        <div className="">
           <p className={consistentLayout.sectionClass}>
             {servicesSection.toUpperCase()}
           </p>
@@ -91,7 +91,7 @@ const Services = ({ consistentLayout, servicesSection, screenWidth }) => {
           </h2>
         </div>
 
-        <div className="grid 2xl:px-[160px] lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 fade-in fade-up">
+        <div className="grid 2xl:px-[160px] lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4">
           {services.map((serviceInfo, serviceIndex) => (
             <Service key={serviceIndex} serviceInfo={serviceInfo} />
           ))}
