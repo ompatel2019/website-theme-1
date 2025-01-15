@@ -49,7 +49,7 @@ const AboutUs = ({consistentLayout, aboutUs}) => {
             <div className='grid grid-cols-2 2xl:grid-cols-4 p-6 bg-c2-0 rounded-2xl gap-2'>
               {
                 stats.map((stat, statIndex) => (
-                  <div key={statIndex} className='rounded-lg text-c4-0 border-2 bg- p-4'>
+                  <div key={statIndex} className='rounded-lg text-c4-0 border-2 p-4 border-gray-400'>
                     <h3 className='h6 font-bold'>{stat.stateNumber}</h3>
                     <p className='text-base font-bold'>{stat.statName}</p>
                   </div>

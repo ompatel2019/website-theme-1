@@ -10,7 +10,7 @@ const Navbar = ({hoverBg}) => {
   const navBarLinks = [
     { name: 'About Us', anchor: '#aboutUs' },
     { name: 'Why Choose Us', anchor: '#whyChooseUs' },
-    { name: 'Book a Call', anchor: '#contact' },
+    { name: 'Pricing', anchor: '#pricing' },
     { name: 'Portfolio', anchor: '#portfolio' },
     { name: 'Blogs', anchor: '#blogs' }
   ];
@@ -65,7 +65,6 @@ const Navbar = ({hoverBg}) => {
         <div
           className='bg-c1-0 fixed inset-0 flex flex-col items-center justify-center z-40 h4 font-questrial opacity-[0.97]'
           id="mobile-menu"
-          // role="dialog"
           aria-modal="true">
           <ul className="flex flex-col text-c4-0 items-center space-y-10 font-dm-sanstext-[16px]placeholder-opacity-80">
             {navBarLinks.map((link, index) => (

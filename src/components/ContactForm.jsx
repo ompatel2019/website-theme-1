@@ -87,7 +87,7 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
                   className="flex space-x-4 items-center"
                 >
                   {/* Icon, aria-hidden since text is visible */}
-                  <Icon className="w-8 h-8" aria-hidden="true" />
+                  <Icon className="w-8 h-8" aria-hidden="true" /> 
 
                   <div className="flex flex-col">
                     <h3 className="h6 font-semibold">
@@ -98,8 +98,8 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
                       <a
                         className="hover:underline"
                         href={contact.contactRedirect}
-                        rel="noopener noreferrer"
-                        aria-label={`Go to ${contact.contactType}`}
+                        rel="noopener noreferrer" 
+                        aria-label={`Go to ${contact.contactType}`} 
                       >
                         {contact.contactInformation}
                       </a>
@@ -137,7 +137,7 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
                   placeholder="John Doe"
                   className="w-full bg-transparent border-c4-0 border-2 rounded-md py-2 px-4 transition-all hover:pl-8"
                   required
-                  autoComplete="name"
+                  autoComplete="name" 
                 />
               </div>
               
