@@ -19,7 +19,6 @@ const Hero = ({ hoverBg }) => {
   const [testimonials, setTestimonialsArray] = useState([]);
   const [heroSubText, setHeroSubText] = useState("");
 
-
   const updateHeroTexts = () => {
     const screenWidth = window.innerWidth;
 
@@ -50,8 +49,9 @@ const Hero = ({ hoverBg }) => {
 
   const heroText = "We Offer Web Solutions";
   const leftButton = "Get Started";
+  const leftMobButton = "Book Call";
   const rightButton = "Services";
-  const buttonClass = `${hoverBg} bg-c2-0 border-2 border-c4-0 w-[90%] rounded-md p-2 text-center transition-all hover:px-32 duration-[325ms] max-md:hover:px-8`;
+  const buttonClass = `${hoverBg} bg-c2-0 border-c4-0 w-[90%] rounded-md p-3 text-center transition-all hover:px-32 duration-[325ms] max-md:hover:px-8`;
 
   return (
     <>
@@ -82,9 +82,17 @@ const Hero = ({ hoverBg }) => {
               <a
                 href="#pricing"
                 aria-label="View Pricing"
-                className={buttonClass}
+                className={`${buttonClass} max-md:hidden`}
               >
                 {leftButton.toUpperCase()}
+              </a>
+              
+              <a
+                href="#contact"
+                aria-label="Book a call"
+                className={`${buttonClass} md:hidden`}
+              >
+                {leftMobButton.toUpperCase()}
               </a>
 
               <a
@@ -101,7 +109,7 @@ const Hero = ({ hoverBg }) => {
             <div className="flex flex-row lg:flex-col gap-4 justify-center items-center">
               <div className='w-fit flex items-center justify-center'>
                 <img
-                  className="2xl:w-[90%] lg:w-[85%]"
+                  className="2xl:w-[90%] lg:w-[85%] rounded-[8px]"
                   src={heroImage1}
                   alt="Hero Image 1"
                   loading="lazy"

@@ -69,7 +69,7 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
       <div className="grid grid-cols-2 max-md:grid-cols-1 max-md:space-y-8">
         
         {/** LEFT COLUMN: Contact Info **/}
-        <div className="space-y-4 lg:space-y-8 flex flex-col justify-around 2xl:w-[115%]">
+        <div className="space-y-4 lg:space-y-8 flex flex-col justify-between 2xl:w-[115%]">
           <p className={consistentLayout.sectionClass}>
             {contactForm.toUpperCase()}
           </p>

@@ -1,5 +1,5 @@
 import React from 'react'
-import aboutUsImg from "../images/aboutUs.webp";
+import aboutUsImg from "../images/aboutUs.jpg";
 
 const AboutUs = ({consistentLayout, aboutUs}) => {
   const subheading = "Just because you're a small business doesn't mean your website can't impress."
@@ -43,7 +43,7 @@ const AboutUs = ({consistentLayout, aboutUs}) => {
 
           <div className='flex flex-col gap-4'>
             <div>
-              <img src={aboutUsImg} alt="" className='rounded-2xl w-full' />
+              <img src={aboutUsImg} alt="" className='rounded-2xl w-full lg:min-h-[480px] min-h-[320px]' />
             </div>
 
             <div className='grid grid-cols-2 2xl:grid-cols-4 p-6 bg-c2-0 rounded-2xl gap-2'>
