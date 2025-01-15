@@ -7,14 +7,21 @@ import WhyChooseUs from './components/WhyChooseUs'
 import Portfolio from './components/Portfolio';
 import Pricing from './components/Pricing';
 import AboutUs from './components/AboutUs';
+import Contact from './components/ContactForm';
+import Blogs from './components/Blogs';
+import Faqs from './components/Faqs';
+import Footer from './components/Footer';
 
 const App = () => {
-  const hoverBg = 'hover:bg-green-400';
+  const hoverBg = 'hover:bg-orange-400';
   const servicesSection = 'Services';
   const whyChooseUS = 'Why Choose Us';
   const portfolio = 'Portfolio';
   const pricing = 'Pricing';
   const aboutUs = 'About Us';
+  const contactForm = 'Contact Form';
+  const blogs = 'Blogs';
+  const faqs = 'FAQs';
 
   useEffect(() => {
     const screenWidth = window.innerWidth;
@@ -36,6 +43,10 @@ const App = () => {
       <Portfolio portfolio = {portfolio} consistentLayout = {consistentLayout}/>
       <Pricing pricing = {pricing} consistentLayout = {consistentLayout}/>
       <AboutUs aboutUs = {aboutUs} consistentLayout = {consistentLayout}/>
+      <Contact contactForm = {contactForm} consistentLayout = {consistentLayout}/>
+      {/* <Blogs blogs = {faqs} consistentLayout = {consistentLayout}/>
+      <Faqs faqs = {faqs} consistentLayout = {consistentLayout}/>
+      <Footer/> */}
     </>
   );
 }

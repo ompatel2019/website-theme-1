@@ -10,7 +10,7 @@ const Navbar = ({hoverBg}) => {
   const navBarLinks = [
     { name: 'About Us', anchor: '#aboutUs' },
     { name: 'Why Choose Us', anchor: '#whyChooseUs' },
-    { name: 'Pricing', anchor: '#pricing' },
+    { name: 'Book a Call', anchor: '#contact' },
     { name: 'Portfolio', anchor: '#portfolio' },
     { name: 'Blogs', anchor: '#blogs' }
   ];

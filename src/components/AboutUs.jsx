@@ -25,12 +25,12 @@ const AboutUs = ({consistentLayout, aboutUs}) => {
   ]
   return (
     <>
-      <div className='responsivePad py-[32px] bg-c1-0'>
+      <div id='aboutUs' className='responsivePad py-[32px] bg-c1-0'>
         <div className='font-dm-sans grid grid-cols-2 max-md:flex max-md:flex-col gap-4 2xl:px-[120px] lg:px-[64px]'>
           <div className='p-6 bg-c2-0 flex flex-col justify-between rounded-2xl text-c4-0 max-md:space-y-8'>
             <div className='space-y-4 2xl:space-y-8'>
               <p className={consistentLayout.sectionClass}>
-                {aboutUs}
+                {aboutUs.toUpperCase()}
               </p>
               <h2 className="h3 font-bold">
                 {subheading}
