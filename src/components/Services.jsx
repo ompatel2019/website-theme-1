@@ -1,36 +1,30 @@
-import React, { useEffect, useState } from 'react'
-import Service from './Service'
+import React, { useState, useEffect } from 'react';
+import Service from './Service';
 import { PiBlueprint } from "react-icons/pi";
 import { MdOutlineDesignServices, MdOutlineReviews, MdAutoGraph } from "react-icons/md";
 import { FaLaptopCode } from "react-icons/fa";
 import { SiGodaddy } from "react-icons/si";
 
-const Services = ({consistentLayout, servicesSection}) => {
-
-  const allSubHeading = "We offer an array of services designed to help you effectively expand your brand in the digital realm. Our comprehensive solutions are tailored to enhance your online presence and drive growth."
+/**
+ * Services Section
+ * @param {object} consistentLayout
+ * @param {string} servicesSection - e.g. "Services"
+ * @param {number} screenWidth - (Optional) from parent if you want to do custom logic
+ */
+const Services = ({ consistentLayout, servicesSection, screenWidth }) => {
+  // Moved the text logic here or you can keep it external
+  const allSubHeading = "We offer an array of services designed to help you effectively expand your brand in the digital realm. Our comprehensive solutions are tailored to enhance your online presence and drive growth.";
   const mobileSubheading = "We offer services to expand your brand online, enhance your presence, and drive growth.";
 
   const [subHeading, setSubheading] = useState("");
 
-  const updateSubheading = () => { 
-    const screensize = window.innerWidth;
-
-    if (screensize <= 768) { 
+  useEffect(() => {
+    if ((screenWidth || window.innerWidth) <= 768) {
       setSubheading(mobileSubheading);
-    } else { 
+    } else {
       setSubheading(allSubHeading);
     }
-
-  }
-
-  useEffect(() => { 
-    updateSubheading();
-    window.addEventListener("resize", updateSubheading);
-
-    return () => { 
-      window.removeEventListener("resize", updateSubheading);
-    };
-  }, [])
+  }, [screenWidth]);
 
   const services = [
     {
@@ -81,29 +75,30 @@ const Services = ({consistentLayout, servicesSection}) => {
       serviceImg: MdOutlineReviews
     }
   ];
-  
-  return (
-    <>
-      <div id='services' className='responsivePad bg-c1-0 font-dm-sans pt-[32px] pb-[64px]'>
-        <div className='text-c4-0 space-y-10'>
-          <div className='fade-in fade-down'>
-            <p className={consistentLayout.sectionClass}>{servicesSection.toUpperCase()}</p>
-            <h2 className={consistentLayout.sectionSubheadingClass}>
-              {subHeading}
-            </h2>
-          </div>
 
-          <div className='grid 2xl:px-[160px] lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 fade-in fade-up'>
-            {
-              services.map((serviceInfo, serviceIndex) => (
-                <Service key={serviceIndex} serviceInfo={serviceInfo}/>
-              ))
-            }
-          </div>
+  return (
+    <section
+      id="services"
+      className={consistentLayout.section}
+    >
+      <div className="text-c4-0 space-y-10">
+        <div className="fade-in fade-down">
+          <p className={consistentLayout.sectionClass}>
+            {servicesSection.toUpperCase()}
+          </p>
+          <h2 className={consistentLayout.sectionSubheadingClass}>
+            {subHeading}
+          </h2>
+        </div>
+
+        <div className="grid 2xl:px-[160px] lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-4 fade-in fade-up">
+          {services.map((serviceInfo, serviceIndex) => (
+            <Service key={serviceIndex} serviceInfo={serviceInfo} />
+          ))}
         </div>
       </div>
-    </>
-  )
-}
+    </section>
+  );
+};
 
-export default Services
+export default Services;
