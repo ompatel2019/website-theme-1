@@ -95,18 +95,18 @@ function App() {
       />
 
       
-      <Blogs 
+      {/* <Blogs 
         blogs={blogsSec}
         consistentLayout={consistentLayout} 
-      />
+      /> */}
 
 
       <Faqs 
-        faqs={faqsSec} 
+        faqsSec={faqsSec} 
         consistentLayout={consistentLayout} 
       />
 
-      <Footer />
+      {/* <Footer /> */}
      
     </>
   );

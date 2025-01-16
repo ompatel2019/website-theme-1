@@ -31,7 +31,7 @@ const Portfolio = ({ portfolio, consistentLayout }) => {
       portfolioItemImg: rgb
     },
     {
-      portfolioItemName: "Solve Plumbing ⋅ 2024",
+      portfolioItemName: "iSolve Plumbing ⋅ 2024",
       portfolioItemDesc: "Designed a sleek, mobile-responsive website for ISolve Plumbing that emphasizes quick service requests and customer support.",
       portfolioItemLink: "https://isolveplumbing.com.au/",
       portfolioItemImg: isolve
