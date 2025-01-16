@@ -38,7 +38,7 @@ function App() {
   const screenWidth = useScreenWidth();
 
   // Basic text for sections
-  const hoverBg     = 'hover:bg-orange-500';
+  const hoverBg     = 'hover:bg-pink-400';
   const servicesSec = 'Services';
   const whyChooseUsSec = 'Why Choose Us';
   const portfolioSec= 'Portfolio';
