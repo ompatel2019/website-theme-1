@@ -205,15 +205,15 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
                 rounded-lg
                 bg-c1-0
                 px-4
-                border-c4-0
-                border-2
-                w-fit
                 items-center
                 space-x-1
                 text-base
                 transition-all
                 hover:bg-c3-0
                 hover:px-8
+                w-full
+                justify-center
+                p
               "
             >
               <button
