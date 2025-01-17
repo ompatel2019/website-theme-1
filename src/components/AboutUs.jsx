@@ -1,5 +1,5 @@
 import React from 'react';
-import aboutUsImg from "../images/aboutUs.jpg";
+import aboutUsImg from "../images/aboutUs.webp";
 
 const AboutUs = ({ consistentLayout, aboutUs }) => {
   const subheading = "Just because you're a small business doesn't mean your website can't impress.";

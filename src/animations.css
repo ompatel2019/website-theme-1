@@ -1,107 +1,114 @@
-/* fadeAnimations.css */
-
-/* Existing fade classes */
-
-/* Reusable Fade Element */
+/* 
+  Base fade element: 
+  - Hidden by default via opacity:0
+  - No layout shift because transform: translate/opacity doesn't reflow.
+*/
 .fade-element {
   opacity: 0;
-  visibility: hidden; /* Hidden initially */
-  transition: opacity 1s ease-in-out, visibility 0s 1s; /* Delays visibility change */
+  transform: translateY(0);
+  transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
+/* 
+  "fade-in" class: 
+  - Applies the final state for the base fade element. 
+  - In some cases, you might just use .fade-element.fade-in { opacity:1; } 
+    for a simple fade. 
+*/
 .fade-element.fade-in {
   opacity: 1;
-  visibility: visible; /* Set visible when fading in */
-  transition: opacity 1s ease-in-out, visibility 0s 0s; /* Immediately make it visible */
+  transform: translateY(0);
 }
 
-/* Simple Fade */
+/* 
+  Simple Fade (Keyframes):
+  - from 0% -> 100% with opacity changes only.
+  - Use the .fade and .fade-in together if you want keyframe control instead of the basic transition.
+*/
 @keyframes fade {
   from {
     opacity: 0;
-    visibility: hidden;
   }
   to {
     opacity: 1;
-    visibility: visible;
   }
 }
-
 .fade.fade-in {
   animation: fade 1s ease-in-out forwards;
 }
 
-/* Fade Up */
+/* 
+  Fade Up 
+  - Animates from transform: translateY(20px) to 0, plus opacity from 0 to 1.
+*/
 @keyframes fade-up {
   from {
     opacity: 0;
-    transform: translateY(20px); /* Starts below */
-    visibility: hidden;
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    visibility: visible;
   }
 }
-
 .fade-up.fade-in {
   animation: fade-up 1s ease-in-out forwards;
 }
 
-/* Fade Down */
+/* 
+  Fade Down 
+  - Animates from transform: translateY(-20px) to 0, plus opacity 0 to 1.
+*/
 @keyframes fade-down {
   from {
     opacity: 0;
-    transform: translateY(-20px); /* Starts above */
-    visibility: hidden;
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-    visibility: visible;
   }
 }
-
 .fade-down.fade-in {
   animation: fade-down 1s ease-in-out forwards;
 }
 
-/* Fade Left */
+/* 
+  Fade Left
+  - Animates from transform: translateX(-50px) to 0, plus opacity 0 to 1.
+*/
 @keyframes fade-left {
   from {
-    transform: translateX(-50px);
     opacity: 0;
-    visibility: hidden;
+    transform: translateX(-50px);
   }
   to {
-    transform: translateX(0);
     opacity: 1;
-    visibility: visible;
+    transform: translateX(0);
   }
 }
-
 .fade-left.fade-in {
   animation: fade-left 1s ease-in-out forwards;
 }
 
-/* Fade Right */
+/* 
+  Fade Right
+  - Animates from transform: translateX(50px) to 0, plus opacity 0 to 1.
+*/
 @keyframes fade-right {
   from {
-    transform: translateX(50px);
     opacity: 0;
-    visibility: hidden;
+    transform: translateX(50px);
   }
   to {
-    transform: translateX(0);
     opacity: 1;
-    visibility: visible;
+    transform: translateX(0);
   }
 }
-
 .fade-right.fade-in {
   animation: fade-right 1s ease-in-out forwards;
 }
+
 
 /* ------------------------------------- */
 /*        CSSTransition for Menu          */
@@ -174,7 +181,7 @@
   display: inline-block;
   white-space: nowrap; /* Prevent text wrapping */
   font-weight: 600;
-  animation: slide 50s linear infinite; /* Continuous sliding animation */
+  animation: slide 60s linear infinite; /* Continuous sliding animation */
 }
 
 /* Keyframes for seamless sliding */

@@ -73,8 +73,10 @@ const PortfolioItem = ({ portfolioItem }) => {
         <img
           src={portfolioItem.portfolioItemImg}
           alt={`${portfolioItem.portfolioItemName} screenshot`}
-          className="rounded-md"
+          className="rounded-md w-full h-full"
           loading="lazy"
+          width="500" 
+          height="300"
         />
       </div>
     </div>
