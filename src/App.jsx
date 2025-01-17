@@ -29,8 +29,8 @@ const navBarLinks = [
 
 // ─── Layout Settings ─────────────────────────────────────────────────────────
 const consistentLayout = {
-  section: 'responsivePad bg-c1-0 text-c4-0 font-dm-sans space-y-8 2xl:py-[64px] lg:py-[32px] md:py-[24px] py-[16px]',
-  sectionClass: 'h6 font-semibold max-md:border-l-2 max-md:pl-2 max-md:w-fit max-md:my-2',
+  section: 'responsivePad bg-c1-0 text-c4-0 font-dm-sans space-y-8 2xl:py-[72px] lg:py-[48px] md:py-[40px] py-[32px]',
+  sectionClass: 'h6 font-semibold',
   sectionSubheadingClass: 'h4 font-semibold'
 };
 
@@ -95,10 +95,10 @@ function App() {
       />
 
       
-      {/* <Blogs 
-        blogs={blogsSec}
+      <Blogs 
+        blogsSec={blogsSec}
         consistentLayout={consistentLayout} 
-      /> */}
+      />
 
 
       <Faqs 

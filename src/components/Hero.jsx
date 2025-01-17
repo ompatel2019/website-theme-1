@@ -58,7 +58,7 @@ const Hero = ({ hoverBg, consistentLayout, screenWidth }) => {
   return (
     <section
       id="home"
-      className={consistentLayout.section}
+      className={`responsivePad bg-c1-0 text-c4-0 font-dm-sans space-y-8 2xl:py-[72px] lg:py-[32px] md:py-[24px] py-[16px]`}
     >
       <div className="grid grid-cols-3 max-lg:flex max-lg:flex-col gap-8">
         

@@ -62,6 +62,7 @@ const Pricing = ({ pricing, consistentLayout }) => {
               rounded-lg
               transition-all duration-200
               hover:translate-y-5
+              max-md:hover:translate-y-2
               bg-c1-0
               space-y-6 max-md:space-y-3
               ${pricingTab.pricingName === 'Monthly' ? 'invert' : 'bg-c1-0'}
