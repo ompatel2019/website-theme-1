@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
-import { FaCircleMinus } from "react-icons/fa6";
-import { FaCirclePlus } from "react-icons/fa6";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 
-const FAQs = ({faqsSec, consistentLayout}) => {
+const FAQs = ({ faqsSec, consistentLayout }) => {
   const faqs = [
     {
       question: "How do I know if a website is right for my company?",
@@ -37,58 +36,78 @@ const FAQs = ({faqsSec, consistentLayout}) => {
   const subheading = "Your questions, answered."
   const [activeFaqIndex, setFaqActive] = useState(null);
 
-  const toggleFaq = (index) => { 
-    if (activeFaqIndex === index) { 
-      setFaqActive(null);
-    } else { 
-      setFaqActive(index);
-    }
-  }
-  
+  const toggleFaq = (index) => {
+    setFaqActive(prev => (prev === index ? null : index));
+  };
+
   return (
     <section 
-      id='faqs'
+      id="faqs"
       className={consistentLayout.section}
-      aria-label='faq-section'
+      aria-label="faq-section"
     >
-      <div className='md:text-center'>
+      <div className="md:text-center">
         <p className={`${consistentLayout.sectionClass}`}>
           {faqsSec}
         </p>
-
         <h3 className={`${consistentLayout.sectionSubheadingClass}`}>
           {subheading}
         </h3>
       </div>
 
       <div>
-        {faqs.map((faq, faqIndex) => (
-          <div 
-            key={faqIndex}
-            className='py-10 max-md:py-6 border-b-2 flex flex-col h6 space-y-4'
-          >
+        {faqs.map((faq, faqIndex) => {
+          const isActive = activeFaqIndex === faqIndex;
+          return (
+            <div 
+              key={faqIndex}
+              className="py-10 md:py-8 max-md:py-6 border-b-2 flex flex-col h6 space-y-4"
+            >
+              <div className="flex justify-between items-top max-md:items-center">
+                {/* Convert the entire row into a button for better accessibility */}
+                <button
+                  type="button"
+                  className="flex-1 text-left"
+                  onClick={() => toggleFaq(faqIndex)}
+                  aria-expanded={isActive}
+                  aria-controls={`faq-answer-${faqIndex}`}
+                  aria-label={isActive ? `Collapse answer ${faqIndex + 1}` : `Expand answer ${faqIndex + 1}`}
+                >
+                  <h3>
+                    {faqIndex + 1}. {faq.question}
+                  </h3>
+                </button>
 
-            <div className='flex justify-between items-top max-md:items-center'>
-              <h3 className=''>
-                {faqIndex + 1}. {faq.question}
-              </h3>
+                {/* Icon for toggling */}
+                {isActive ? (
+                  <FaMinus
+                    onClick={() => toggleFaq(faqIndex)}
+                    className="w-6 h-6 max-md:max-w-4 max-md:max-h-4 max-md:ml-2 cursor-pointer"
+                    aria-hidden="true"
+                  />
+                ) : (
+                  <FaPlus
+                    onClick={() => toggleFaq(faqIndex)}
+                    className="w-6 h-6 max-md:max-w-4 max-md:max-h-4 max-md:ml-2 cursor-pointer"
+                    aria-hidden="true"
+                  />
+                )}
+              </div>
 
-              {
-                activeFaqIndex === faqIndex ? 
-                <FaCircleMinus onClick={() => toggleFaq(faqIndex)} className='w-8 h-8 max-md:max-w-6 max-md:max-h-6' aria-hidden="true" /> :
-                <FaCirclePlus onClick={() => toggleFaq(faqIndex)} className='w-8 h-8 max-md:max-w-6 max-md:max-h-6' aria-hidden="true" />
-              }
-
-          </div>
-
-            {activeFaqIndex === faqIndex && <div className='text-gray-400'> {faq.answer} </div>}
-            
-          </div>
-        ))}
+              {isActive && (
+                <div
+                  id={`faq-answer-${faqIndex}`}
+                  className="text-gray-400"
+                >
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          );
+        })}
       </div>
-
     </section>
   )
 }
 
-export default FAQs
+export default FAQs;

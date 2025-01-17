@@ -106,7 +106,7 @@ function App() {
         consistentLayout={consistentLayout} 
       />
 
-      {/* <Footer /> */}
+      <Footer consistentLayout={consistentLayout} />
      
     </>
   );
