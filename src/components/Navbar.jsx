@@ -3,7 +3,7 @@ import { FaPlus } from "react-icons/fa6";
 import { RxCross2 } from "react-icons/rx";
 import { CSSTransition } from 'react-transition-group';
 import { CgMenuMotion } from "react-icons/cg";
-
+import { Link } from 'react-router-dom';
 /**
  * Navigation bar with desktop + mobile support.
  * @param {string} hoverBg - A Tailwind class to apply on hover for the main CTA button.
@@ -20,11 +20,11 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
         className="bg-c1-0 flex items-center responsivePad pt-[24px] pb-[16px] justify-between font-questrial sticky z-50 top-0"
         aria-label="Main Navigation"
       >
-        <a href="#home" aria-label="Home">
+        <Link to='/' aria-label="Home">
           <p className="text-white text-[16px] fade-left fade-in h4 max-md:text-[32px]">
             Byt.
           </p>
-        </a>
+        </Link>
 
         {/** DESKTOP NAV */}
         <div className="max-[960px]:hidden flex space-x-4 h5 fade-right fade-in">
@@ -34,13 +34,13 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
                 key={index}
                 className="hover:translate-y-[-8px] transition-all duration-300 hover:pl-2"
               >
-                <a href={link.anchor} aria-label={`Navigate to ${link.name}`}>
+                <Link to={link.to} aria-label={`Navigate to ${link.name}`}>
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>
-          <a href="#contact">
+          <Link to='/contact'>
             <button
               className={`
                 ${hoverBg}
@@ -60,7 +60,7 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
             >
               Book a call <FaPlus className="plus" aria-hidden="true" />
             </button>
-          </a>
+          </Link>
         </div>
 
         {/** MOBILE NAV ICON */}
@@ -98,13 +98,13 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
                 key={index}
                 className="hover:translate-y-[-5px] transition-transform duration-200"
               >
-                <a
-                  href={link.anchor}
+                <Link
+                  to={link.to}
                   onClick={() => setShowMenu(false)}
                   aria-label={`Navigate to ${link.name}`}
                 >
                   {link.name}
-                </a>
+                </Link>
               </li>
             ))}
           </ul>

@@ -201,8 +201,8 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
               className="
                 turnParent
                 flex
-                p-2
-                rounded-lg
+                p-3
+                rounded-md
                 bg-c1-0
                 px-4
                 items-center
@@ -211,7 +211,7 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
                 transition-all
                 hover:bg-c3-0
                 hover:px-8
-                w-full
+                w-fit
                 justify-center
                 p
               "

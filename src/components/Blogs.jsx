@@ -44,7 +44,7 @@ const Blogs = ({blogsSec, consistentLayout}) => {
       {/* BLOGS */}
       <div className='grid grid-cols-3 gap-8 max-md:grid-cols-1'>
         {blogs.map((blog, blogIndex) => (
-          <div className='flex flex-col justify-between space-y-2'>
+          <div key={blogIndex} className='flex flex-col justify-between space-y-2'>
             <img src={blog.blogImage} alt={blog.blogTitle} width={400} height={400} loading='lazy' className='rounded-md' />
             <p className='italic text-base'>{blog.blogType}</p>
             <h4 className='p font-bold'>{blog.blogTitle}</h4>
