@@ -1,6 +1,7 @@
 import React from 'react';
 import { RxCross2 } from "react-icons/rx";
 import { IoCheckmark } from "react-icons/io5";
+import { HashLink } from 'react-router-hash-link';
 
 /**
  * Pricing section
@@ -99,11 +100,11 @@ const Pricing = ({ pricing, consistentLayout }) => {
             </div>
             
             <div>
-              <a href="#contact">
+              <HashLink smooth to="#contact">
                 <div className="text-center p bg-c4-0 rounded-md p-3 max-md:p-2 text-c2-0 font-dm-mono">
                   Get Started
                 </div>
-              </a>
+              </HashLink>
             </div>
           </div>
         ))}

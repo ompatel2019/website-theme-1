@@ -1,17 +1,20 @@
 import React, { useState } from 'react';
-import { FaPlus } from "react-icons/fa6"; 
-import { RxCross2 } from "react-icons/rx";
 import { CSSTransition } from 'react-transition-group';
+import { FaPlus } from "react-icons/fa6";
+import { RxCross2 } from "react-icons/rx";
 import { CgMenuMotion } from "react-icons/cg";
-import { Link } from 'react-router-dom';
+
+// HashLink for smooth scrolling to IDs in same page
+import { HashLink } from 'react-router-hash-link';
+
 /**
  * Navigation bar with desktop + mobile support.
  * @param {string} hoverBg - A Tailwind class to apply on hover for the main CTA button.
- * @param {Array} navBarLinks - Array of objects: [{ name, anchor }, ...]
+ * @param {Array} navBarLinks - Array of objects: [{ name, to }, ...]
  */
 const Navbar = ({ hoverBg, navBarLinks }) => {
   const [showMenu, setShowMenu] = useState(false);
-  
+
   const changeMenuVisibility = () => setShowMenu(prev => !prev);
 
   return (
@@ -20,13 +23,14 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
         className="bg-c1-0 flex items-center responsivePad pt-[24px] pb-[16px] justify-between font-questrial sticky z-50 top-0"
         aria-label="Main Navigation"
       >
-        <Link to='/' aria-label="Home">
+        {/* Home Link */}
+        <HashLink smooth to="/#home" aria-label="Home">
           <p className="text-white text-[16px] fade-left fade-in h4 max-md:text-[32px]">
             Byt.
           </p>
-        </Link>
+        </HashLink>
 
-        {/** DESKTOP NAV */}
+        {/* DESKTOP NAV */}
         <div className="max-[960px]:hidden flex space-x-4 h5 fade-right fade-in">
           <ul className="bg-c2-0 flex text-c4-0 rounded-full items-center space-x-6 px-8 p">
             {navBarLinks.map((link, index) => (
@@ -34,13 +38,23 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
                 key={index}
                 className="hover:translate-y-[-8px] transition-all duration-300 hover:pl-2"
               >
-                <Link to={link.to} aria-label={`Navigate to ${link.name}`}>
-                  {link.name}
-                </Link>
+                {/* If link.to starts with "/#" => same page anchor */}
+                {link.to.startsWith('/#') ? (
+                  <HashLink smooth to={link.to} aria-label={`Navigate to ${link.name}`}>
+                    {link.name}
+                  </HashLink>
+                ) : (
+                  // Otherwise, use standard Link for normal route
+                  <HashLink to={link.to} aria-label={`Navigate to ${link.name}`}>
+                    {link.name}
+                  </HashLink>
+                )}
               </li>
             ))}
           </ul>
-          <Link to='/contact'>
+
+          {/* "Book a call" => anchor or separate route? */}
+          <HashLink smooth to="/#contact" aria-label="Book a call">
             <button
               className={`
                 ${hoverBg}
@@ -56,15 +70,14 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
                 hover:px-12
                 duration-300
               `}
-              aria-label="Book a call"
             >
               Book a call <FaPlus className="plus" aria-hidden="true" />
             </button>
-          </Link>
+          </HashLink>
         </div>
 
-        {/** MOBILE NAV ICON */}
-        <div className='min-[961px]:hidden text-white h3 fade-right fade-in max-md:text-[32px]'>
+        {/* MOBILE NAV ICON */}
+        <div className="min-[961px]:hidden text-white h3 fade-right fade-in max-md:text-[32px]">
           <button
             onClick={changeMenuVisibility}
             aria-label={showMenu ? "Close Menu" : "Open Menu"}
@@ -80,7 +93,7 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
         </div>
       </nav>
 
-      {/** MOBILE NAV MENU */}
+      {/* MOBILE NAV MENU */}
       <CSSTransition
         in={showMenu}
         timeout={300}
@@ -88,7 +101,7 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
         unmountOnExit
       >
         <div
-          className='bg-c1-0 fixed inset-0 flex flex-col items-center justify-center z-40 h4 font-questrial opacity-[0.97]'
+          className="bg-c1-0 fixed inset-0 flex flex-col items-center justify-center z-40 h4 font-questrial opacity-[0.97]"
           id="mobile-menu"
           aria-modal="true"
         >
@@ -98,13 +111,24 @@ const Navbar = ({ hoverBg, navBarLinks }) => {
                 key={index}
                 className="hover:translate-y-[-5px] transition-transform duration-200"
               >
-                <Link
-                  to={link.to}
-                  onClick={() => setShowMenu(false)}
-                  aria-label={`Navigate to ${link.name}`}
-                >
-                  {link.name}
-                </Link>
+                {link.to.startsWith('/#') ? (
+                  <HashLink
+                    smooth
+                    to={link.to}
+                    onClick={() => setShowMenu(false)}
+                    aria-label={`Navigate to ${link.name}`}
+                  >
+                    {link.name}
+                  </HashLink>
+                ) : (
+                  <HashLink
+                    to={link.to}
+                    onClick={() => setShowMenu(false)}
+                    aria-label={`Navigate to ${link.name}`}
+                  >
+                    {link.name}
+                  </HashLink>
+                )}
               </li>
             ))}
           </ul>

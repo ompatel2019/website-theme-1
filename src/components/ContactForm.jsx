@@ -1,12 +1,9 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { MdArrowOutward } from "react-icons/md";
 import { FaPhoneAlt } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
-import { MdArrowOutward } from "react-icons/md";
 
-/**
- * Contact Form
- */
 const ContactForm = ({ contactForm, consistentLayout }) => {
   const contacts = [
     {
@@ -25,7 +22,7 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
       icon: FaLocationDot,
       contactType: "Areas Served",
       contactInformation: 'Sydney, NSW',
-    }
+    },
   ];
 
   const [result, setResult] = useState("");
@@ -33,7 +30,6 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
   const onSubmit = async (event) => {
     event.preventDefault();
     setResult("Sending...");
-
     const formData = new FormData(event.target);
     formData.append("access_key", "4137160f-72eb-4e4a-983e-07995f90140f");
 
@@ -57,17 +53,18 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
     }
   };
 
-  const subheading = "Websites Starting at $0 Down and $239 per month. Money back guaranteed if you don’t want to continue.";
-  const formSubheading = "You’ve got ideas? We have the skills to convert them. Let’s put the pen to paper!";
+  const subheading =
+    "Websites Starting at $0 Down and $239 per month. Money back guaranteed if you don’t want to continue.";
+  const formSubheading =
+    "You’ve got ideas? We have the skills to convert them. Let’s put the pen to paper!";
 
   return (
     <section
       id="contact"
-      className={consistentLayout.section}
+      className={`${consistentLayout.section} p font-dm-sans text-c4-0`}
       aria-label="Contact Section"
     >
       <div className="grid grid-cols-2 max-md:grid-cols-1 max-md:space-y-8">
-        
         {/* LEFT: Contact Info */}
         <div className="space-y-4 lg:space-y-8 flex flex-col justify-between 2xl:w-[115%]">
           <p className={consistentLayout.sectionClass}>
@@ -85,7 +82,7 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
               const Icon = contact.icon;
               return (
                 <div key={idx} className="flex space-x-4 items-center">
-                  <Icon className="w-8 h-8" aria-hidden="true" /> 
+                  <Icon className="w-8 h-8" aria-hidden="true" />
                   <div className="flex flex-col">
                     <h3 className="h6 font-semibold">
                       {contact.contactType.toUpperCase()}
@@ -112,7 +109,6 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
         {/* RIGHT: Form */}
         <div className="p-8 bg-c2-0 rounded-xl space-y-4 flex flex-col justify-around max-md:p-6 2xl:w-[75%] ml-auto 2xl:p-10">
           <h4 className="h5 font-questrial mb-4">{formSubheading}</h4>
-
           <form
             onSubmit={onSubmit}
             className="space-y-4 text-base"
@@ -201,27 +197,27 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
               className="
                 turnParent
                 flex
-                p-3
-                rounded-md
+                p-2
+                rounded-lg
                 bg-c1-0
-                px-4
+                px-8
+                border-c4-0
+                border-2
+                w-fit
                 items-center
                 space-x-1
                 text-base
                 transition-all
                 hover:bg-c3-0
-                hover:px-8
-                w-fit
-                justify-center
-                p
+                hover:px-12
               "
             >
               <button
                 type="submit"
                 aria-label="Submit contact form"
-                className="focus:outline-none"
+                className="focus:outline-none p"
               >
-                Get Started
+                Send Inquiry
               </button>
               <MdArrowOutward
                 className="turn transition-all"
@@ -230,7 +226,6 @@ const ContactForm = ({ contactForm, consistentLayout }) => {
             </div>
           </form>
 
-          {/* Submission Feedback */}
           {result && (
             <p className="text-sm mt-2" role="status" aria-live="polite">
               {result}

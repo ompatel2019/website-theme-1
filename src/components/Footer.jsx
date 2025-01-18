@@ -3,6 +3,7 @@ import { FaInstagram, FaLinkedin, FaFacebook, FaTiktok, FaPhoneAlt } from "react
 import { MdEmail } from "react-icons/md";
 import { FaLocationDot } from "react-icons/fa6";
 import { IoArrowUp } from "react-icons/io5";
+import { HashLink } from 'react-router-hash-link';
 
 const Footer = ({ consistentLayout }) => {
   const socials = [
@@ -79,28 +80,28 @@ const Footer = ({ consistentLayout }) => {
             </div>
             <div className={`${consistentLayout.sectionSubheadingClass} max-md:hidden`}>
               <h3>{subHeading}</h3>
-              <a
-                href="#home"
+              <HashLink
+                smooth to="#home"
                 aria-label="Scroll back to top"
                 className="flex items-center"
               >
                 Go back up <IoArrowUp />
-              </a>
+              </HashLink>
             </div>
           </div>
 
           {/* QUICK LINKS + CONTACTS */}
-          <div className="flex space-x-8">
+          <div className="flex space-x-8 p">
             <div className="flex flex-col space-y-2 justify-around">
               {quickLinks.map((quickLink, quickLinkIndex) => (
-                <a
-                  target="_blank"
+                <HashLink
                   rel="noopener noreferrer"
                   key={quickLinkIndex}
-                  href={quickLink.link}
+                  smooth to={quickLink.link}
+                  className='hover:underline'
                 >
-                  {quickLink.linkName}
-                </a>
+                  {quickLink.linkName}   
+                </HashLink>
               ))}
             </div>
             <div className="flex md:flex-col justify-around gap-2 max-md:hidden">

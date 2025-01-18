@@ -3,12 +3,15 @@ import { FaStar } from "react-icons/fa";
 import heroImage1 from "../images/heroImage1.webp";
 import heroImage2 from "../images/heroImage2.webp";
 
+// HashLink for smooth scrolling to IDs in same page
+import { HashLink } from 'react-router-hash-link';
+
 /**
  * The Hero section that welcomes users.
  * @param {string} hoverBg - A Tailwind class for the main CTA button hover.
  * @param {number} screenWidth 
  */
-const Hero = ({ hoverBg, consistentLayout, screenWidth }) => {
+const Hero = ({ hoverBg, screenWidth }) => {
   const allTestimonials = [
     "Their expertise brought my vision to life—highly recommended!",
     "Creative solutions, timely delivery, and excellent attention to detail!",
@@ -86,30 +89,30 @@ const Hero = ({ hoverBg, consistentLayout, screenWidth }) => {
 
           <div className="flex max-lg:justify-center p space-x-3">
             {/* Desktop Button */}
-            <a
-              href="#pricing"
+            <HashLink
+              smooth to ="#pricing"
               aria-label="View Pricing"
               className={`${buttonClass} max-md:hidden`}
             >
               {leftButton.toUpperCase()}
-            </a>
+            </HashLink>
 
             {/* Mobile Button */}
-            <a
-              href="#contact"
+            <HashLink
+              smooth to="#contact"
               aria-label="Book a call"
               className={`${buttonClass} md:hidden`}
             >
               {leftMobButton.toUpperCase()}
-            </a>
+            </HashLink>
 
-            <a
-              href="#services"
+            <HashLink
+              smooth to="#services"
               aria-label="Explore Services"
               className={buttonClass}
             >
               {rightButton.toUpperCase()}
-            </a>
+            </HashLink>
           </div>
         </div>
 

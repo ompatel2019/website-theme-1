@@ -1,10 +1,10 @@
 import React from 'react'
-import blog1 from '../images/blog1.webp'
-import blog2 from '../images/blog2.webp'
-import blog3 from '../images/blog3.webp'
+import blog1 from '../../images/blog1.webp'
+import blog2 from '../../images/blog2.webp'
+import blog3 from '../../images/blog3.webp'
 import { Link } from 'react-router-dom'
 
-const Blogs = ({blogsSec, consistentLayout}) => {
+const Blogs = ({consistentLayout, blogsSec}) => {
   const subHeading = "Latest Insights and Trends in Digital Services"
 
   const blogs = [
@@ -14,7 +14,7 @@ const Blogs = ({blogsSec, consistentLayout}) => {
       blogTitle: 'The Ultimate Guide to Optimising Your Website for 2025', 
       blogDescription: 'Explore essential tips for advanced SEO and website optimization techniques.',
       blogReleaseDuration: 'December 28, 2024 ⋅ 5 min read',
-      blogTo: '/blog1'
+      blogTo: '/blogs/1'
     },
     {
       blogImage: blog2,
@@ -22,7 +22,7 @@ const Blogs = ({blogsSec, consistentLayout}) => {
       blogTitle: 'The Impact of Web Design on User Experience and Conversions', 
       blogDescription: 'Discover how thoughtful design significantly boosts user engagement and sales.',
       blogReleaseDuration: 'August 27, 2024 ⋅ 5 min read',
-      blogTo: '/blog2'
+      blogTo: '/blogs/2'
     },
     {
       blogImage: blog3,
@@ -30,7 +30,7 @@ const Blogs = ({blogsSec, consistentLayout}) => {
       blogTitle: 'How to Measure the ROI of Your SEO Efforts', 
       blogDescription: 'Learn effective strategies to quantify and enhance your SEO investments.',
       blogReleaseDuration: 'October 4, 2024 ⋅ 5 min read',
-      blogTo: '/blog3'
+      blogTo: '/blogs/3'
     },
   ]
 

@@ -1,35 +1,37 @@
-import React from 'react'
+import React from 'react';
+import { Outlet } from 'react-router-dom';
 
-// ─── Components ──────────────────────────────────────────────────────────────
+// ─── Components ─────────────────────────────────────────────────────────
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 
-import { Outlet } from 'react-router-dom'
-
-// ─── Centralized Data ────────────────────────────────────────────────────────
+// ─── Centralized Data ───────────────────────────────────────────────────
+/*
+  We'll use the hash-based approach for sections on the HomePage
+  ( /#services, /#pricing, etc. ), and direct routes for /blogs, /blogs/1, etc.
+*/
 const navBarLinks = [
-    { name: 'Why Choose Us', to: '/whyChooseUs' },
-    { name: 'Pricing', to: '/pricing' },
-    { name: 'Portfolio', to: '/portfolio' },
-    { name: 'Blogs', to: '/blogs' },
-    { name: 'FAQs', to: '/faqs' }
+  { name: 'Why Choose Us', to: '/#whyChooseUs' },
+  { name: 'Pricing', to: '/#pricing' },
+  { name: 'Portfolio', to: '/#portfolio' },
+  { name: 'Blogs', to: '/blogs' },
+  { name: 'FAQs', to: '/#faqs' },
 ];
 
-const MainLayout = ({consistentLayout, hoverBg}) => {
+const MainLayout = ({ consistentLayout, hoverBg }) => {
   return (
     <>
-        <Navbar 
-            hoverBg={hoverBg} 
-            navBarLinks={navBarLinks} 
-        />
+      <Navbar
+        hoverBg={hoverBg}
+        navBarLinks={navBarLinks}
+      />
 
-        <Outlet/>
+      {/* Renders whatever child route is active */}
+      <Outlet />
 
-        <Footer 
-            consistentLayout={consistentLayout}
-        />
+      <Footer consistentLayout={consistentLayout} />
     </>
-  )
-}
+  );
+};
 
-export default MainLayout
+export default MainLayout;
