@@ -120,24 +120,38 @@ const Hero = ({ hoverBg, screenWidth }) => {
         <div className="fade-in fade-down max-sm:hidden">
           <div className="flex flex-row lg:flex-col gap-4 justify-center items-center">
             <div className="w-fit flex items-center justify-center">
-            <img
-              className="2xl:w-[90%] lg:w-[85%] rounded-[8px]"
-              src={heroImage1}
-              alt="Hero Image 1"
-              loading="lazy"
-              width="600" 
-              height="400" 
-            />
+              <picture>
+                <source
+                  srcSet={heroImage1}
+                  media="(max-width: 600px)"
+                  type="image/webp"
+                />
+                <source srcSet={heroImage1} media="(max-width: 1200px)" />
+                <img
+                  src={heroImage1}
+                  alt="Hero Image 1"
+                  loading="lazy"
+                  width="600"
+                  height="400"
+                />
+              </picture>
             </div>
             <div className="w-fit flex items-center justify-center">
-              <img
-                className="2xl:w-[90%] lg:w-[85%] h-full"
-                src={heroImage2}
-                alt="Hero Image 2"
-                loading="lazy"
-                width="600" 
-                height="400" 
-              />
+              <picture>
+                  <source
+                    srcSet={heroImage2}
+                    media="(max-width: 600px)"
+                    type="image/webp"
+                  />
+                  <source srcSet={heroImage2} media="(max-width: 1200px)" />
+                  <img
+                    src={heroImage2}
+                    alt="Hero Image 2"
+                    loading="lazy"
+                    width="600"
+                    height="400"
+                  />
+                </picture>
             </div>
           </div>
         </div>

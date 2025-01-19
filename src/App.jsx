@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import {
   Route,
   createBrowserRouter,
@@ -7,10 +7,12 @@ import {
 } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
-import BlogsPage from './pages/BlogsPage';
-import Blog1 from './pages/blogs/Blog1';
-import Blog2 from './pages/blogs/Blog2';
-import Blog3 from './pages/blogs/Blog3';
+
+// Lazy load your blog pages
+const BlogsPage = lazy(() => import('./pages/BlogsPage'));
+const Blog1 = lazy(() => import('./pages/blogs/Blog1'));
+const Blog2 = lazy(() => import('./pages/blogs/Blog2'));
+const Blog3 = lazy(() => import('./pages/blogs/Blog3'));
 
 // ─── Assets and Layout Settings ─────────────────────────────────────────
 const consistentLayout = {
@@ -21,49 +23,50 @@ const consistentLayout = {
 
 const hoverBg = 'hover:bg-orange-500';
 
-// Define all routes, including new blog routes
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route
       path="/"
-      element={
-        <MainLayout
-          consistentLayout={consistentLayout}
-          hoverBg={hoverBg}
-        />
-      }
+      element={<MainLayout consistentLayout={consistentLayout} hoverBg={hoverBg} />}
     >
-      {/* Home Page */}
       <Route
         index
-        element={
-          <HomePage
-            consistentLayout={consistentLayout}
-            hoverBg={hoverBg}
-          />
-        }
+        element={<HomePage consistentLayout={consistentLayout} hoverBg={hoverBg} />}
       />
 
-      {/* Blogs main listing page */}
+      {/* Suspense boundary for route-level code splitting */}
       <Route
         path="blogs"
-        element={<BlogsPage consistentLayout={consistentLayout} />}
+        element={
+          <Suspense fallback={<div>Loading Blogs...</div>}>
+            <BlogsPage consistentLayout={consistentLayout} />
+          </Suspense>
+        }
       />
-
-      {/* Individual blog pages */}
       <Route
         path="blogs/1"
-        element={<Blog1 consistentLayout={consistentLayout} />}
+        element={
+          <Suspense fallback={<div>Loading Blog1...</div>}>
+            <Blog1 consistentLayout={consistentLayout} />
+          </Suspense>
+        }
       />
       <Route
         path="blogs/2"
-        element={<Blog2 consistentLayout={consistentLayout} />}
+        element={
+          <Suspense fallback={<div>Loading Blog2...</div>}>
+            <Blog2 consistentLayout={consistentLayout} />
+          </Suspense>
+        }
       />
       <Route
         path="blogs/3"
-        element={<Blog3 consistentLayout={consistentLayout} />}
+        element={
+          <Suspense fallback={<div>Loading Blog3...</div>}>
+            <Blog3 consistentLayout={consistentLayout} />
+          </Suspense>
+        }
       />
-
     </Route>
   )
 );

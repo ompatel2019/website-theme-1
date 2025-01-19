@@ -70,14 +70,21 @@ const PortfolioItem = ({ portfolioItem }) => {
 
       {/* RIGHT SIDE */}
       <div className="flex justify-end">
-        <img
-          src={portfolioItem.portfolioItemImg}
-          alt={`${portfolioItem.portfolioItemName} screenshot`}
-          className="rounded-md w-full h-full"
-          loading="lazy"
-          width="500" 
-          height="300"
-        />
+        <picture>
+          <source
+            srcSet={portfolioItem.portfolioItemImg}
+            media="(max-width: 600px)"
+            type="image/webp"
+          />
+          <source srcSet={portfolioItem.portfolioItemImg} media="(max-width: 1200px)" />
+          <img
+            src={portfolioItem.portfolioItemImg}
+            alt={`${portfolioItem.portfolioItemName} screenshot`}
+            loading="lazy"
+            width="600"
+            height="400"
+          />
+        </picture>
       </div>
     </div>
   );
