@@ -9,6 +9,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import Portfolio from '../components/Portfolio';
 import Pricing from '../components/Pricing';
 import ContactForm from '../components/ContactForm';
+import Blogs from '../pages/blogs/Blogs'
 import Faqs from '../components/Faqs';
 
 // ─── Basic text for sections ────────────────────────────────────────────
@@ -17,6 +18,7 @@ const whyChooseUsSec = 'Why Choose Us';
 const portfolioSec = 'Portfolio';
 const pricingSec = 'Pricing';
 const contactSec = 'Contact Form';
+const blogsSec = 'Blogs';
 const faqsSec = 'FAQs';
 
 const HomePage = ({ consistentLayout, hoverBg }) => {
@@ -56,6 +58,11 @@ const HomePage = ({ consistentLayout, hoverBg }) => {
       <ContactForm
         contactForm={contactSec}
         consistentLayout={consistentLayout}
+      />
+
+      <Blogs
+          blogsSec={blogsSec}
+          consistentLayout={consistentLayout}
       />
 
       <Faqs

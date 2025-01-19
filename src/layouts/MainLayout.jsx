@@ -11,11 +11,11 @@ import Footer from '../components/Footer';
   ( /#services, /#pricing, etc. ), and direct routes for /blogs, /blogs/1, etc.
 */
 const navBarLinks = [
+  { name: 'Home', to: '/#home' },
   { name: 'Why Choose Us', to: '/#whyChooseUs' },
   { name: 'Pricing', to: '/#pricing' },
   { name: 'Portfolio', to: '/#portfolio' },
   { name: 'Blogs', to: '/blogs/#blogs' },
-  { name: 'FAQs', to: '/#faqs' },
 ];
 
 const MainLayout = ({ consistentLayout, hoverBg }) => {

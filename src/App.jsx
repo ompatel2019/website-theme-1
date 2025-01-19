@@ -16,7 +16,7 @@ const Blog3 = lazy(() => import('./pages/blogs/Blog3'));
 
 // ─── Assets and Layout Settings ─────────────────────────────────────────
 const consistentLayout = {
-  section: 'responsivePad bg-c1-0 text-c4-0 font-dm-sans space-y-8 2xl:py-[72px] lg:py-[48px] md:py-[40px] py-[32px]',
+  section: 'responsivePad bg-c1-0 text-c4-0 font-dm-sans space-y-8 max-md:space-y-2 2xl:py-[72px] lg:py-[48px] md:py-[40px] py-[32px]',
   sectionClass: 'h6 font-semibold',
   sectionSubheadingClass: 'h4 font-semibold',
 };
