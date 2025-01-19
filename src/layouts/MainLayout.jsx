@@ -14,7 +14,7 @@ const navBarLinks = [
   { name: 'Why Choose Us', to: '/#whyChooseUs' },
   { name: 'Pricing', to: '/#pricing' },
   { name: 'Portfolio', to: '/#portfolio' },
-  { name: 'Blogs', to: '/blogs' },
+  { name: 'Blogs', to: '/blogs/#blogs' },
   { name: 'FAQs', to: '/#faqs' },
 ];
 
