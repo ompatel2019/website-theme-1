@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { IoHourglassOutline } from "react-icons/io5";
 import { SlGraph } from "react-icons/sl";
 import { BsLightningCharge } from "react-icons/bs";
+import img from '../images/whyChooseUs.webp'
 
 /**
  * Why Choose Us section
@@ -58,8 +59,8 @@ const WhyChooseUs = ({ consistentLayout, whyChooseUS }) => {
         </div>
 
         <div className="grid grid-cols-2 max-md:flex max-md:flex-col gap-8 2xl:px-[200px] lg:px-[96px]">
-          <div className="border-2 w-full h-full rounded-md">
-            {/* Possibly an image or illustration here if you like */}
+          <div className="flex items-center">
+            <img src={img} alt="Image of our website scores" className='w-full h-fit rounded-md' />
           </div>
 
           <div className="flex flex-col justify-between space-y-4">
@@ -74,8 +75,8 @@ const WhyChooseUs = ({ consistentLayout, whyChooseUS }) => {
                   key={perkIndex}
                   className="flex items-center p space-x-4 space-y-4"
                 >
-                  <Icon className="h-12 w-12" aria-hidden="true" />
-                  <p>{perk.perkDesc}</p>
+                  <Icon className="h-16 w-16" aria-hidden="true" />
+                  <p className='font-semibold'>{perk.perkDesc}</p>
                 </div>
               );
             })}
