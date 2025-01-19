@@ -59,8 +59,8 @@ const WhyChooseUs = ({ consistentLayout, whyChooseUS }) => {
         </div>
 
         <div className="grid grid-cols-2 max-md:flex max-md:flex-col gap-8 2xl:px-[200px] lg:px-[96px]">
-          <div className="flex items-center">
-            <img src={img} alt="Image of our website scores" className='w-full h-fit rounded-md' />
+          <div className="flex items-center justify-center">
+            <img src={img} alt="Image of our website scores" className='w-full h-fit max-md:max-h-[360px] max-md:max-w-[360px] rounded-lg' />
           </div>
 
           <div className="flex flex-col justify-between space-y-4">
