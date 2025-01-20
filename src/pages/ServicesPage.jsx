@@ -1,12 +1,13 @@
+
 import React from 'react'
-import Blogs from '../components/Blogs'
+import Services from '../components/Services'
 import CTA from '../components/CTA'
 
 const BlogsPage = ({}) => {
     
     return (
         <>
-            <Blogs/> 
+            <Services/> 
             
             <CTA/>
     
