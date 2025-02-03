@@ -1,31 +1,76 @@
+<!-- index.html -->
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!--
+      Viewport Meta Tag:
+      Ensures proper scaling and rendering on mobile devices.
+    -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- OPTIONAL: Placeholder Favicons -->
-    <!-- Remove these or replace with placeholders if you want a generic blueprint -->
-    <!--
+    <!-- Favicon & App Icons:
+         These tags specify the icons used in browser tabs, bookmarks, and on mobile devices.
     <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="shortcut icon" href="/favicon.ico" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
-    -->
+     -->
 
-    <!-- SEO Tags (Generic / Placeholder) -->
-    <title>Business Name Goes Here </title>
+    <!-- Page Title:
+         Appears in browser tabs and is used by search engines as the clickable headline.
+    -->
+    <title>Business Name Goes Here</title>
+
+    <!-- Meta Description:
+         Provides a summary of the page content for search engines and social previews.
+    -->
     <meta
       name="description"
       content="This is a generic React/Vite boilerplate. Customize your description here."
     />
 
-    <!-- Open Graph / Social Media Tags (Optional) -->
-    <meta property="og:title" content="{{PROJECT_NAME}} Boilerplate" />
+    <!-- Meta Keywords:
+         (Optional) Lists targeted keywords. Note: most modern search engines give little weight to this tag.
+    -->
+    <meta
+      name="keywords"
+      content="React, Vite, Boilerplate, SEO, Business, Digital, Web Development"
+    />
+
+    <!-- Canonical Tag:
+         Helps prevent duplicate content issues by specifying the preferred URL.
+    -->
+    <link rel="canonical" href="https://example.com" />
+
+    <!-- Robots Meta Tag:
+         Instructs search engine crawlers to index the page and follow the links.
+    -->
+    <meta name="robots" content="index, follow" />
+
+    <!-- X-Robots-Tag:
+         Additional crawler instructions (often set via HTTP headers, but can be included here).
+    -->
+    <meta name="x-robots-tag" content="index, follow" />
+
+    <!-- Publisher Meta Tag:
+         Specifies the publisher or brand behind the content.
+    -->
+    <meta name="publisher" content="Business Name Goes Here" />
+
+    <!-- Theme Color:
+         Sets the browser toolbar color on supported mobile devices.
+    -->
+    <meta name="theme-color" content="#ffffff" />
+
+    <!-- Open Graph Meta Tags:
+         Enhance link previews when your site is shared on social media platforms.
+    -->
+    <meta property="og:title" content="Business Name Goes Here Boilerplate" />
     <meta
       property="og:description"
-      content="Generic boilerplate for React/Vite."
+      content="Generic boilerplate for React/Vite. Customize as needed."
     />
     <meta property="og:url" content="https://example.com" />
     <meta
@@ -33,14 +78,55 @@
       content="https://example.com/path-to-default-image.png"
     />
     <meta property="og:type" content="website" />
-    <!-- <meta property="fb:app_id" content="YOUR_APP_ID" /> -->
+    <meta property="og:locale" content="en_US" />
 
+    <!-- Twitter Card Meta Tags:
+         Provide rich content previews for tweets sharing your page.
+    -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Business Name Goes Here Boilerplate" />
+    <meta
+      name="twitter:description"
+      content="Generic boilerplate for React/Vite. Customize as needed."
+    />
+    <meta
+      name="twitter:image"
+      content="https://example.com/path-to-default-image.png"
+    />
+
+    <!-- Structured Data (JSON-LD):
+         Embeds Business Schema markup to help search engines understand your business details.
+         Customize the address, telephone, and other business details as needed.
+    -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Business Name Goes Here",
+        "url": "https://example.com",
+        "logo": "https://example.com/path-to-logo.png",
+        "description": "This is a generic React/Vite boilerplate. Customize your description here.",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1234 Business St",
+          "addressLocality": "City",
+          "addressRegion": "State",
+          "postalCode": "12345",
+          "addressCountry": "Country"
+        },
+        "telephone": "+1234567890"
+      }
+    </script>
   </head>
   <body>
-    <!-- React root element -->
+    <!-- React Root Element:
+         This is where your React application will be mounted.
+    -->
     <div id="root"></div>
 
-    <!-- Main entry script for your React application -->
+    <!-- Main Entry Script:
+         Loads your React application bundle.
+    -->
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

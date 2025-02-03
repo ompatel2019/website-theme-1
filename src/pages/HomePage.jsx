@@ -1,33 +1,46 @@
+// pages/HomePage.jsx
 import React from 'react';
-import useScreenWidth from '../hooks/useScreenWidth';
+import { Helmet } from 'react-helmet';
 
 // ─── Sections ───────────────────────────────────────────────────────────
 import Hero from '../components/Hero';
 import Services from '../components/Services';
 import WhyChooseUs from '../components/WhyChooseUs';
-import Testimonials from '../components/Testimonials';
 import AboutUs from '../components/AboutUs';
+import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
-import Blogs from '../components/Blogs'
+import Blogs from '../components/Blogs';
+import Faqs from '../components/Faqs';
 
-const HomePage = ({}) => {
-  const screenWidth = useScreenWidth();
+const HomePage = () => {
+  // ─── Schema for Home Page ──────────────────────────────────────────────
+  const jsonLdHomePage = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Home - Business Name",
+    "description": "Welcome to Business Name. Customize your homepage description here.",
+    "url": "https://example.com/"
+  };
 
   return (
     <>
-      <Hero/> 
-      
-      <Services/>
+      <Helmet>
+        <title>Home - Business Name</title>
+        <meta name="description" content="Welcome to Business Name. Customize your homepage description here." />
+        <script type="application/ld+json">
+          {JSON.stringify(jsonLdHomePage)}
+        </script>
+      </Helmet>
 
-      <WhyChooseUs/>
-
-      <Testimonials/>
-      
-      <AboutUs/>
-      
-      <ContactForm/>
-      
-      <Blogs/>
+      {/* ─── Sections ───────────────────────────────────────────── */}
+      <Hero />
+      <Services />
+      <WhyChooseUs />
+      <AboutUs />
+      <Testimonials />
+      <ContactForm />
+      <Blogs />
+      <Faqs />
     </>
   );
 };
