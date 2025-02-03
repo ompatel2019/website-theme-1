@@ -6,6 +6,7 @@ import { Outlet } from 'react-router-dom';
 import Topbar from '../components/Topbar';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import ScrollToTop from '../tools/ScrollToTop';
 
 const MainLayout = () => {
   return (
@@ -15,6 +16,8 @@ const MainLayout = () => {
 
       {/* ─── Navigation Bar Section ───────────────────────────────── */}
       <Navbar />
+
+      <ScrollToTop /> 
 
       {/* ─── Page Content Outlet ─────────────────────────────────----- */}
       <Outlet />

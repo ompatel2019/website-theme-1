@@ -1,7 +1,11 @@
+/* ============================================================
+   BASE UTILITY CLASSES
+   ============================================================ */
+
 /* 
-  Base fade element: 
-  - Hidden by default via opacity:0
-  - No layout shift because transform: translate/opacity doesn't reflow.
+  .fade-element 
+  - Base for fade-related animations.
+  - Starts hidden; use .fade-in (or corresponding animation classes) to reveal.
 */
 .fade-element {
   opacity: 0;
@@ -9,135 +13,123 @@
   transition: opacity 1s ease-in-out, transform 1s ease-in-out;
 }
 
-/* 
-  "fade-in" class: 
-  - Applies the final state for the base fade element. 
-  - In some cases, you might just use .fade-element.fade-in { opacity:1; } 
-    for a simple fade. 
-*/
 .fade-element.fade-in {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* 
-  Simple Fade (Keyframes):
-  - from 0% -> 100% with opacity changes only.
-  - Use the .fade and .fade-in together if you want keyframe control instead of the basic transition.
+  Animation Trigger 
+  - Use [data-animate] on any element you want to animate.
+  - When the element is in view, the AnimateOnScroll component adds the .in-view class.
 */
-@keyframes fade {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+[data-animate] {
+  opacity: 0;
+  transition: opacity 0.3s ease-out;
 }
-.fade.fade-in {
+[data-animate].in-view {
+  opacity: 1;
+}
+
+/* ============================================================
+   KEYFRAME ANIMATIONS
+   ============================================================ */
+
+/* Simple Fade */
+@keyframes fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.fade.fade-in.in-view {
   animation: fade 1s ease-in-out forwards;
 }
 
-/* 
-  Fade Up 
-  - Animates from transform: translateY(20px) to 0, plus opacity from 0 to 1.
-*/
+/* Fade Up: from 20px below to original position */
 @keyframes fade-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.fade-up.fade-in {
+.fade-up.fade-in.in-view {
   animation: fade-up 1s ease-in-out forwards;
 }
 
-/* 
-  Fade Down 
-  - Animates from transform: translateY(-20px) to 0, plus opacity 0 to 1.
-*/
+/* Fade Down: from 20px above to original position */
 @keyframes fade-down {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(-20px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
-.fade-down.fade-in {
+.fade-down.fade-in.in-view {
   animation: fade-down 1s ease-in-out forwards;
 }
 
-/* 
-  Fade Left
-  - Animates from transform: translateX(-50px) to 0, plus opacity 0 to 1.
-*/
+/* Fade Left: from 50px left to original position */
 @keyframes fade-left {
-  from {
-    opacity: 0;
-    transform: translateX(-50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(-50px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
-.fade-left.fade-in {
+.fade-left.fade-in.in-view {
   animation: fade-left 1s ease-in-out forwards;
 }
 
-/* 
-  Fade Right
-  - Animates from transform: translateX(50px) to 0, plus opacity 0 to 1.
-*/
+/* Fade Right: from 50px right to original position */
 @keyframes fade-right {
-  from {
-    opacity: 0;
-    transform: translateX(50px);
-  }
-  to {
-    opacity: 1;
-    transform: translateX(0);
-  }
+  from { opacity: 0; transform: translateX(50px); }
+  to   { opacity: 1; transform: translateX(0); }
 }
-.fade-right.fade-in {
+.fade-right.fade-in.in-view {
   animation: fade-right 1s ease-in-out forwards;
 }
 
+/* Additional Animations */
 
-/* ------------------------------------- */
-/*        CSSTransition for Menu          */
-/* ------------------------------------- */
+/* Zoom In: scales up from 0.8 to 1 while fading in */
+@keyframes zoom-in {
+  from { opacity: 0; transform: scale(0.8); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.zoom-in.fade-in.in-view {
+  animation: zoom-in 0.8s ease-in-out forwards;
+}
 
-/* Entering */
+/* Zoom Out: scales down from 1.2 to 1 while fading in */
+@keyframes zoom-out {
+  from { opacity: 0; transform: scale(1.2); }
+  to   { opacity: 1; transform: scale(1); }
+}
+.zoom-out.fade-in.in-view {
+  animation: zoom-out 0.8s ease-in-out forwards;
+}
+
+/* Rotate In: rotates from 90deg to 0 while fading in */
+@keyframes rotate-in {
+  from { opacity: 0; transform: rotate(90deg); }
+  to   { opacity: 1; transform: rotate(0deg); }
+}
+.rotate-in.fade-in.in-view {
+  animation: rotate-in 1s ease-in-out forwards;
+}
+
+/* ============================================================
+   CSSTransition FOR MENUS (e.g., using React Transition Group)
+   ============================================================ */
+
+/* Menu Entering */
 .menu-enter {
   opacity: 0;
   transform: translateY(-20px);
 }
-
 .menu-enter-active {
   opacity: 1;
   transform: translateY(0);
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
 
-/* Exiting */
+/* Menu Exiting */
 .menu-exit {
   opacity: 1;
   transform: translateY(0);
 }
-
 .menu-exit-active {
   opacity: 0;
   transform: translateY(-20px);
   transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
 }
-
-
-
-

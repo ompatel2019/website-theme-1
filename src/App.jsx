@@ -7,7 +7,7 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
-import Fallback from './components/Fallback';
+import Fallback from './tools/Fallback';
 
 // Lazy load pages
 const HomePage = lazy(() => import('./pages/HomePage'));
