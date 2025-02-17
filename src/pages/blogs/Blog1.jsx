@@ -1,6 +1,7 @@
 // pages/blogs/Blog1.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { HashLink } from 'react-router-hash-link';
+import SeoHelmet from '../../tools/SeoHelmet';
 
 const Blog1 = () => {
   // ─── Schema for Blog Post ────────────────────────────────────────────
@@ -19,13 +20,11 @@ const Blog1 = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Blog Post 1 - Business Name</title>
-        <meta name="description" content="Summary of blog post 1." />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdBlogPost)}
-        </script>
-      </Helmet>
+      <SeoHelmet
+        title="Blog Post 1 - Business Name"
+        description="Summary of blog post 1."
+        jsonSchema={jsonLdBlogPost}
+      />
 
       {/* ─── Blog Content ───────────────────────────────────────────── */}
       <article>

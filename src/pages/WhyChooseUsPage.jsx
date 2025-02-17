@@ -1,6 +1,6 @@
 // pages/WhyChooseUsPage.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SeoHelmet from '../tools/SeoHelmet';
 
 // ─── Components for Why Choose Us Page ──────────────────────────────────
 import WhyChooseUs from '../components/WhyChooseUs';
@@ -19,13 +19,11 @@ const WhyChooseUsPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Why Choose Us - Business Name</title>
-        <meta name="description" content="Learn why Business Name is the best choice for your needs." />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdWhyChooseUsPage)}
-        </script>
-      </Helmet>
+      <SeoHelmet
+        title="Why Choose Us - Business Name"
+        description="Learn why Business Name is the best choice for your needs."
+        jsonSchema={jsonLdWhyChooseUsPage}
+      />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
       <WhyChooseUs />

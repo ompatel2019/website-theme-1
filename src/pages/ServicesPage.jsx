@@ -1,6 +1,6 @@
 // pages/ServicesPage.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SeoHelmet from '../tools/SeoHelmet';
 
 // ─── Components for Services Page ──────────────────────────────────────
 import Services from '../components/Services';
@@ -18,13 +18,11 @@ const ServicesPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Services - Business Name</title>
-        <meta name="description" content="Discover our range of professional services at Business Name." />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdServicesPage)}
-        </script>
-      </Helmet>
+      <SeoHelmet
+        title="Services - Business Name"
+        description="Discover our range of professional services at Business Name."
+        jsonSchema={jsonLdServicesPage}
+      />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
       <Services />

@@ -9,7 +9,7 @@ import {
 import MainLayout from './layouts/MainLayout';
 import Fallback from './tools/Fallback';
 
-// Lazy load pages
+// Lazy-load your pages
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const WhyChooseUsPage = lazy(() => import('./pages/WhyChooseUsPage'));
@@ -19,12 +19,19 @@ const BlogsPage = lazy(() => import('./pages/BlogsPage'));
 const Blog1 = lazy(() => import('./pages/blogs/Blog1'));
 const Blog2 = lazy(() => import('./pages/blogs/Blog2'));
 const Blog3 = lazy(() => import('./pages/blogs/Blog3'));
+const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
-// ─── Router Configuration ───────────────────────────────────────────────
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<MainLayout />}>
-      <Route index element={<HomePage />} />
+      <Route
+        index
+        element={
+          <Suspense fallback={<Fallback />}>
+            <HomePage />
+          </Suspense>
+        }
+      />
 
       <Route
         path="services"
@@ -36,7 +43,7 @@ const router = createBrowserRouter(
       />
 
       <Route
-        path="whychooseus"
+        path="why-choose-us"
         element={
           <Suspense fallback={<Fallback />}>
             <WhyChooseUsPage />
@@ -45,7 +52,7 @@ const router = createBrowserRouter(
       />
 
       <Route
-        path="aboutus"
+        path="about-us"
         element={
           <Suspense fallback={<Fallback />}>
             <AboutUsPage />
@@ -54,7 +61,7 @@ const router = createBrowserRouter(
       />
 
       <Route
-        path="contact"
+        path="contact-us"
         element={
           <Suspense fallback={<Fallback />}>
             <ContactPage />
@@ -94,6 +101,15 @@ const router = createBrowserRouter(
         element={
           <Suspense fallback={<Fallback />}>
             <Blog3 />
+          </Suspense>
+        }
+      />
+
+      <Route
+        path="*"
+        element={
+          <Suspense fallback={<Fallback />}>
+            <NotFoundPage />
           </Suspense>
         }
       />

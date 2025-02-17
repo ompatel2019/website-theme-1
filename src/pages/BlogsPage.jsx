@@ -1,6 +1,6 @@
 // pages/BlogsPage.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SeoHelmet from '../tools/SeoHelmet';
 
 // ─── Components for Blogs Page ───────────────────────────────────────
 import Blogs from '../components/Blogs';
@@ -18,13 +18,11 @@ const BlogsPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>All Blogs - Business Name</title>
-        <meta name="description" content="Explore our latest blog posts on SEO, web design, and digital marketing insights." />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdBlogsPage)}
-        </script>
-      </Helmet>
+      <SeoHelmet
+        title="Blogs - Business Name"
+        description="Collection of our latest insights and trends in digital services."
+        jsonSchema={jsonLdBlogsPage}
+      />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
       <Blogs />

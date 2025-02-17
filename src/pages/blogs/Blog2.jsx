@@ -1,31 +1,30 @@
-// pages/blogs/Blog2.jsx
+// pages/blogs/Blog1.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import { HashLink } from 'react-router-hash-link';
+import SeoHelmet from '../../tools/SeoHelmet';
 
-const Blog2 = () => {
+const Blog1 = () => {
   // ─── Schema for Blog Post ────────────────────────────────────────────
   const jsonLdBlogPost = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
     "headline": "Blog Post 2 Title",
     "description": "Summary of blog post 2.",
-    "url": "https://example.com/blogs/2",
+    "url": "https://example.com/blogs/1",
     "author": {
       "@type": "Person",
       "name": "Author Name"
     },
-    "datePublished": "2025-01-02"
+    "datePublished": "2025-01-01"
   };
 
   return (
     <>
-      <Helmet>
-        <title>Blog Post 2 - Business Name</title>
-        <meta name="description" content="Summary of blog post 2." />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdBlogPost)}
-        </script>
-      </Helmet>
+      <SeoHelmet
+        title="Blog Post 2 - Business Name"
+        description="Summary of blog post 2."
+        jsonSchema={jsonLdBlogPost}
+      />
 
       {/* ─── Blog Content ───────────────────────────────────────────── */}
       <article>
@@ -36,4 +35,4 @@ const Blog2 = () => {
   );
 };
 
-export default Blog2;
+export default Blog1;

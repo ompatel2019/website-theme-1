@@ -1,6 +1,6 @@
 // pages/HomePage.jsx
 import React from 'react';
-import { Helmet } from 'react-helmet';
+import SeoHelmet from '../tools/SeoHelmet';
 
 // ─── Sections ───────────────────────────────────────────────────────────
 import Hero from '../components/Hero';
@@ -24,13 +24,11 @@ const HomePage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>Home - Business Name</title>
-        <meta name="description" content="Welcome to Business Name. Customize your homepage description here." />
-        <script type="application/ld+json">
-          {JSON.stringify(jsonLdHomePage)}
-        </script>
-      </Helmet>
+      <SeoHelmet
+        title="Home - Business Nameß"
+        description="Welcome to Business Name. Customize your homepage description here."
+        jsonSchema={jsonLdHomePage}
+      />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
       <Hero />
