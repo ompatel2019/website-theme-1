@@ -12,7 +12,7 @@ const MainLayout = () => {
   return (
     <>
       {/* ─── Topbar Section ───────────────────────────────────────── */}
-      <Topbar />
+      {/* <Topbar /> */}
 
       {/* ─── Navigation Bar Section ───────────────────────────────── */}
       <Navbar />
