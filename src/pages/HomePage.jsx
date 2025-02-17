@@ -8,6 +8,7 @@ import Services from '../components/Services';
 import WhyChooseUs from '../components/WhyChooseUs';
 import AboutUs from '../components/AboutUs';
 import Testimonials from '../components/Testimonials';
+import { MarqueeDemo} from '../components/MarqueeDemo'
 import ContactForm from '../components/ContactForm';
 import Blogs from '../components/Blogs';
 import Faqs from '../components/Faqs';
@@ -36,6 +37,7 @@ const HomePage = () => {
       <WhyChooseUs />
       <AboutUs />
       <Testimonials />
+      <MarqueeDemo />
       <ContactForm />
       <Blogs />
       <Faqs />
