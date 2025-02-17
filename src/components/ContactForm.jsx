@@ -4,7 +4,7 @@ const ContactForm = () => {
   const [statusMessage, setStatusMessage] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents page reload
+    e.preventDefault(); // Prevent default page reload
     const form = e.target;
     const formData = new FormData(form);
 
@@ -29,7 +29,7 @@ const ContactForm = () => {
         data-netlify="true"
         onSubmit={handleSubmit}
       >
-        {/* Hidden input must match the form's name */}
+        {/* Hidden input to help Netlify identify your form */}
         <input type="hidden" name="form-name" value="contact" />
         
         {/* Optional honeypot field for spam protection */}
@@ -61,6 +61,10 @@ const ContactForm = () => {
           required
           className="block my-2 p-2 border"
         ></textarea>
+        
+        {/* reCAPTCHA placeholder - Netlify will replace this with the widget on deployment */}
+        <div data-netlify-recaptcha="true"></div>
+        
         <button type="submit" className="bg-blue-500 text-white p-2">
           Send a message
         </button>
