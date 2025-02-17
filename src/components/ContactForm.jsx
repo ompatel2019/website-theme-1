@@ -4,7 +4,7 @@ const ContactForm = () => {
   const [statusMessage, setStatusMessage] = useState("");
 
   const handleSubmit = (e) => {
-    e.preventDefault();  // Prevents the default page reload
+    e.preventDefault(); // Prevents page reload
     const form = e.target;
     const formData = new FormData(form);
 
@@ -13,56 +13,60 @@ const ContactForm = () => {
       body: formData,
     })
       .then(() => {
-        // Show a success message or handle the success however you like
         setStatusMessage("Form submission successful!");
+        form.reset();
       })
       .catch((error) => {
-        // Show an error message or handle the error
         setStatusMessage(`Form submission failed: ${error}`);
       });
   };
 
   return (
-    <>
+    <div className="bg-orange-50 p-4">
       <form
         name="contact"
-        method="POST"
+        method="post"
         data-netlify="true"
         onSubmit={handleSubmit}
-        className="bg-blue-600"
       >
-        {/* Required hidden input for Netlify form handling */}
+        {/* Hidden input must match the form's name */}
         <input type="hidden" name="form-name" value="contact" />
-
-        <p>
-          <label>Your Name: <input type="text" name="name" /></label>
-        </p>
-        <p>
-          <label>Your Email: <input type="email" name="email" /></label>
-        </p>
-        <p>
-          <label>Your Role: 
-            <select name="role[]" multiple>
-              <option value="leader">Leader</option>
-              <option value="follower">Follower</option>
-            </select>
+        
+        {/* Optional honeypot field for spam protection */}
+        <p style={{ display: "none" }}>
+          <label>
+            Don’t fill this out: <input name="bot-field" />
           </label>
         </p>
-        <p>
-          <label>Message: <textarea name="message"></textarea></label>
-        </p>
-
-        {/* reCAPTCHA placeholder (injected by Netlify on deploy) */}
-        <div className="field" data-netlify-recaptcha="true"></div>
-
-        <p>
-          <button type="submit">Send</button>
-        </p>
+        
+        <input
+          type="text"
+          name="name"
+          placeholder="Your name"
+          required
+          className="block my-2 p-2 border"
+        />
+        <input
+          type="email"
+          name="email"
+          placeholder="Your email"
+          required
+          className="block my-2 p-2 border"
+        />
+        <textarea
+          name="message"
+          placeholder="Message"
+          cols="30"
+          rows="10"
+          required
+          className="block my-2 p-2 border"
+        ></textarea>
+        <button type="submit" className="bg-blue-500 text-white p-2">
+          Send a message
+        </button>
       </form>
-
-      {/* Display success/error message */}
-      {statusMessage && <p>{statusMessage}</p>}
-    </>
+      {statusMessage && <p className="mt-4">{statusMessage}</p>}
+    </div>
   );
 };
 
