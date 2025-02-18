@@ -96,9 +96,10 @@ html {
 }
 
 @layer base {
-  * {
+  /* Remove if you don't want a border on everything: */
+  /* * {
     @apply border-border;
-  }
+  } */
   body {
     @apply bg-background text-foreground;
   }
