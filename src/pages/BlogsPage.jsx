@@ -11,7 +11,7 @@ const BlogsPage = () => {
   const jsonLdBlogsPage = {
     "@context": "https://schema.org",
     "@type": "Blog",
-    "name": "Blogs - Business Name",
+    "name": "Blogs",
     "description": "Collection of our latest insights and trends in digital services.",
     "url": "https://example.com/blogs"
   };
@@ -19,7 +19,7 @@ const BlogsPage = () => {
   return (
     <>
       <SeoHelmet
-        title="Blogs - Business Name"
+        title="Blogs"
         description="Collection of our latest insights and trends in digital services."
         jsonSchema={jsonLdBlogsPage}
       />

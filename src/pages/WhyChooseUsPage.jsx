@@ -12,7 +12,7 @@ const WhyChooseUsPage = () => {
   const jsonLdWhyChooseUsPage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Why Choose Us - Business Name",
+    "name": "Why Choose Us",
     "description": "Learn why Business Name is the best choice for your needs.",
     "url": "https://example.com/whychooseus"
   };
@@ -20,7 +20,7 @@ const WhyChooseUsPage = () => {
   return (
     <>
       <SeoHelmet
-        title="Why Choose Us - Business Name"
+        title="Why Choose Us"
         description="Learn why Business Name is the best choice for your needs."
         jsonSchema={jsonLdWhyChooseUsPage}
       />

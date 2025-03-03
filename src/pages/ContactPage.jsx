@@ -12,7 +12,7 @@ const ContactPage = () => {
   const jsonLdContactPage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Contact - Business Name",
+    "name": "Contact",
     "description": "Get in touch with Business Name for inquiries and support.",
     "url": "https://example.com/contact"
   };
@@ -20,7 +20,7 @@ const ContactPage = () => {
   return (
     <>
       <SeoHelmet
-        title="Contact - Business Name"
+        title="Contact"
         description="Get in touch with Business Name for inquiries and support."
         jsonSchema={jsonLdContactPage}
       />
