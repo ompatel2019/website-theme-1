@@ -1,14 +1,16 @@
+const {heroui} = require('@heroui/theme');
 /** @type {import('tailwindcss').Config} */
 export default {
 	darkMode: ["class"],
-	content: [
-	  "./index.html",
-	  "./src/**/*.{js,ts,jsx,tsx}",
-	],
+  content: [
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    "./node_modules/@heroui/theme/dist/components/(button|dropdown|link|navbar|ripple|spinner|menu|divider|popover).js"
+  ],
 	theme: {
 	  extend: {
 		colors: {
-		  primary: {
+		  secondary: {
 			DEFAULT: 'var(--primary)',
 			foreground: 'hsl(var(--primary-foreground))'
 		  },
@@ -16,7 +18,7 @@ export default {
 			DEFAULT: 'var(--secondary)',
 			foreground: 'hsl(var(--secondary-foreground))'
 		  },
-		  secondary: '#FEA000',
+		  primary: '#FEA000',
 		  black: '#1A1A1A',
 		  white: '#FFFFFF',
 		  grey: '#666666',
@@ -66,6 +68,6 @@ export default {
 		}
 	  }
 	},
-	plugins: [require("tailwindcss-animate")],
+  plugins: [require("tailwindcss-animate"),heroui()],
   }
   
