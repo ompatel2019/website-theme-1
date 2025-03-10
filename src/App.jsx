@@ -9,6 +9,8 @@ import {
 import MainLayout from './layouts/MainLayout';
 import Fallback from './tools/Fallback';
 
+// All image imports go here
+
 // Lazy-load your pages
 const HomePage = lazy(() => import('./pages/HomePage'));
 const ServicesPage = lazy(() => import('./pages/ServicesPage'));
@@ -17,6 +19,7 @@ const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
 const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
+
 
 const router = createBrowserRouter(
   createRoutesFromElements(
