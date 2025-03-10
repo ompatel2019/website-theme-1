@@ -4,8 +4,27 @@
   status = 200
   force = true
 
+# Enforce HTTPS and non-www (for canonicalization and SEO)
+[[redirects]]
+  from = "http://domain-url-goes-here.com.au/*"
+  to = "https://domain-url-goes-here.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "http://www.domain-url-goes-here.com.au/*"
+  to = "https://domain-url-goes-here.com.au/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.domain-url-goes-here.com.au/*"
+  to = "https://domain-url-goes-here.com.au/:splat"
+  status = 301
+  force = true
+
+# SPA routing fallback (React Router)
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
-  methods = ["GET", "HEAD"]
