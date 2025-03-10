@@ -9,7 +9,7 @@ import WhyChooseUs from '../components/WhyChooseUs';
 import AboutUs from '../components/AboutUs';
 import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
-import Blogs from '../components/Blogs';
+import Projects from '../components/Projects';
 import Faqs from '../components/Faqs';
 
 const HomePage = () => {
@@ -36,7 +36,7 @@ const HomePage = () => {
       <WhyChooseUs />
       <AboutUs />
       <Testimonials />
-      <Blogs />
+      <Projects />
       <Faqs />
     </>
   );

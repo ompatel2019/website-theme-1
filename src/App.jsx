@@ -15,10 +15,7 @@ const ServicesPage = lazy(() => import('./pages/ServicesPage'));
 const WhyChooseUsPage = lazy(() => import('./pages/WhyChooseUsPage'));
 const AboutUsPage = lazy(() => import('./pages/AboutUsPage'));
 const ContactPage = lazy(() => import('./pages/ContactPage'));
-const BlogsPage = lazy(() => import('./pages/BlogsPage'));
-const Blog1 = lazy(() => import('./pages/blogs/Blog1'));
-const Blog2 = lazy(() => import('./pages/blogs/Blog2'));
-const Blog3 = lazy(() => import('./pages/blogs/Blog3'));
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 
 const router = createBrowserRouter(
@@ -70,40 +67,40 @@ const router = createBrowserRouter(
       />
 
       <Route
-        path="blogs"
+        path="projects"
         element={
           <Suspense fallback={<Fallback />}>
-            <BlogsPage />
+            <ProjectsPage />
+          </Suspense>
+        }
+      />
+
+      {/* <Route
+        path="projects/1"
+        element={
+          <Suspense fallback={<Fallback />}>
+            <Project1 />
           </Suspense>
         }
       />
 
       <Route
-        path="blogs/1"
+        path="projects/2"
         element={
           <Suspense fallback={<Fallback />}>
-            <Blog1 />
+            <Project2 />
           </Suspense>
         }
       />
 
       <Route
-        path="blogs/2"
+        path="projects/3"
         element={
           <Suspense fallback={<Fallback />}>
-            <Blog2 />
+            <Project3 />
           </Suspense>
         }
-      />
-
-      <Route
-        path="blogs/3"
-        element={
-          <Suspense fallback={<Fallback />}>
-            <Blog3 />
-          </Suspense>
-        }
-      />
+      /> */}
 
       <Route
         path="*"
