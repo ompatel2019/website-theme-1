@@ -6,7 +6,7 @@ import SeoHelmet from '../tools/SeoHelmet';
 import Services from '../components/Services';
 import CTA from '../components/CTA';
 
-const ServicesPage = () => {
+const ServicesPage = ({services}) => {
   // ─── Schema for Services Page ─────────────────────────────────────────
   const jsonLdServicesPage = {
     "@context": "https://schema.org",
@@ -25,7 +25,7 @@ const ServicesPage = () => {
       />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
-      <Services />
+      <Services bg="bg-black" text="text-white" services={services} isHome={false}/>
       <CTA />
     </>
   );

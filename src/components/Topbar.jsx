@@ -27,7 +27,7 @@ const Topbar = () => {
           <TbHours24 className='h6'/>
           <p className="text-center h7">{leftText}</p>
         </div>
-        <div className="flex space-x-4">
+        <div className="flex lg:space-x-3 md:space-x-2 space-x-1">
           {socials.map((social, index) => (
             <div className='flex items-center gap-1 md:px-2 md:py-1 px-[6px] py-[3px] md:rounded-lg rounded-md bg-black hover:invert transition-all'>
               <a href={social.to} target='_blank' className='text-white p' key={index}>{social.icon}</a>
