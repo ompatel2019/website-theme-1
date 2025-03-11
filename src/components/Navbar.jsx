@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   Navbar,
   NavbarBrand,
@@ -9,20 +9,22 @@ import {
   NavbarMenuItem,
 } from "@heroui/navbar";
 import { Button } from "@heroui/button";
+import { NavLink } from 'react-router-dom'
 import { Link } from "react-router-dom";
 
 export default function App() {
-  // Keep track of menu open/close
-  const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const menuItems = [
     { linkName: "Home", linkTo: "/" },
     { linkName: "Services", linkTo: "/services" },
-    { linkName: "Why Choose Us", linkTo: "/whychooseus" },
+    { linkName: "Why Choose Us", linkTo: "/why-choose-us" },
     { linkName: "Projects", linkTo: "/projects" },
-    { linkName: "About Us", linkTo: "/aboutus" },
-    { linkName: "Get a Quote", linkTo: "/contact" },
+    { linkName: "About Us", linkTo: "/about-us" },
+    { linkName: "Get a Quote", linkTo: "/contact-us" },
   ];
+
+  const linkClass = ({isActive}) => isActive ? 'text-primary rounded-sm h7' : 'h7 text-white hover:text-primary transition'
 
   // For fully controlled, pass BOTH isMenuOpen and onMenuOpenChange
   return (
@@ -30,6 +32,7 @@ export default function App() {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="full"
+      className="bg-black text-white font-supreme xl:py-3 py-2 2xl:px-[64px] xl:px-[48px] lg:px-[40px] md:px-[16px] sm:px-[8px]"
     >
       {/* Left side: brand + menu toggle (mobile) */}
       <NavbarContent>
@@ -38,56 +41,49 @@ export default function App() {
           className="md:hidden"
         />
         <NavbarBrand>
-          <p className="font-bold text-inherit">Lightwater Plumbing</p>
+          <Link to='/'>
+            <p className="font-bold text-inherit h7">Lightwater Plumbing</p>
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
       {/* Desktop nav */}
       <NavbarContent className="hidden md:flex gap-4" justify="center">
         {menuItems.map((item) => (
+            item.linkName != 'Get a Quote' ? 
           <NavbarItem key={item.linkName}>
-            <Link
+            <NavLink
               to={item.linkTo}
-              className="text-foreground hover:text-primary transition"
+              className={linkClass}
             >
               {item.linkName}
-            </Link>
+            </NavLink>
           </NavbarItem>
-        ))}
-
-      {/* Right side (desktop) */}
-      <NavbarContent className="hidden md:flex" justify="end">
-        <NavbarItem>
+            :
           <Button
             as={Link}
-            to="/book-call"
-            variant="flat"
-            radius="sm"
-            className="bg-secondary text-black px-6"
+            to="/contact-us"
+            className="bg-secondary text-black px-6 bg-primary rounded-sm h7"
             >
-            Book a call
+            {item.linkName}
           </Button>
-        </NavbarItem>
-      </NavbarContent>
+        ))}
         </NavbarContent>
 
       {/* Mobile Menu */}
-      <NavbarMenu>
+      <NavbarMenu className="bg-black text-white mt-12 md:px-10 sm:px-8 px-6 font-supreme">
         {menuItems.map((item) => (
           <NavbarMenuItem
             key={item.linkName}
-            // If you want the built-in 'active' styles:
-            // isActive={location.pathname === item.linkTo}
-            onClick={() => setIsMenuOpen(false)} // closes menu
+            onClick={() => setIsMenuOpen(false)}
           >
-            <Link
+            <NavLink
               to={item.linkTo}
-              // also close on link click
               onClick={() => setIsMenuOpen(false)}
-              className="text-foreground hover:text-primary transition"
+              className="hover:text-primary transition h5"
             >
               {item.linkName}
-            </Link>
+            </NavLink>
           </NavbarMenuItem>
         ))}
       </NavbarMenu>

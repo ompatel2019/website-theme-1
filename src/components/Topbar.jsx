@@ -1,37 +1,40 @@
 import React from 'react';
 import AnimateOnScroll from '../tools/AnimateOnScroll';
+import { TbHours24 } from "react-icons/tb";
 
 const Topbar = () => {
-  const leftText = 'Business Information Goes Here';
-  const number = 'Business Number Goes Here';
-  const location = 'Business Location Goes Here';
+  const leftText = 'Open 24-Hours';
+  const socials = [
+    {
+      icon: <i class="bi bi-instagram"></i>,
+      to: 'https://www.instagram.com/'
+    }, 
+    {
+      icon: <i class="bi bi-linkedin"></i>,
+      to: 'https://www.linkedin.com/feed/'
+    }, 
+    {
+      icon: <i class="bi bi-facebook"></i>,
+      to: 'https://www.facebook.com/'
+    }, 
+  ]
 
   return (
-    <AnimateOnScroll className='fade-in fade-down p'>
+    <AnimateOnScroll className='fade-in fade-down'>
       <header
-        className="2xl:px-[48px] lg:px-[32px] md:px-[16px] px-[4px]
-        flex justify-between 2xl:py-6 lg:py-4 py-2 max-lg:justify-center"
+        className="responsivePad bg-primary font-supreme-medium
+        flex justify-between 2xl:py-6 lg:py-4 py-2"
       >
-        <p className="text-center">{leftText}</p>
-        <div className="max-lg:hidden flex space-x-4">
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href="tel:"
-            className="flex space-x-2 items-center"
-          >
-            <i className="bi bi-telephone-fill"></i>
-            <p>{number}</p>
-          </a>
-          <a
-            target="_blank"
-            rel="noreferrer"
-            href=""
-            className="flex space-x-2 items-center"
-          >
-            <i className="bi bi-geo-fill"></i>
-            <p>{location}</p>
-        </a>
+        <div className='flex justify-center items-center gap-1'>
+          <TbHours24 className='h6'/>
+          <p className="text-center h7">{leftText}</p>
+        </div>
+        <div className="flex space-x-4">
+          {socials.map((social, index) => (
+            <div className='flex items-center gap-1 md:px-2 md:py-1 px-[6px] py-[3px] md:rounded-lg rounded-md bg-black'>
+              <a href={social.to} target='_blank' className='text-white p' key={index}>{social.icon}</a>
+            </div>
+          ))}
         </div>
       </header>
     </AnimateOnScroll>

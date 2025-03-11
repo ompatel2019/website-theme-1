@@ -11,6 +11,7 @@ import Testimonials from '../components/Testimonials';
 import ContactForm from '../components/ContactForm';
 import Projects from '../components/Projects';
 import Faqs from '../components/Faqs';
+import CTAMini from '../components/CTAMini';
 
 const HomePage = () => {
   // ─── Schema for Home Page ──────────────────────────────────────────────
@@ -31,6 +32,7 @@ const HomePage = () => {
       />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
+      <CTAMini text="Book online and receive $50 off your first service"/>
       <Hero />
       <Services />
       <WhyChooseUs />

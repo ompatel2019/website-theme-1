@@ -1,3 +1,5 @@
+@import url('fonts/supreme.css');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,8 +11,8 @@ html {
   background-color: #ffffff;
 }
 
-.responsivePad {
-  @apply 2xl:px-[200px] xl:px-[120px] lg:px-[96px] sm:px-[64px] min-[480px]:px-[24px] max-sm:px-[16px];
+.responsivePad { 
+  @apply 2xl:px-[80px] xl:px-[64px] lg:px-[48px] md:px-[32px] sm:px-[16px] px-[8px]
 }
 
 /* Headings */
