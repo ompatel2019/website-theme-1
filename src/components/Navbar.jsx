@@ -63,7 +63,7 @@ export default function App() {
           <Button
             as={Link}
             to="/contact-us"
-            className="bg-secondary text-black px-6 bg-primary rounded-sm h7"
+            className="bg-primary text-black px-6 rounded-sm h7"
             >
             {item.linkName}
           </Button>
@@ -80,7 +80,7 @@ export default function App() {
             <NavLink
               to={item.linkTo}
               onClick={() => setIsMenuOpen(false)}
-              className="hover:text-primary transition h5"
+              className="hover:text-primary transition h2"
             >
               {item.linkName}
             </NavLink>

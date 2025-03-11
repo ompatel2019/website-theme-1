@@ -46,7 +46,7 @@ const Hero = ({ placeholderImg }) => {
         <div className="hidden md:block">
           <ImagesMarqueeVert placeholderImg={placeholderImg}/>
         </div>
-        <div className="md:hidden block">
+        <div className="md:hidden block pb-8">
           <ImagesMarqueeHor placeholderImg={placeholderImg} />  
         </div>
       </div>

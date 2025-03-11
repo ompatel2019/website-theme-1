@@ -4,17 +4,15 @@ import SeoHelmet from '../tools/SeoHelmet';
 
 // ─── Sections ───────────────────────────────────────────────────────────
 import Hero from '../components/Hero';
-import Services from '../components/Services';
-import WhyChooseUs from '../components/WhyChooseUs';
-import AboutUs from '../components/AboutUs';
-import Testimonials from '../components/Testimonials';
-import ContactForm from '../components/ContactForm';
-import Projects from '../components/Projects';
-import Faqs from '../components/Faqs';
 import CTAMini from '../components/CTAMini';
+import Services from '../components/Services';
+import Projects from '../components/Projects';
+import Testimonials from '../components/Testimonials';
+import Faqs from '../components/Faqs';
 
 // ─── Tools ───────────────────────────────────────────────────────────
 import { BlurFade } from "@/components/magicui/blur-fade";
+import Stats from '../components/Stats';
 
 const HomePage = ({placeholderImg}) => {
   // ─── Schema for Home Page ──────────────────────────────────────────────
@@ -26,6 +24,24 @@ const HomePage = ({placeholderImg}) => {
     "url": "https://example.com/"
   };
 
+  const stats = [ 
+    {
+      stat: "10",
+      statType: "+",
+      statDesc: "Years Experience"
+    },
+    {
+      stat: "550",
+      statType: "+",
+      statDesc: "Clients Served"
+    },
+    {
+      stat: "1100",
+      statType: "+",
+      statDesc: "Projects Completed"
+    },
+  ]
+
   return (
     <>
       <SeoHelmet
@@ -35,15 +51,18 @@ const HomePage = ({placeholderImg}) => {
       />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
-      <BlurFade delay={0.2} inView>
-      <CTAMini text="Book online and receive $50 off your first service"/>
+      <BlurFade delay={0.15} inView>
+        <CTAMini text="Book online and receive $50 off your first service"/>
         <Hero placeholderImg={placeholderImg}/>
       </BlurFade>
+
+      <Stats stats={stats} bg="bg-primary" text="text-black"/>
+
+
+      
       <Services />
-      <WhyChooseUs />
-      <AboutUs />
-      <Testimonials />
       <Projects />
+      <Testimonials />
       <Faqs />
     </>
   );

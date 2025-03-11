@@ -12,7 +12,7 @@ export default {
     		colors: {
     			primary: 'var(--primary)',
     			secondary: 'var(--secondary)',
-    			black: '#1A1A1A',
+    			black: '#2A2A2A',
     			white: '#FFFFFF',
     			grey: '#666666',
     			background: 'hsl(var(--background))',
