@@ -8,14 +8,18 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import ScrollToTop from '../tools/ScrollToTop';
 
+// ─── Tools ───────────────────────────────────────────────────────────
+import { BlurFade } from "@/components/magicui/blur-fade";
+
 const MainLayout = () => {
   return (
     <>
-      {/* ─── Topbar Section ───────────────────────────────────────── */}
-      <Topbar />
-
-      {/* ─── Navigation Bar Section ───────────────────────────────── */}
-      <Navbar />
+      <BlurFade delay={0.15} inView>
+        {/* ─── Topbar Section ───────────────────────────────────────── */}
+        <Topbar />
+        {/* ─── Navigation Bar Section ───────────────────────────────── */}
+        <Navbar />
+      </BlurFade>
 
       <ScrollToTop /> 
 

@@ -10,6 +10,7 @@ import MainLayout from './layouts/MainLayout';
 import Fallback from './tools/Fallback';
 
 // All image imports go here
+import placeholderImg from './assets/images/placeholder.png'
 
 // Lazy-load your pages
 const HomePage = lazy(() => import('./pages/HomePage'));
@@ -28,7 +29,7 @@ const router = createBrowserRouter(
         index
         element={
           <Suspense fallback={<Fallback />}>
-            <HomePage />
+            <HomePage placeholderImg={placeholderImg}/>
           </Suspense>
         }
       />

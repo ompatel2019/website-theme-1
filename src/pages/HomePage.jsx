@@ -13,7 +13,10 @@ import Projects from '../components/Projects';
 import Faqs from '../components/Faqs';
 import CTAMini from '../components/CTAMini';
 
-const HomePage = () => {
+// ─── Tools ───────────────────────────────────────────────────────────
+import { BlurFade } from "@/components/magicui/blur-fade";
+
+const HomePage = ({placeholderImg}) => {
   // ─── Schema for Home Page ──────────────────────────────────────────────
   const jsonLdHomePage = {
     "@context": "https://schema.org",
@@ -32,8 +35,10 @@ const HomePage = () => {
       />
 
       {/* ─── Sections ───────────────────────────────────────────── */}
+      <BlurFade delay={0.2} inView>
       <CTAMini text="Book online and receive $50 off your first service"/>
-      <Hero />
+        <Hero placeholderImg={placeholderImg}/>
+      </BlurFade>
       <Services />
       <WhyChooseUs />
       <AboutUs />

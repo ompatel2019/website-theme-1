@@ -1,5 +1,4 @@
 import React from 'react';
-import AnimateOnScroll from '../tools/AnimateOnScroll';
 import { TbHours24 } from "react-icons/tb";
 
 const Topbar = () => {
@@ -20,7 +19,6 @@ const Topbar = () => {
   ]
 
   return (
-    <AnimateOnScroll className='fade-in fade-down'>
       <header
         className="responsivePad bg-primary font-supreme-medium
         flex justify-between 2xl:py-6 lg:py-4 py-2"
@@ -31,13 +29,12 @@ const Topbar = () => {
         </div>
         <div className="flex space-x-4">
           {socials.map((social, index) => (
-            <div className='flex items-center gap-1 md:px-2 md:py-1 px-[6px] py-[3px] md:rounded-lg rounded-md bg-black'>
+            <div className='flex items-center gap-1 md:px-2 md:py-1 px-[6px] py-[3px] md:rounded-lg rounded-md bg-black hover:invert transition-all'>
               <a href={social.to} target='_blank' className='text-white p' key={index}>{social.icon}</a>
             </div>
           ))}
         </div>
       </header>
-    </AnimateOnScroll>
   );
 };
 

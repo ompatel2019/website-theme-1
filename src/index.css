@@ -17,25 +17,25 @@ html {
 
 /* Headings */
 .h1 {
-  @apply text-4xl leading-snug md:text-6xl md:leading-normal xl:text-8xl xl:leading-snug;
+  @apply text-4xl md:text-6xl xl:text-8xl;
 }
 .h2 {
-  @apply text-3xl leading-snug md:text-5xl md:leading-normal xl:text-7xl xl:leading-snug;
+  @apply text-3xl md:text-5xl xl:text-7xl;
 }
 .h3 {
-  @apply text-2xl leading-snug md:text-4xl md:leading-normal xl:text-6xl xl:leading-snug;
+  @apply text-2xl md:text-4xl xl:text-6xl;
 }
 .h4 {
-  @apply text-xl leading-snug md:text-3xl md:leading-normal xl:text-5xl xl:leading-snug;
+  @apply text-xl md:text-3xl xl:text-5xl;
 }
 .h5 {
-  @apply text-lg leading-snug md:text-2xl md:leading-normal xl:text-4xl xl:leading-snug;
+  @apply text-lg md:text-2xl xl:text-4xl;
 }
 .h6 {
-  @apply text-base leading-normal md:text-xl md:leading-normal xl:text-3xl xl:leading-normal;
+  @apply text-base leading-normal md:text-xl xl:text-3xl xl:leading-normal;
 }
 .h7 {
-  @apply text-base leading-normal md:text-lg md:leading-normal xl:text-xl xl:leading-normal;
+  @apply text-base leading-normal md:text-lg xl:text-xl xl:leading-normal;
 }
 .p {
   @apply text-base leading-normal xl:text-lg xl:leading-normal;
@@ -49,10 +49,9 @@ html {
     --card-foreground: 0 0% 3.9%;
     --popover: 0 0% 100%;
     --popover-foreground: 0 0% 3.9%;
-    --secondary: #1E53AE;
     --primary: #FEA000;
+    --secondary: #1E53AE;
     --primary-foreground: 0 0% 98%;
-    --secondary: 0 0% 96.1%;
     --secondary-foreground: 0 0% 9%;
     --muted: 0 0% 96.1%;
     --muted-foreground: 0 0% 45.1%;
