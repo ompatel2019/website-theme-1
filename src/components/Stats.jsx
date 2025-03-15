@@ -20,11 +20,11 @@ const Stats = ({ stats, bg, text }) => {
   }
 
   const width = useScreenWidth()
-  const displayedStats = width < 768 ? stats.slice(0, 2) : stats
+  const displayedStats = width < 480 ? stats.slice(0, 2) : stats
 
   return (
     <Section bg={bg} text={text} py={py}>
-      <div className="flex justify-between mt-[-10px]">
+      <div className="flex justify-between lg:justify-around">
         {displayedStats.map((stat, index) => (
           <Stat 
             key={index + 1} 

@@ -24,8 +24,8 @@ const Topbar = () => {
         flex justify-between 2xl:py-6 lg:py-4 py-2"
       >
         <div className='flex justify-center items-center gap-1'>
-          <TbHours24 className='h6'/>
-          <p className="text-center h7">{leftText}</p>
+          <TbHours24 className='h7'/>
+          <p className="text-center p">{leftText}</p>
         </div>
         <div className="flex lg:space-x-3 md:space-x-2 space-x-1">
           {socials.map((social, index) => (

@@ -1,35 +1,55 @@
-import React from 'react'
-import ImageComponent from './ImageComponent'
-import { Link } from 'react-router-dom'
 
-const Service = ({serviceImg, serviceImgAlt, serviceName, serviceDesc, serviceClass, isHome}) => {
+
+// Enhanced Service Component
+import React from 'react';
+import ImageComponent from './ImageComponent';
+import { Link } from 'react-router-dom';
+import { ArrowUpRight } from 'lucide-react';
+
+const Service = ({
+  serviceImg, 
+  serviceImgAlt, 
+  serviceName, 
+  serviceDesc, 
+  serviceClass, 
+  isHovered,
+  onMouseEnter,
+  onMouseLeave
+}) => {
   return (
-    <Link to='/services' className='flex flex-col md:space-y-2 justify-around lg:p-8 p-6 rounded-md bg-[#3f3f3f] space-y-2 hover:invert transition-all'>
-        <ImageComponent
-          src={serviceImg}
-          alt={serviceImgAlt}
-          width={72}
-          height={72}
-          className={serviceClass}
-          loading='lazy'
-        />
-
-      <h5 className='h7 font-supreme-medium text-left'>
-        {serviceName}
-      </h5>
+    <Link 
+      to='/services' 
+      className='group flex flex-col justify-between h-full lg:p-8 p-6 rounded-lg bg-[#3f3f3f] hover:bg-[#4a4a4a] transition-all duration-300 border border-transparent hover:border-gray-500 relative overflow-hidden'
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {/* Decorative corner accent */}
+      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary opacity-0 group-hover:opacity-10 transform rotate-45 transition-all duration-300"></div>
       
-      {/* {isHome ? 
-        <></>
-      : 
-        <p className='font-supreme text-sm text-left max-md:hidden'>
-          {serviceDesc}
-        </p>
-      } */}
-        <p className='font-supreme text-sm text-left'>
-          {serviceDesc}
-        </p>
-    </Link>
-  )
-}
+      <div className="flex flex-col space-y-4">
+        <div className="relative">
+          <div className="p-3rounded-lg inline-block">
+            <ImageComponent
+              src={serviceImg}
+              alt={serviceImgAlt}
+              width={56}
+              height={56}
+              className={`${serviceClass} transition-transform duration-300 group-hover:scale-110`}
+              loading='lazy'
+            />
+          </div>
+        </div>
 
-export default Service
+        <h5 className='h7 font-supreme-medium text-left text-lg group-hover:text-primary transition-colors duration-300'>
+          {serviceName}
+        </h5>
+        
+        <p className='font-supreme text-sm text-left text-gray-300 flex-grow'>
+          {serviceDesc}
+        </p>
+      </div>
+    </Link>
+  );
+};
+
+export default Service;

@@ -2,8 +2,8 @@ import React from 'react'
 
 const SectionHeader = ({sectionName, sectionHeader, sectionDesc}) => {
   return (
-    <div className='flex flex-col h-full justify-around'>
-      <div className='xl:space-y-4 md:space-y-2 space-y-1'>
+    <div className='flex flex-col h-full justify-around 2xl:space-y-8 lg:space-y-6 md:space-y-4 space-y-2'>
+      <div className='2xl:space-y-4 lg:space-y-3 md:space-y-2 space-y-1'>
         <h4 className='h7 font-supreme-medium'>
           {sectionName}
         </h4>
