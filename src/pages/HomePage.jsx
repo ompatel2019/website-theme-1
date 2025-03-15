@@ -62,7 +62,8 @@ const HomePage = ({placeholderImg, services}) => {
       <Services bg="bg-black" text="text-white" services={services} isHome={true}/>
       <CTAMini text="Schedule Your Free Consultation Today"/>
       <WhyChooseUs bg="bg-black" text="text-white" placeholderImg={placeholderImg}/>
-      <Projects />
+      <CTAMini text="Book a No-Commitment call today!"/>
+      <Projects bg="bg-black" text="text-white" services={services} isHome={true} placeholderImg={placeholderImg}/>
       <Testimonials />
       <Faqs />
     </>
