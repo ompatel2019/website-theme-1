@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 const Hero = ({ placeholderImg }) => { 
   const h1 = "We Fix All Your Plumbing Problems"
   const p = "We resolve every plumbing challenge swiftly and efficiently. Trust our skilled team to deliver prompt repairs and expert installations, ensuring your water systems run flawlessly day and night with utmost care."
-  const buttonClass = 'border-2 border-transparent w-full text-black bg-primary py-2 hover:bg-black text-center md:py-3 rounded-md h7 hover:text-white hover:border-white'
+  const buttonClass = 'border-2 border-transparent w-full text-black bg-primary py-2 hover:bg-white text-center md:py-3 rounded-md h7 hover:text-black hover:border-white hover:px-16 transition-all'
   return (
     <section className='grid grid-cols-2 bg-black max-md:grid-cols-1 font-supreme text-white max-lg:text-center'>
         <div className="cols-span-1 2xl:py-16 xl:py-12 pt-12 pb-8 flex flex-col justify-between max-md:items-center 2xl:pl-[80px] xl:pl-[64px] xl:pr-0 lg:px-[48px] md:px-[24px] sm:px-[16px] px-[8px] max-lg:space-y-4">
@@ -38,8 +38,8 @@ const Hero = ({ placeholderImg }) => {
             </div>
           </div>
           <div className="flex space-x-2 w-full max-md:px-8">
-            <Link className={buttonClass}>Contact Us </Link>
-            <Link className={buttonClass}> View Services</Link>
+            <Link to='/contact-us' className={buttonClass}>Contact Us </Link>
+            <Link to='/services' className={buttonClass}> View Services</Link>
           </div>
         </div>
 

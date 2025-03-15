@@ -5,15 +5,15 @@ import SeoHelmet from '../tools/SeoHelmet';
 // ─── Sections ───────────────────────────────────────────────────────────
 import Hero from '../components/Hero';
 import CTAMini from '../components/CTAMini';
+import Stats from '../components/Stats';
 import Services from '../components/Services';
+import WhyChooseUs from '../components/WhyChooseUs';
 import Projects from '../components/Projects';
 import Testimonials from '../components/Testimonials';
 import Faqs from '../components/Faqs';
 
 // ─── Tools ───────────────────────────────────────────────────────────
 import { BlurFade } from "@/components/magicui/blur-fade";
-import Stats from '../components/Stats';
-import WhyChooseUs from '../components/WhyChooseUs';
 
 const HomePage = ({placeholderImg, services}) => {
   // ─── Schema for Home Page ──────────────────────────────────────────────

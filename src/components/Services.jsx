@@ -5,7 +5,7 @@ import Service from './Service'
 import SectionHeader from './SectionHeader'
 
 const Services = ({services, bg, text, isHome}) => {
-  const buttonClass = 'border-2 border-transparent w-fit text-black bg-primary hover:bg-black text-center md:p-2 p-1 rounded-md h7 hover:text-white hover:border-white'
+  const buttonClass = 'border-2 border-transparent w-fit text-black bg-primary py-2 hover:bg-white text-center md:py-3 rounded-md h7 hover:text-black hover:border-white hover:px-16 transition-all lg:px-10 px-6'
   return (
     <Section bg={bg} text={text}>
       <div className='flex max-md:flex-col md:justify-between md:items-center 2xl:gap-8 md:gap-6 gap-4'>
@@ -19,7 +19,7 @@ const Services = ({services, bg, text, isHome}) => {
         }
       </div>
 
-      <div className='grid grid-cols-2 md:grid-cols-3 gap-12'>
+      <div className='grid grid-cols-1 md:grid-cols-3 lg:gap-10 md:gap-8 gap-6'>
         {
           services.map((service, index) => (
             <Service 
@@ -28,6 +28,7 @@ const Services = ({services, bg, text, isHome}) => {
               serviceImgAlt={service.serviceAlt}
               serviceName={service.serviceName}
               serviceDesc={service.serviceDesc}
+              serviceClass={service.className}
             />
           ))
         }

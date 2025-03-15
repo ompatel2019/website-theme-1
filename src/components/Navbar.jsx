@@ -24,7 +24,7 @@ export default function App() {
     { linkName: "Get a Quote", linkTo: "/contact-us" },
   ];
 
-  const linkClass = ({isActive}) => isActive ? 'text-primary rounded-sm h7' : 'h7 text-white hover:text-primary transition'
+  const linkClass = ({isActive}) => isActive ? 'text-primary rounded-sm p' : 'p text-white hover:text-primary transition'
 
   // For fully controlled, pass BOTH isMenuOpen and onMenuOpenChange
   return (
@@ -42,7 +42,7 @@ export default function App() {
         />
         <NavbarBrand>
           <Link to='/'>
-            <p className="font-bold text-inherit h7">Lightwater Plumbing</p>
+            <p className="font-bold text-inherit p">Lightwater Plumbing</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>
@@ -63,7 +63,7 @@ export default function App() {
           <Button
             as={Link}
             to="/contact-us"
-            className="bg-primary text-black px-6 rounded-sm h7"
+            className="bg-primary text-black px-6 rounded-sm p"
             >
             {item.linkName}
           </Button>
@@ -80,7 +80,7 @@ export default function App() {
             <NavLink
               to={item.linkTo}
               onClick={() => setIsMenuOpen(false)}
-              className="hover:text-primary transition h2"
+              className="hover:text-primary transition p"
             >
               {item.linkName}
             </NavLink>

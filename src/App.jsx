@@ -39,56 +39,65 @@ const services = [
     serviceImg: emergency,
     serviceImgAlt: 'Emergency plumbing icon',
     serviceName: 'Emergency Repairs',
+    className: 'min-w-12 max-w-12 max-h-20 max-md:max-w-6 max-md:max-h-12',
     serviceDesc: 'Available 24/7, our team provides rapid repairs to prevent further damage.'
   },
   {
     serviceImg: residential,
     serviceImgAlt: 'Residential plumbing icon',
     serviceName: 'Home Plumbing',
+    className: 'min-w-12 max-w-12 max-h-20 max-md:max-w-6 max-md:max-h-12',
     serviceDesc: 'We deliver precise plumbing setups for homes with efficient, reliable workmanship.'
   },
   {
     serviceImg: commercial,
     serviceImgAlt: 'Commercial plumbing icon',
     serviceName: 'Business Plumbing',
+    className: 'min-w-12 max-w-12 max-h-20 max-md:max-w-6 max-md:max-h-12',
     serviceDesc: 'Tailored for businesses, our services resolve complex plumbing challenges with dependable results.'
-  },
-  {
-    serviceImg: hotWater,
-    serviceImgAlt: 'Hot water system icon',
-    serviceName: 'Hot Water',
-    serviceDesc: 'Specializing in hot water systems, we ensure consistent performance through expert installs and fixes.'
-  },
-  {
-    serviceImg: drainCleaning,
-    serviceImgAlt: 'Drain cleaning icon',
-    serviceName: 'Drain Cleaning',
-    serviceDesc: 'Using advanced tools, we clear clogs and clean drains to restore smooth flow.'
-  },
-  {
-    serviceImg: renovation,
-    serviceImgAlt: 'Renovation plumbing icon',
-    serviceName: 'Plumbing Upgrades',
-    serviceDesc: 'We integrate modern plumbing solutions in renovations and new constructions for flawless results.'
   },
   {
     serviceImg: gasFitting,
     serviceImgAlt: 'Gas fitting icon',
     serviceName: 'Gas Fitting',
+    className: 'min-w-12 max-w-12 max-h-20 max-md:max-w-6 max-md:max-h-12',
     serviceDesc: 'Certified for gas fitting, we install and maintain gas appliances safely and efficiently.'
   },
   {
     serviceImg: preventativeMaintenance,
     serviceImgAlt: 'Preventative maintenance icon',
     serviceName: 'System Maintenance',
+    className: 'min-w-12 max-w-12 max-h-20 max-md:max-w-6 max-md:max-h-12',
     serviceDesc: 'Regular checks and upkeep keep your plumbing system in top condition, helping avoid costly repairs.'
   },
   {
     serviceImg: waterLeak,
     serviceImgAlt: 'Water leak detection icon',
     serviceName: 'Leak Detection',
+    className: 'min-w-12 max-w-12 max-h-20 max-md:max-w-6 max-md:max-h-12',
     serviceDesc: 'With state-of-the-art equipment, we quickly locate and repair leaks to protect your property.'
-  }
+  },
+  {
+    serviceImg: hotWater,
+    serviceImgAlt: 'Hot water system icon',
+    serviceName: 'Hot Water',
+    className: 'w-10 h-14',
+    serviceDesc: 'Specializing in hot water systems, we ensure consistent performance through expert installs and fixes.'
+  },
+  {
+    serviceImg: drainCleaning,
+    serviceImgAlt: 'Drain cleaning icon',
+    serviceName: 'Drain Cleaning',
+    className: 'w-11 h-13',
+    serviceDesc: 'Using advanced tools, we clear clogs and clean drains to restore smooth flow.'
+  },
+  {
+    serviceImg: renovation,
+    serviceImgAlt: 'Renovation plumbing icon',
+    serviceName: 'Plumbing Upgrades',
+    className: 'min-w-12 max-w-12 max-h-20 max-md:max-w-6 max-md:max-h-12',
+    serviceDesc: 'We integrate modern plumbing solutions in renovations and new constructions for flawless results.'
+  },
 ];
 
 const router = createBrowserRouter(
