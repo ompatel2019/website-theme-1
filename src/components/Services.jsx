@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Section from './Section';
-import Service from './Service';
+import Service from './ServiceTab';
 import SectionHeader from './SectionHeader';
 import { ChevronRight, ArrowRight } from 'lucide-react';
 

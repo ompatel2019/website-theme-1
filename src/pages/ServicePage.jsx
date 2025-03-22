@@ -1,4 +1,4 @@
-// pages/ProjectPage.jsx
+// pages/ServicePage.jsx
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { slugify } from '../utils/slugify';
@@ -10,51 +10,51 @@ import Section from '../components/Section';
 import PageHeadingHeader from '../components/PageHeadingHeader';
 import CTA from '../components/CTA';
 import NotFoundPage from './NotFoundPage';
-import Project from '../components/Project';
+import Service from '../components/Service';
 
-const ProjectPage = ({ projectsData }) => {
+const ServicePage = ({ services }) => {
   const { slug } = useParams();
-  const project = projectsData.find((p) => slugify(p.title) === slug);
+  const service = services.find((s) => slugify(s.serviceName) === slug);
 
-  if (!project) {
+  if (!service) {
     return <NotFoundPage />;
   }
 
   // Construct a canonical URL for SEO
-  const canonicalUrl = `https://example.com/projects/${slug}`;
+  const canonicalUrl = `https://example.com/services/${slug}`;
 
-  // Basic JSON-LD for a “Project,” referencing Penrith and Lightwater Plumbing
-  const jsonLdProjectPage = {
+  // Basic JSON-LD for a “Service” entity, referencing Penrith and Lightwater Plumbing
+  const jsonLdServicePage = {
     "@context": "https://schema.org",
-    "@type": "Project",
-    "name": project.title,
-    "description": project.description,
-    "creator": {
-      "@type": "Organization",
+    "@type": "Service",
+    "name": service.serviceName,
+    "provider": {
+      "@type": "LocalBusiness",
       "name": "Lightwater Plumbing",
-      "location": "Penrith, Australia"
+      "areaServed": "Penrith, Australia"
     },
+    "description": service.serviceDesc,
     "url": canonicalUrl
   };
 
   return (
     <>
       <SeoHelmet
-        title={`${project.title} | Lightwater Plumbing`}
-        description={`${project.description}`}
+        title={`${service.serviceName} | Lightwater Plumbing`}
+        description={`Learn about our ${service.serviceName}. ${service.serviceDesc}`}
         canonicalUrl={canonicalUrl}
-        jsonSchema={jsonLdProjectPage}
+        jsonSchema={jsonLdServicePage}
       />
 
       <CTAMini text="Book online and receive $50 off your first service" />
 
       <Section bg="bg-black" text="text-white">
         <PageHeadingHeader
-          route={`Home / Projects / ${project.title}`}
-          heading={project.title}
+          route={`Home / Services / ${service.serviceName}`}
+          heading={service.serviceName}
         />
 
-        <Project project={project} />
+        <Service service={service} />
       </Section>
 
       <CTA />
@@ -62,4 +62,4 @@ const ProjectPage = ({ projectsData }) => {
   );
 };
 
-export default ProjectPage;
+export default ServicePage;

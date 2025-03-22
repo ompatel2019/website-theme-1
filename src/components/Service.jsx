@@ -1,54 +1,52 @@
-
-
-// Enhanced Service Component
+// components/Service.jsx
 import React from 'react';
-import ImageComponent from './ImageComponent';
 import { Link } from 'react-router-dom';
-import { ArrowUpRight } from 'lucide-react';
+import ImageComponent from './ImageComponent';
 
-const Service = ({
-  serviceImg, 
-  serviceImgAlt, 
-  serviceName, 
-  serviceDesc, 
-  serviceClass, 
-  isHovered,
-  onMouseEnter,
-  onMouseLeave
-}) => {
+const Service = ({ service }) => {
   return (
-    <Link 
-      to='/services' 
-      className='group flex flex-col justify-between h-full lg:p-8 p-6 rounded-lg bg-[#3f3f3f] hover:bg-[#4a4a4a] transition-all duration-300 border border-transparent hover:border-gray-500 relative overflow-hidden'
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
-      {/* Decorative corner accent */}
-      <div className="absolute -top-10 -right-10 w-20 h-20 bg-primary opacity-0 group-hover:opacity-10 transform rotate-45 transition-all duration-300"></div>
-      
-      <div className="flex flex-col space-y-4">
-        <div className="relative">
-          <div className="p-3rounded-lg inline-block">
-            <ImageComponent
-              src={serviceImg}
-              alt={serviceImgAlt}
-              width={56}
-              height={56}
-              className={`${serviceClass} transition-transform duration-300 group-hover:scale-110`}
-              loading='lazy'
-            />
-          </div>
+    <div className="container py-10">
+      <div className="flex flex-col md:flex-row items-start md:space-x-8">
+        {/* Circular icon wrapper */}
+        <div className="rounded-full bg-[#3f3f3f] p-6 flex items-center justify-center w-32 h-32 mb-6 md:mb-0">
+          <ImageComponent
+            src={service.serviceImg}
+            alt={service.serviceImgAlt}
+            width={128}
+            height={128}
+            className="max-w-full max-h-full"
+          />
         </div>
 
-        <h5 className='h7 font-supreme-medium text-left text-lg group-hover:text-primary transition-colors duration-300'>
-          {serviceName}
-        </h5>
-        
-        <p className='font-supreme text-sm text-left text-gray-300 flex-grow'>
-          {serviceDesc}
-        </p>
+        <div className="flex-1">
+          <h2 className="text-2xl font-bold mb-4">Service Description</h2>
+          <p className="text-gray-300 mb-4">{service.serviceDesc}</p>
+
+          <p className="text-md text-gray-200 whitespace-pre-line leading-relaxed mb-8">
+            {service.extendedDescription}
+          </p>
+
+          {/* How We Offer This Service */}
+          {service.howWeOffer && (
+            <>
+              <h3 className="text-xl font-semibold mb-2">
+                How We Offer {service.serviceName}
+              </h3>
+              <p className="text-md text-gray-200 whitespace-pre-line leading-relaxed">
+                {service.howWeOffer}
+              </p>
+            </>
+          )}
+
+          <Link
+            to="/services"
+            className="inline-block mt-6 text-primary font-semibold underline hover:text-blue-300"
+          >
+            &larr; Back to All Services
+          </Link>
+        </div>
       </div>
-    </Link>
+    </div>
   );
 };
 
