@@ -97,7 +97,7 @@ const Projects = ({ bg, text, isHome}) => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 mb-12 max-sm:px-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-12 mb-12 max-sm:px-2">
           {displayProjects.map((project) => (
             <div key={project.id} className="bg-white rounded-lg overflow-hidden shadow-lg transform transition-all duration-300 hover:shadow-2xl hover:-translate-y-2">
               <div className="relative overflow-hidden">
@@ -130,7 +130,7 @@ const Projects = ({ bg, text, isHome}) => {
             <Link to='/projects' className="flex-1">
               <button className="w-fit bg-primary hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 group">
                 View All Projects
-                <span className="ml-2 inline-block transform group-hover:translate-x-1 transition-transform">→</span>
+                <i className="bi bi-arrow-right ml-2 inline-block transform group-hover:translate-x-1 transition-transform"></i>
               </button>
             </Link>
           </div>

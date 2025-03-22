@@ -27,7 +27,7 @@ const MainLayout = () => {
       <Outlet />
 
       {/* ─── Footer Section ───────────────────────────────────────── */}
-      <Footer />
+      <Footer bg="bg-black" text="text-white"/>
     </>
   );
 };

@@ -3,7 +3,7 @@ import Section from './Section';
 import SectionHeader from './SectionHeader';
 import ImageComponent from './ImageComponent';
 import { Link } from 'react-router-dom';
-import { CheckCircle, Phone, Clock, Award, Shield, ThumbsUp } from 'lucide-react';
+import { CheckCircle, Phone, Clock, Award, Shield } from 'lucide-react';
 
 const WhyChooseUs = ({ bg, text, placeholderImg }) => {
   const benefits = [
@@ -91,20 +91,20 @@ const WhyChooseUs = ({ bg, text, placeholderImg }) => {
             </div>
             
             {/* Enhanced customer testimonial */}
-            <div className="bg-white bg-opacity-5 p-6 rounded-lg italic text-sm border-l-4 border-blue-500 mt-8 relative">
+            {/* <div className="bg-white bg-opacity-5 p-6 rounded-lg italic text-sm border-l-4 border-blue-500 mt-8 relative">
               <div className="absolute -top-3 -left-3 bg-blue-500 rounded-full p-2 shadow-md">
                 <ThumbsUp size={16} className="text-white" />
               </div>
               <p className="text-base">"The team was professional, efficient, and solved our plumbing emergency in no time. Highly recommended!"</p>
               <div className="mt-3 font-semibold text-blue-400">— Sarah Johnson, Homeowner</div>
-            </div>
+            </div> */}
             
             {/* CTA button with improved spacing */}
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
               <Link to='/contact-us' className="flex-1">
                 <button className="w-full bg-primary hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-md shadow-lg transition-all duration-300 transform hover:scale-105 group">
                   Schedule Your Call
-                  <span className="ml-2 inline-block transform group-hover:translate-x-1 transition-transform">→</span>
+                  <i className="bi bi-arrow-right ml-2 inline-block transform group-hover:translate-x-1 transition-transform"></i>
                 </button>
               </Link>
             </div>

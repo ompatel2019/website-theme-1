@@ -56,15 +56,14 @@ const HomePage = ({placeholderImg, services}) => {
         <CTAMini text="Book online and receive $50 off your first service"/>
         <Hero placeholderImg={placeholderImg}/>
       </BlurFade>
-
       <Stats stats={stats} bg="bg-primary" text="text-black"/>
-
       <Services bg="bg-black" text="text-white" services={services} isHome={true}/>
       <CTAMini text="Schedule Your Free Consultation Today"/>
       <WhyChooseUs bg="bg-black" text="text-white" placeholderImg={placeholderImg}/>
       <CTAMini text="Book a No-Commitment call today!"/>
       <Projects bg="bg-black" text="text-white" services={services} isHome={true} placeholderImg={placeholderImg}/>
-      <Testimonials />
+      <CTAMini text="Schedule Your Free Consultation Today!"/>
+      <Testimonials bg="bg-black" text="text-white"/>
       <Faqs />
     </>
   );
