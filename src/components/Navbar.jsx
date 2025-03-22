@@ -32,7 +32,7 @@ export default function App() {
       isMenuOpen={isMenuOpen}
       onMenuOpenChange={setIsMenuOpen}
       maxWidth="full"
-      className="bg-black text-white font-supreme xl:py-3 py-2 2xl:px-[64px] xl:px-[48px] lg:px-[40px] md:px-[16px] sm:px-[8px]"
+      className="bg-black text-white font-supreme-medium xl:py-3 py-2 2xl:px-[64px] xl:px-[48px] lg:px-[40px] md:px-[16px] sm:px-[8px]"
     >
       {/* Left side: brand + menu toggle (mobile) */}
       <NavbarContent>

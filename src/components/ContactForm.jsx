@@ -1,25 +1,20 @@
 import React, { useState } from "react";
+import Section from "./Section";
+import SectionHeader from "./SectionHeader";
 
 const ContactForm = () => {
   const [statusMessage, setStatusMessage] = useState("");
 
-  // Clears the status message after 3 seconds
   const clearStatus = () => {
-    setTimeout(() => {
-      setStatusMessage("");
-    }, 3000);
+    setTimeout(() => setStatusMessage(""), 3000);
   };
 
-  // Handle form submission via AJAX
   const handleSubmit = (e) => {
-    e.preventDefault(); // Prevents page reload
+    e.preventDefault();
     const form = e.target;
     const formData = new FormData(form);
 
-    fetch("/", {
-      method: "POST",
-      body: formData,
-    })
+    fetch("/", { method: "POST", body: formData })
       .then(() => {
         setStatusMessage("Form submission successful!");
         form.reset();
@@ -32,70 +27,102 @@ const ContactForm = () => {
   };
 
   return (
-    <>
-      <div>ContactForm</div>
-      
-      <div>
-        {/*
-          Contact Form Component - No Styling Version
+    <Section bg="bg-black" text="text-white">
+      <div className="container py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+          {/* Left Side (Contact Info) */}
+          <div className="">
+            <SectionHeader
+              sectionName="Contact"
+              sectionHeader="Contact Us"
+              sectionDesc="Please fill out the form below with your details. Our team will contact you promptly to discuss your plumbing needs and arrange a service that fits your schedule. We're here to assist with any issues, ensuring a quick and efficient resolution."
+              centre={false}
+            />
 
-          This form is configured for Netlify Forms.
-          It includes:
-            - A hidden input ("form-name") for Netlify to identify the form.
-            - A honeypot field ("bot-field") for spam prevention.
-            - Input fields for Name, Email, Number, and Message with aria-labels.
-            - A reCAPTCHA placeholder (injected by Netlify on deployment).
-            - AJAX submission handler that clears the status message after 3 seconds.
-        */}
-        <form name="contact" method="post" data-netlify="true" onSubmit={handleSubmit}>
-          {/* Hidden input required by Netlify */}
-          <input type="hidden" name="form-name" value="contact" />
-
-          {/* Honeypot field for spam prevention */}
-          <p style={{ display: "none" }}>
-            <label>
-              Don’t fill this out: <input name="bot-field" aria-label="bot-field" />
-            </label>
-          </p>
-
-          {/* Name field */}
-          <div>
-            <label htmlFor="name">Your Name:</label>
-            <input id="name" type="text" name="name" aria-label="Your Name" required />
+            <ul className="mt-6 space-y-5 text-white-300">
+              <li className="flex items-center">
+                <i className="bi bi-envelope-fill mr-3 text-xl"></i>
+                plumbing@lightwatergroup.com.au
+              </li>
+              <li className="flex items-center">
+                <i className="bi bi-geo-alt-fill mr-3 text-xl"></i>
+                Sydney, NSW
+              </li>
+              <li className="flex items-center">
+                <i className="bi bi-telephone-fill mr-3 text-xl"></i>
+                0432 147 251
+              </li>
+            </ul>
           </div>
 
-          {/* Email field */}
-          <div>
-            <label htmlFor="email">Your Email:</label>
-            <input id="email" type="email" name="email" aria-label="Your Email" required />
+          {/* Right Side (Form) */}
+          <div className="bg-[#3f3f3f] rounded-xl text-white shadow-xl md:p-8 sm:p-6 p-6 font-supreme">
+            <h2 className="text-3xl font-bold font-supreme-bold h4">
+              Claim $50 Off Your First Service
+            </h2>
+
+            <form
+              name="contact"
+              method="post"
+              data-netlify="true"
+              data-netlify-recaptcha="true"
+              onSubmit={handleSubmit}
+              className="space-y-4"
+            >
+              <input type="hidden" name="form-name" value="contact" />
+              <p style={{ display: "none" }}>
+                <input name="bot-field" />
+              </p>
+
+              <input
+                type="text"
+                name="name"
+                placeholder="Name*"
+                required
+                className="w-full py-4 px-2 placeholder-white bg-transparent border-b-2 border-white outline-none"
+              />
+
+              <input
+                type="email"
+                name="email"
+                placeholder="Email (optional)"
+                className="w-full py-4 px-2 placeholder-white bg-transparent border-b-2 border-white outline-none"
+              />
+
+              <input
+                type="tel"
+                name="phone"
+                placeholder="Phone*"
+                required
+                className="w-full py-4 px-2 placeholder-white bg-transparent border-b-2 border-white outline-none"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Inquiry*"
+                required
+                className="w-full py-4 px-2 placeholder-white bg-transparent border-b-2 border-white outline-none h-32 resize-none"
+              />
+
+              <div data-netlify-recaptcha="true"></div>
+
+              <button
+                type="submit"
+                className="w-full bg-black text-white font-semibold py-4 rounded-lg hover:bg-white-800 transition duration-200"
+              >
+                Send Inquiry
+              </button>
+
+              {statusMessage && (
+                <div className="mt-4 text-center font-semibold text-black">
+                  {statusMessage}
+                </div>
+              )}
+            </form>
           </div>
-
-          {/* Number field */}
-          <div>
-            <label htmlFor="number">Your Number:</label>
-            <input id="number" type="number" name="number" aria-label="Your Number" required />
-          </div>
-
-          {/* Message field */}
-          <div>
-            <label htmlFor="message">Message:</label>
-            <textarea id="message" name="message" aria-label="Message" required></textarea>
-          </div>
-
-          {/* reCAPTCHA placeholder - Netlify will inject the widget when deployed */}
-          <div data-netlify-recaptcha="true"></div>
-
-          {/* Submit button */}
-          <div>
-            <button type="submit">Send a message</button>
-          </div>
-        </form>
-
-        {/* Display status message if it exists */}
-        {statusMessage && <p>{statusMessage}</p>}
+        </div>
       </div>
-      
-    </>
+    </Section>
   );
 };
 
