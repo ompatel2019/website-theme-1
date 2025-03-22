@@ -9,29 +9,50 @@ const ContactForm = () => {
     setTimeout(() => setStatusMessage(""), 3000);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    const form = e.target;
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsSending(true);
+
+    const form = event.target;
     const formData = new FormData(form);
 
-    fetch("/", { method: "POST", body: formData })
-      .then(() => {
-        setStatusMessage("Form submission successful!");
-        form.reset();
-        clearStatus();
-      })
-      .catch((error) => {
-        setStatusMessage(`Form submission failed: ${error}`);
-        clearStatus();
+    try {
+      await fetch("/", {
+        method: "POST",
+        body: formData,
       });
+
+      // Mark as submitted
+      setIsSubmitted(true);
+      setIsSending(false);
+      setStatusMessage("Form submitted successfully!");
+
+      // Clear form fields
+      form.reset();
+
+      // Fade out success after some time
+      setTimeout(() => {
+        setFadeOut(true);
+        setTimeout(() => {
+          setIsSubmitted(false);
+          setFadeOut(false);
+        }, 1000);
+      }, 2000);
+
+      clearStatus();
+    } catch (error) {
+      setIsSending(false);
+      setStatusMessage(`Form submission failed: ${error}`);
+      clearStatus();
+    }
   };
 
   return (
     <Section bg="bg-black" text="text-white">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
           {/* Left Side (Contact Info) */}
-          <div className="">
+          <div>
             <SectionHeader
               sectionName="Contact"
               sectionHeader="Contact Us"
@@ -39,7 +60,7 @@ const ContactForm = () => {
               centre={false}
             />
 
-            <ul className="mt-6 space-y-5 text-white-300">
+            <ul className="mt-4 space-y-4 text-gray-300">
               <li className="flex items-center">
                 <i className="bi bi-envelope-fill mr-3 text-xl"></i>
                 plumbing@lightwatergroup.com.au
@@ -56,8 +77,8 @@ const ContactForm = () => {
           </div>
 
           {/* Right Side (Form) */}
-          <div className="bg-[#3f3f3f] rounded-xl text-white shadow-xl md:p-8 sm:p-6 p-6 font-supreme">
-            <h2 className="text-3xl font-bold font-supreme-bold h4">
+          <div className="bg-[#3f3f3f] rounded-xl text-white shadow-xl 2xl:p-12 lg:p-10 md:p-8 p-6 font-supreme">
+            <h2 className="text-3xl font-bold font-supreme-bold mb-4">
               Claim $50 Off Your First Service
             </h2>
 
@@ -108,13 +129,13 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-black text-white font-semibold py-4 rounded-lg hover:bg-white-800 transition duration-200"
+                className="w-full bg-black text-white font-semibold py-4 rounded-lg hover:bg-gray-800 transition duration-200"
               >
                 Send Inquiry
               </button>
 
               {statusMessage && (
-                <div className="mt-4 text-center font-semibold text-black">
+                <div className="mt-4 text-center font-semibold text-white">
                   {statusMessage}
                 </div>
               )}
