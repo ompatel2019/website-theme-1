@@ -15,7 +15,6 @@ import commercial from './assets/images/commercial.png';
 import drainCleaning from './assets/images/draincleaning.png';
 import emergency from './assets/images/emergency.png';
 import gasFitting from './assets/images/gasfitting.png';
-import handshake from './assets/images/handshake.png';
 import hotWater from './assets/images/hotwater.png';
 import placeholderImg from './assets/images/placeholder.png';
 import preventativeMaintenance from './assets/images/preventativemaintenance.png';
@@ -116,7 +115,7 @@ const router = createBrowserRouter(
         path="services"
         element={
           <Suspense fallback={<Fallback />}>
-            <ServicesPage services={services}/>
+            <ServicesPage services={services} placeholderImg={placeholderImg}/>
           </Suspense>
         }
       />
@@ -125,25 +124,7 @@ const router = createBrowserRouter(
         path="why-choose-us"
         element={
           <Suspense fallback={<Fallback />}>
-            <WhyChooseUsPage />
-          </Suspense>
-        }
-      />
-
-      <Route
-        path="about-us"
-        element={
-          <Suspense fallback={<Fallback />}>
-            <AboutUsPage />
-          </Suspense>
-        }
-      />
-
-      <Route
-        path="contact-us"
-        element={
-          <Suspense fallback={<Fallback />}>
-            <ContactPage />
+            <WhyChooseUsPage placeholderImg={placeholderImg}/>
           </Suspense>
         }
       />
@@ -152,7 +133,25 @@ const router = createBrowserRouter(
         path="projects"
         element={
           <Suspense fallback={<Fallback />}>
-            <ProjectsPage />
+            <ProjectsPage placeholderImg={placeholderImg}/>
+          </Suspense>
+        }
+      />
+
+      <Route
+        path="about-us"
+        element={
+          <Suspense fallback={<Fallback />}>
+            <AboutUsPage placeholderImg={placeholderImg}/>
+          </Suspense>
+        }
+      />
+
+      <Route
+        path="contact-us"
+        element={
+          <Suspense fallback={<Fallback />}>
+            <ContactPage placeholderImg={placeholderImg}/>
           </Suspense>
         }
       />

@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Stat from './Stat'
 import Section from './Section'
 
-const Stats = ({ stats, bg, text }) => {
+const Stats = ({ stats, bg, text, isHome }) => {
   const py = '2xl:py-12 lg:py-10 md:py-8 py-6'
   
   // Custom hook to track screen width
@@ -22,6 +22,9 @@ const Stats = ({ stats, bg, text }) => {
   const width = useScreenWidth()
   const displayedStats = width < 480 ? stats.slice(0, 2) : stats
 
+  let textColour = ''
+  isHome ? textColour = 'text-black' : textColour = 'text-white'
+
   return (
     <Section bg={bg} text={text} py={py}>
       <div className="flex justify-between lg:justify-around">
@@ -30,7 +33,8 @@ const Stats = ({ stats, bg, text }) => {
             key={index + 1} 
             stat={stat.stat} 
             statDesc={stat.statDesc} 
-            statType={stat.statType} 
+            statType={stat.statType}
+            textColour={textColour}
           />
         ))}
       </div>

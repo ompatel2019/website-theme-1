@@ -1,12 +1,13 @@
 import React from 'react'
 import { NumberTicker } from "@/components/magicui/number-ticker";
 
-const Stat = ({stat, statDesc, statType}) => {
+const Stat = ({stat, statDesc, statType, textColour}) => {
   return (
     <div>
         <p className='flex text-center items-center justify-center font-supreme-extrabold h2'>
             <NumberTicker
                 value={stat}
+                className={textColour}
             />
             <p>
                 {statType}
