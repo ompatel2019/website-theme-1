@@ -3,8 +3,6 @@ import Section from './Section';
 import SectionHeader from './SectionHeader';
 
 const Faqs = () => {
-
-  // Array of questions and answers
   const faqs = [
     {
       question: "Lorem ipsum dolor sit amet consectetur adipisicing?",
@@ -51,8 +49,6 @@ const Faqs = () => {
           <details
             key={index}
             className="group [&_summary::-webkit-details-marker]:hidden"
-            // Set 'open' on the first item for demonstration. Remove if you want all closed by default.
-            open={index === 0}
           >
             <summary
               className="flex cursor-pointer items-center justify-between gap-1.5 rounded bg-gray-50 p-4 text-gray-900"

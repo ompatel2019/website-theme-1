@@ -9,7 +9,7 @@ import Stats from '../components/Stats'
 import CTAMini from '../components/CTAMini';
 import PageHeading from '../components/PageHeading';
 
-const ProjectsPage = ({placeholderImg}) => {
+const ProjectsPage = ({placeholderImg, projectsData}) => {
   // ─── Schema for Projects Page ───────────────────────────────────────────
   const jsonLdProjectsPage = {
     "@context": "https://schema.org",
@@ -54,7 +54,7 @@ const ProjectsPage = ({placeholderImg}) => {
       />
       <Stats stats={stats} bg="bg-black" text="text-white"/>
       <CTAMini text="Claim Your Exclusive Discount Now"/>
-      <Projects bg="bg-black" text="text-white" isHome={false} placeholderImg={placeholderImg}/>
+      <Projects bg="bg-black" text="text-white" isHome={false} placeholderImg={placeholderImg} projectsData={projectsData}/>
       <CTA bg="bg-primary" text="text-black"/>
     </>
   );

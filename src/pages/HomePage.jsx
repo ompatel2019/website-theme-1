@@ -15,7 +15,7 @@ import Faqs from '../components/Faqs';
 // ─── Tools ───────────────────────────────────────────────────────────
 import { BlurFade } from "@/components/magicui/blur-fade";
 
-const HomePage = ({placeholderImg, services}) => {
+const HomePage = ({placeholderImg, services, projectsData}) => {
   // ─── Schema for Home Page ──────────────────────────────────────────────
   const jsonLdHomePage = {
     "@context": "https://schema.org",
@@ -61,7 +61,7 @@ const HomePage = ({placeholderImg, services}) => {
       <CTAMini text="Schedule Your Free Consultation Today"/>
       <WhyChooseUs bg="bg-black" text="text-white" placeholderImg={placeholderImg}/>
       <CTAMini text="Book a No-Commitment call today!"/>
-      <Projects bg="bg-black" text="text-white" isHome={true} placeholderImg={placeholderImg}/>
+      <Projects bg="bg-black" text="text-white" isHome={true} placeholderImg={placeholderImg} projectsData={projectsData}/>
       <CTAMini text="Schedule Your Free Consultation Today!"/>
       <Testimonials bg="bg-black" text="text-white"/>
       <Faqs />

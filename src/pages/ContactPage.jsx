@@ -5,7 +5,6 @@ import SeoHelmet from '../tools/SeoHelmet';
 // ─── Components for Contact Page ─────────────────────────────────────
 import ContactForm from '../components/ContactForm';
 import Faqs from '../components/Faqs';
-import CTA from '../components/CTA';
 import Stats from '../components/Stats'
 import CTAMini from '../components/CTAMini';
 import PageHeading from '../components/PageHeading';
@@ -57,9 +56,7 @@ const ContactPage = ({placeholderImg}) => {
       <Stats stats={stats} bg="bg-black" text="text-white"/>
       <CTAMini text="Get Your No-Obligation Quote Now"/>
       <ContactForm />
-      <Projects bg="bg-black" text="text-white" isHome={true} placeholderImg={placeholderImg}/>
       <Faqs />
-      <CTA />
     </>
   );
 };

@@ -17,7 +17,7 @@ const ContactForm = () => {
 
     fetch("/", { method: "POST", body: formData })
       .then(() => {
-        toast.success('Form submission successful!');
+        setStatusMessage("Form submission successful!");
         form.reset();
         clearStatus();
       })
@@ -109,7 +109,7 @@ const ContactForm = () => {
 
               <button
                 type="submit"
-                className="w-full bg-black text-white font-semibold py-4 rounded-lg hover:bg-gray-800 transition duration-200"
+                className="w-full bg-black text-white font-semibold py-4 rounded-lg hover:bg-blue-500 transition duration-200"
               >
                 Send Inquiry
               </button>
