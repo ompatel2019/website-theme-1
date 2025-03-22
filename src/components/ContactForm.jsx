@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Section from "./Section";
 import SectionHeader from "./SectionHeader";
+import { toast } from 'react-toastify';
 
 const ContactForm = () => {
   const [statusMessage, setStatusMessage] = useState("");
@@ -9,42 +10,21 @@ const ContactForm = () => {
     setTimeout(() => setStatusMessage(""), 3000);
   };
 
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setIsSending(true);
-
-    const form = event.target;
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const form = e.target;
     const formData = new FormData(form);
 
-    try {
-      await fetch("/", {
-        method: "POST",
-        body: formData,
+    fetch("/", { method: "POST", body: formData })
+      .then(() => {
+        toast.success('Form submission successful!');
+        form.reset();
+        clearStatus();
+      })
+      .catch((error) => {
+        setStatusMessage(`Form submission failed: ${error}`);
+        clearStatus();
       });
-
-      // Mark as submitted
-      setIsSubmitted(true);
-      setIsSending(false);
-      setStatusMessage("Form submitted successfully!");
-
-      // Clear form fields
-      form.reset();
-
-      // Fade out success after some time
-      setTimeout(() => {
-        setFadeOut(true);
-        setTimeout(() => {
-          setIsSubmitted(false);
-          setFadeOut(false);
-        }, 1000);
-      }, 2000);
-
-      clearStatus();
-    } catch (error) {
-      setIsSending(false);
-      setStatusMessage(`Form submission failed: ${error}`);
-      clearStatus();
-    }
   };
 
   return (
