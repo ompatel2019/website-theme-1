@@ -11,8 +11,8 @@ const ContactPage = ({ placeholderImg }) => {
   const jsonLdContactPage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Contact Us | Lightwater Plumbing",
-    "description": "Reach out to Lightwater Plumbing for reliable plumbing solutions. We're here to help 24/7.",
+    "name": "Contact Us | Business Name",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida.",
     "url": "https://example.com/contact"
   };
 
@@ -25,8 +25,8 @@ const ContactPage = ({ placeholderImg }) => {
   return (
     <>
       <SeoHelmet
-        title="Contact Us | Lightwater Plumbing"
-        description="Reach out to Lightwater Plumbing for reliable plumbing solutions. We're here to help 24/7."
+        title="Contact Us | Business Name"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
         canonicalUrl="https://example.com/contact"
         jsonSchema={jsonLdContactPage}
       />
@@ -35,7 +35,7 @@ const ContactPage = ({ placeholderImg }) => {
         placeholderImg={placeholderImg}
         route="Home / Contact Us"
         heading="Contact Us"
-        subheading="Get in touch for fast, friendly support—our dedicated team is available 24/7 for all your plumbing needs."
+        subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
       />
       <Stats stats={stats} bg="bg-black" text="text-white"/>
       <CTAMini text="Get Your No-Obligation Quote Now"/>

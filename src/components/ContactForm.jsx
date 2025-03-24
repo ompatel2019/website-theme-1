@@ -43,7 +43,7 @@ const ContactForm = () => {
             <ul className="mt-4 space-y-4 text-gray-300">
               <li className="flex items-center">
                 <i className="bi bi-envelope-fill mr-3 text-xl"></i>
-                plumbing@lightwatergroup.com.au
+                info@domainname.com.au
               </li>
               <li className="flex items-center">
                 <i className="bi bi-geo-alt-fill mr-3 text-xl"></i>
@@ -51,7 +51,7 @@ const ContactForm = () => {
               </li>
               <li className="flex items-center">
                 <i className="bi bi-telephone-fill mr-3 text-xl"></i>
-                0432 147 251
+                0412 345 678
               </li>
             </ul>
           </div>

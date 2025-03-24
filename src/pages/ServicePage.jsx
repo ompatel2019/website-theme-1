@@ -23,14 +23,14 @@ const ServicePage = ({ services }) => {
   // Construct a canonical URL for SEO
   const canonicalUrl = `https://example.com/services/${slug}`;
 
-  // Basic JSON-LD for a “Service” entity, referencing Penrith and Lightwater Plumbing
+  // Basic JSON-LD for a “Service” entity, referencing Penrith and Business Name
   const jsonLdServicePage = {
     "@context": "https://schema.org",
     "@type": "Service",
     "name": service.serviceName,
     "provider": {
       "@type": "LocalBusiness",
-      "name": "Lightwater Plumbing",
+      "name": "Business Name",
       "areaServed": "Penrith, Australia"
     },
     "description": service.serviceDesc,
@@ -40,7 +40,7 @@ const ServicePage = ({ services }) => {
   return (
     <>
       <SeoHelmet
-        title={`${service.serviceName} | Lightwater Plumbing`}
+        title={`${service.serviceName} | Business Name`}
         description={`Learn about our ${service.serviceName}. ${service.serviceDesc}`}
         canonicalUrl={canonicalUrl}
         jsonSchema={jsonLdServicePage}

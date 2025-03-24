@@ -13,8 +13,8 @@ const WhyChooseUsPage = ({ placeholderImg }) => {
   const jsonLdWhyChooseUsPage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Why Choose Lightwater Plumbing in Penrith",
-    "description": "Learn why Lightwater Plumbing is Penrith's best choice for plumbing services.",
+    "name": "Business Name",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida.",
     "url": "https://example.com/whychooseus"
   };
 
@@ -27,8 +27,8 @@ const WhyChooseUsPage = ({ placeholderImg }) => {
   return (
     <>
       <SeoHelmet
-        title="Why Choose Us | Lightwater Plumbing"
-        description="Discover why people trust Lightwater Plumbing for reliable, transparent, and effective plumbing solutions."
+        title="Why Choose Us | Business Name"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
         canonicalUrl="https://example.com/whychooseus"
         jsonSchema={jsonLdWhyChooseUsPage}
       />
@@ -36,8 +36,8 @@ const WhyChooseUsPage = ({ placeholderImg }) => {
       <PageHeading
         placeholderImg={placeholderImg}
         route="Home / Why Choose Us"
-        heading="Why Choose Us"
-        subheading="Choose us for proven expertise, prompt response, and transparency."
+        heading="Why Us"
+        subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida.."
       />
       <Stats stats={stats} bg="bg-black" text="text-white"/>
       <CTAMini text="Contact Us for 24/7 Emergency Support"/>

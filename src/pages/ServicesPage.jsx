@@ -12,7 +12,7 @@ const ServicesPage = ({ services, placeholderImg }) => {
     "@context": "https://schema.org",
     "@type": "WebPage",
     "name": "Our Services",
-    "description": "Discover our range of professional plumbing and maintenance services in Penrith.",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida.",
     "url": "https://example.com/services"
   };
 
@@ -25,8 +25,8 @@ const ServicesPage = ({ services, placeholderImg }) => {
   return (
     <>
       <SeoHelmet
-        title="Services | Lightwater Plumbing"
-        description="Discover our range of professional plumbing services. From emergency repairs to routine maintenance."
+        title="Services | Business Name"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
         canonicalUrl="https://example.com/services"
         jsonSchema={jsonLdServicesPage}
       />
@@ -35,7 +35,7 @@ const ServicesPage = ({ services, placeholderImg }) => {
         placeholderImg={placeholderImg}
         route="Home / Services"
         heading="Services"
-        subheading="Our expert team delivers reliable plumbing and electrical services—from emergency repairs to new installations."
+        subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
       />
       <Stats stats={stats} bg="bg-black" text="text-white"/>
       <CTAMini text="Get Your No-Obligation Quote Now"/>

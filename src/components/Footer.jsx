@@ -16,12 +16,12 @@ const Footer = ({ bg, text }) => {
     },
     address: {
       label: 'Address:',
-      value: 'Orchard Hills, New South Wales',
+      value: 'Lorem ipsum dolor sit amet.',
     },
     contact: {
       label: 'Contact:',
-      phone: '0412 569 739',
-      email: 'plumbing@lightwatergroup.com.au',
+      phone: '0412 345 678',
+      email: 'info@domainname.com.au',
     },
     columnLinks: [
       {
@@ -47,7 +47,7 @@ const Footer = ({ bg, text }) => {
       { url: '#', icon: <i className="bi bi-instagram size-6" /> },
       { url: '#', icon: <i className="bi bi-linkedin size-6" /> },
     ],
-    footerText: `${new Date().getFullYear()} Lightwater Plumbing. All rights reserved.`,
+    footerText: `${new Date().getFullYear()} Business Name. All rights reserved.`,
     credit: [
       { title: 'Privacy Policy', url: '#' },
       { title: 'Terms of Service', url: '#' },

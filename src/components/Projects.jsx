@@ -13,8 +13,8 @@ const Projects = ({ bg, text, isHome, projectsData }) => {
       <div>
         <SectionHeader 
           sectionName="Our Projects" 
-          sectionHeader="View Our Latest Projects"
-          sectionDesc="Explore our gallery of completed projects to see the quality and scope of our plumbing work. From routine repairs to complex installations, we showcase our commitment to excellence and attention to detail in every task we undertake."
+          sectionHeader="Lorem ipsum dolor sit amet."
+          sectionDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida. "
           centre={true}
         />
       </div>

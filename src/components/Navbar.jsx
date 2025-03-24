@@ -42,7 +42,7 @@ export default function App() {
         />
         <NavbarBrand>
           <Link to='/'>
-            <p className="font-bold text-inherit p">Lightwater Plumbing</p>
+            <p className="font-bold text-inherit p">Company Name Goes Here</p>
           </Link>
         </NavbarBrand>
       </NavbarContent>

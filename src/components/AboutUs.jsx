@@ -6,12 +6,12 @@ import SectionHeader from './SectionHeader';
 const AboutUs = () => {
   // Bullet points to display under the main description
   const features = [
-    { text: 'Affordable Pricing' },
-    { text: 'Fast Service' },
-    { text: '1,100+ Projects' },
-    { text: '24/7 Service' },
-    { text: 'Plumbing Experts' },
-    { text: 'Modern Tools' },
+    { text: 'Lorem ipsum dolor' },
+    { text: 'Lorem ipsum dolor' },
+    { text: 'Lorem ipsum dolor' },
+    { text: 'Lorem ipsum dolor' },
+    { text: 'Lorem ipsum dolor' },
+    { text: 'Lorem ipsum dolor' },
   ];
 
   return (
@@ -25,9 +25,9 @@ const AboutUs = () => {
               // Subheading
               sectionName="About Us"
               // Main heading
-              sectionHeader="Best Plumbing Services Trusted By Hundreds Since 2000"
+              sectionHeader="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
               // Paragraph/description
-              sectionDesc="With decades of experience since 2000, we stand as your premier plumbing experts, committed to delivering dependable services that have earned the trust and loyalty of hundreds of customers through unwavering integrity and precise workmanship."
+              sectionDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
             />
             
             {/* Feature List (Check Icons) */}

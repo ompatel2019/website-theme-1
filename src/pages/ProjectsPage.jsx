@@ -11,8 +11,8 @@ const ProjectsPage = ({ placeholderImg, projectsData }) => {
   const jsonLdProjectsPage = {
     "@context": "https://schema.org",
     "@type": "Project",
-    "name": "Penrith Projects by Lightwater Plumbing",
-    "description": "Collection of our latest plumbing projects completed in Penrith and beyond.",
+    "name": "Business Name",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida.",
     "url": "https://example.com/projects"
   };
 
@@ -25,8 +25,8 @@ const ProjectsPage = ({ placeholderImg, projectsData }) => {
   return (
     <>
       <SeoHelmet
-        title="Projects | Lightwater Plumbing"
-        description="Explore our plumbing projects that showcase quality workmanship and innovative solutions."
+        title="Projects | Business Name"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
         canonicalUrl="https://example.com/projects"
         jsonSchema={jsonLdProjectsPage}
       />
@@ -35,7 +35,7 @@ const ProjectsPage = ({ placeholderImg, projectsData }) => {
         placeholderImg={placeholderImg}
         route="Home / Projects"
         heading="Projects"
-        subheading="Explore our portfolio of completed projects, demonstrating quality workmanship and innovative solutions."
+        subheading="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
       />
       <Stats stats={stats} bg="bg-black" text="text-white"/>
       <CTAMini text="Claim Your Exclusive Discount Now"/>

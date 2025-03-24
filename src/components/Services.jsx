@@ -17,8 +17,8 @@ const Services = ({ services, bg, text, isHome }) => {
         <div className="flex-1">
           <SectionHeader 
             sectionName="Our Services" 
-            sectionHeader="Professional Plumbing Solutions for Every Need"
-            sectionDesc={isHome ? "From emergency repairs to complete installations, our expert team is ready to tackle any plumbing challenge." : ""}
+            sectionHeader="Lorem ipsum dolor sit amet, consectetur elit."
+            sectionDesc={isHome ? "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida." : ""}
           />
         </div>
         

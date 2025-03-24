@@ -5,14 +5,14 @@ import { FcGoogle } from "react-icons/fc";
 import { Link } from 'react-router-dom';
 
 const Hero = ({ placeholderImg }) => { 
-  const h1 = "We Fix All Your Plumbing Problems"
-  const p = "We resolve every plumbing challenge swiftly and efficiently. Trust our skilled team to deliver prompt repairs and expert installations, ensuring your water systems run flawlessly day and night with utmost care."
+  const h1 = "Lorem ipsum dolor sit amet"
+  const p = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
   const buttonClass = 'border-2 border-transparent w-full text-black bg-primary py-2 hover:bg-white text-center md:py-3 rounded-md h7 hover:text-black hover:border-white hover:px-16 transition-all'
   return (
     <section className='grid grid-cols-2 bg-black max-md:grid-cols-1 font-supreme text-white max-lg:text-center'>
         <div className="cols-span-1 2xl:py-16 xl:py-12 pt-12 pb-8 flex flex-col justify-between max-md:items-center 2xl:pl-[80px] xl:pl-[64px] xl:pr-0 lg:px-[48px] md:px-[24px] sm:px-[16px] px-[8px] max-lg:space-y-4">
           <p className='p-2 px-3 rounded-full bg-primary h7 w-fit max-md:flex max-md:justify-center text-black'>
-            Top Rated Plumbing Service
+              Lorem ipsum dolor sit amet
           </p>
           <h1 className='h1 font-supreme-extrabold max-md:text-center text-left'>
             {h1}
@@ -32,7 +32,7 @@ const Hero = ({ placeholderImg }) => {
                   <i class="bi bi-star-fill"></i>
                 </div>
                 <p>
-                  5/5 (40 + Reviews)
+                  5/5 (XX + Reviews)
                 </p>
               </div>
             </div>

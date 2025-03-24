@@ -23,7 +23,7 @@ const WhyChooseUs = ({ bg, text, placeholderImg }) => {
       icon: <Shield className="text-blue-500 flex-shrink-0" size={20} />
     },
     {
-      title: "Satisfaction Guaranteed",
+      title: "100% Satisfaction",
       description: "We're not happy until you're completely satisfied",
       icon: <CheckCircle className="text-blue-500 flex-shrink-0" size={20} />
     }
@@ -66,8 +66,8 @@ const WhyChooseUs = ({ bg, text, placeholderImg }) => {
           <div className="space-y-6 order-1 lg:order-2">
             <SectionHeader 
               sectionName="Why Choose Us" 
-              sectionHeader="Your Premier Plumbing Partner For Every Home Challenge"
-              sectionDesc="We combine cutting-edge technology with decades of hands-on expertise to deliver plumbing solutions that stand the test of time."
+              sectionHeader="Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+              sectionDesc="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
             />
             
             {/* Benefits grid with improved spacing */}
