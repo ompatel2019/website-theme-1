@@ -17,8 +17,8 @@ const HomePage = ({ placeholderImg, services, projectsData }) => {
   const jsonLdHomePage = {
     "@context": "https://schema.org",
     "@type": "WebPage",
-    "name": "Lightwater Plumbing | Penrith Plumbing & Services",
-    "description": "Welcome to Lightwater Plumbing, your trusted provider of plumbing services in Penrith.",
+    "name": "Business Name | Business Information",
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida.",
     "url": "https://example.com/"
   };
 
@@ -31,8 +31,8 @@ const HomePage = ({ placeholderImg, services, projectsData }) => {
   return (
     <>
       <SeoHelmet
-        title="Lightwater Plumbing | Penrith Plumbing & Services"
-        description="Welcome to Lightwater Plumbing, your local Penrith experts for reliable plumbing and maintenance solutions."
+        title="Business Name | Business Information"
+        description="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce posuere ac quam et imperdiet. Etiam non mauris feugiat, efficitur mauris sed, aliquam dui. Nulla gravida."
         canonicalUrl="https://example.com/"
         jsonSchema={jsonLdHomePage}
       />
